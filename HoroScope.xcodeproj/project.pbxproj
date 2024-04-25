@@ -20,6 +20,7 @@
 		26D55F522BD7A43600390E1F /* DiaBan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D55F512BD7A43600390E1F /* DiaBan.swift */; };
 		26D55F572BD7A62500390E1F /* BanMenh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D55F562BD7A62500390E1F /* BanMenh.swift */; };
 		26D55F592BD7B38800390E1F /* CanChi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D55F582BD7B38800390E1F /* CanChi.swift */; };
+		B385F8BC2BDA4F8B009F8502 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B385F8BB2BDA4F8B009F8502 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		26D55F512BD7A43600390E1F /* DiaBan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaBan.swift; sourceTree = "<group>"; };
 		26D55F562BD7A62500390E1F /* BanMenh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanMenh.swift; sourceTree = "<group>"; };
 		26D55F582BD7B38800390E1F /* CanChi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanChi.swift; sourceTree = "<group>"; };
+		B385F8BB2BDA4F8B009F8502 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			children = (
 				26D55F3A2BD600A900390E1F /* Info.plist */,
 				26D55F492BD7A18200390E1F /* Application */,
+				B385F8BA2BDA4F6F009F8502 /* Constants */,
 				26D55F402BD7A07500390E1F /* Model */,
 				26D55F472BD7A17500390E1F /* View */,
 				26D55F482BD7A17900390E1F /* Controller */,
@@ -152,6 +155,14 @@
 			path = DiaBan;
 			sourceTree = "<group>";
 		};
+		B385F8BA2BDA4F6F009F8502 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B385F8BB2BDA4F8B009F8502 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -228,6 +239,7 @@
 				26D55F522BD7A43600390E1F /* DiaBan.swift in Sources */,
 				26D55F502BD7A42A00390E1F /* ThienBan.swift in Sources */,
 				26D55F442BD7A0A700390E1F /* LunarDate.swift in Sources */,
+				B385F8BC2BDA4F8B009F8502 /* Constants.swift in Sources */,
 				26D55F462BD7A0EF00390E1F /* Can.swift in Sources */,
 				26D55F4E2BD7A41D00390E1F /* LaSo.swift in Sources */,
 				26D55F422BD7A09A00390E1F /* SolarDate.swift in Sources */,

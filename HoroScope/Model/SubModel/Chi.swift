@@ -22,4 +22,15 @@ enum Chi: Int {
     case Hoi = 11
     
     static let list: [Chi] = [.Ti, .Suu, .Dan, .Mao, .Thin, .Ty, .Ngo, .Mui, .Than, .Dau, .Tuat, .Hoi]
+    
+    static func generateArray(startWith startChi: Chi, length: Int) -> [Chi] {
+        let startIndex = startChi.rawValue
+        var cycleArray: [Chi] = []
+        
+        for i in 0..<length {
+            let index = (startIndex + i) % list.count
+            cycleArray.append(list[index])
+        }
+        return cycleArray
+    }
 }

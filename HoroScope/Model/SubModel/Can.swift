@@ -20,4 +20,15 @@ enum Can: Int {
     case Ky = 9
     
     static let list: [Can] = [.Canh, .Tan, .Nham, .Quy, .Giap, .At, .Binh, .Dinh, .Mau, .Ky]
+    
+    static func generateArray(startWith startCan: Can, length: Int) -> [Can] {
+        let startIndex = startCan.rawValue
+        var cycleArray: [Can] = []
+        
+        for i in 0..<length {
+            let index = (startIndex + i) % list.count
+            cycleArray.append(list[index])
+        }
+        return cycleArray
+    }
 }

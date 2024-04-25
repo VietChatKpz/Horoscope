@@ -14,26 +14,27 @@ class LunarDate {
     let hour: Int
     let minute: Int
     
-    let ddTxt: CanChi
-    let mmTxt: CanChi
     let yyTxt: CanChi
-//    let hTxt: CanChi
+    let mmTxt: CanChi
+    let ddTxt: CanChi
+    let hhTxt: CanChi
     
     init(solarDate: SolarDate) {
         let arr = LunarDate.convertSolar2Lunar(solarDate: solarDate, timeZone: 7)
+        print(arr)
         dd = arr[0]
         mm = arr[1]
         yy = arr[2]
-        hour = 0
-        minute = 0
+        hour = solarDate.hour
+        minute = solarDate.minute
         yyTxt = CanChi(yy: yy)
-        mmTxt = CanChi(withMonth: mm, and: yyTxt)
+        mmTxt = CanChi(withMonth: mm, withCanYY: yyTxt.can)
         ddTxt = CanChi(dayFromSolarDate: solarDate)
-        
+        hhTxt = CanChi(hourFrom: hour, minute: minute, day: ddTxt.can)
     }
 }
 
-//MARK: - Function to convert solar date to lunar
+//MARK: - Đổi từ lịch dương sang lịch âm
 extension LunarDate {
     
     static func iFloor(inp: Double) -> Int {
@@ -41,15 +42,15 @@ extension LunarDate {
     }
 
     static func jdFromDate(dd: Int, mm: Int, yy: Int) -> Int {
-        let a = iFloor(inp: (14 - Double(mm)) / 12);
-        let y = yy+4800-a;
-        let m = mm+12*a-3;
-        var jd = dd + (153*m+2)/5 + 365*y + y/4 - y/100 + y/400 - 32045;
+        let a = iFloor(inp: (14 - Double(mm)) / 12)
+        let y = yy+4800-a
+        let m = mm+12*a-3
+        var jd = dd + (153*m+2)/5 + 365*y + y/4 - y/100 + y/400 - 32045
         if (jd < 2299161) {
-            jd = dd + (153*m+2)/5 + 365*y + y/4 - 32083;
+            jd = dd + (153*m+2)/5 + 365*y + y/4 - 32083
         }
-        //jd = jd - 1721425;
-        return jd;
+        //jd = jd - 1721425
+        return jd
     }
 
     static func getNewMoonDay(k: Double, timeZone: Double) -> Int {
@@ -101,7 +102,7 @@ extension LunarDate {
     }
 
     static func getSunLongitude(dayNumber: Int, timeZone: Double) -> Double {
-        return SunLongitude(Double(dayNumber) - 0.5 - timeZone/24);
+        return SunLongitude(Double(dayNumber) - 0.5 - timeZone/24)
     }
     
     static func getLunarMonth11(_ yy: Int, timeZone: Double) -> Int {

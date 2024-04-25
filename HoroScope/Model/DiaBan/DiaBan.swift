@@ -8,5 +8,6 @@
 import Foundation
 
 class DiaBan {
-    
+//    let canChi: CanChi
+//    let cung: 
 }
