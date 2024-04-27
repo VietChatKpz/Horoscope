@@ -21,6 +21,21 @@
 		26D55F572BD7A62500390E1F /* BanMenh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D55F562BD7A62500390E1F /* BanMenh.swift */; };
 		26D55F592BD7B38800390E1F /* CanChi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D55F582BD7B38800390E1F /* CanChi.swift */; };
 		B385F8BC2BDA4F8B009F8502 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B385F8BB2BDA4F8B009F8502 /* Constants.swift */; };
+		B385F8BE2BDB509B009F8502 /* Menh.swift in Sources */ = {isa = PBXBuildFile; fileRef = B385F8BD2BDB509B009F8502 /* Menh.swift */; };
+		B385F8C02BDB5D87009F8502 /* Cuc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B385F8BF2BDB5D87009F8502 /* Cuc.swift */; };
+		B385F8C22BDB621D009F8502 /* AnThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B385F8C12BDB621D009F8502 /* AnThan.swift */; };
+		B385F8C42BDB63D6009F8502 /* MenhChu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B385F8C32BDB63D6009F8502 /* MenhChu.swift */; };
+		B385F8C62BDB662B009F8502 /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B385F8C52BDB662B009F8502 /* Sex.swift */; };
+		B3A881652BDB8A14004F372F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A881632BDB8A14004F372F /* HomeViewController.swift */; };
+		B3A881662BDB8A14004F372F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3A881642BDB8A14004F372F /* HomeViewController.xib */; };
+		B3A881682BDB8DAC004F372F /* TuVi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A881672BDB8DAC004F372F /* TuVi.swift */; };
+		B3A8816A2BDB8DB7004F372F /* ThienPhu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A881692BDB8DB7004F372F /* ThienPhu.swift */; };
+		B3A8816C2BDB91B0004F372F /* SaoDacTinh.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A8816B2BDB91B0004F372F /* SaoDacTinh.swift */; };
+		B3A8816E2BDB9544004F372F /* TrangSinh.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A8816D2BDB9544004F372F /* TrangSinh.swift */; };
+		B3A881702BDB99AA004F372F /* Sao.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A8816F2BDB99AA004F372F /* Sao.swift */; };
+		B3A881722BDB9F1F004F372F /* ChuThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A881712BDB9F1F004F372F /* ChuThan.swift */; };
+		B3A881742BDBA133004F372F /* MenhThanChu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A881732BDBA133004F372F /* MenhThanChu.swift */; };
+		B3A881762BDBA464004F372F /* Hanh.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A881752BDBA464004F372F /* Hanh.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +55,21 @@
 		26D55F562BD7A62500390E1F /* BanMenh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanMenh.swift; sourceTree = "<group>"; };
 		26D55F582BD7B38800390E1F /* CanChi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanChi.swift; sourceTree = "<group>"; };
 		B385F8BB2BDA4F8B009F8502 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B385F8BD2BDB509B009F8502 /* Menh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menh.swift; sourceTree = "<group>"; };
+		B385F8BF2BDB5D87009F8502 /* Cuc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cuc.swift; sourceTree = "<group>"; };
+		B385F8C12BDB621D009F8502 /* AnThan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnThan.swift; sourceTree = "<group>"; };
+		B385F8C32BDB63D6009F8502 /* MenhChu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenhChu.swift; sourceTree = "<group>"; };
+		B385F8C52BDB662B009F8502 /* Sex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sex.swift; sourceTree = "<group>"; };
+		B3A881632BDB8A14004F372F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B3A881642BDB8A14004F372F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		B3A881672BDB8DAC004F372F /* TuVi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuVi.swift; sourceTree = "<group>"; };
+		B3A881692BDB8DB7004F372F /* ThienPhu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThienPhu.swift; sourceTree = "<group>"; };
+		B3A8816B2BDB91B0004F372F /* SaoDacTinh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaoDacTinh.swift; sourceTree = "<group>"; };
+		B3A8816D2BDB9544004F372F /* TrangSinh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrangSinh.swift; sourceTree = "<group>"; };
+		B3A8816F2BDB99AA004F372F /* Sao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sao.swift; sourceTree = "<group>"; };
+		B3A881712BDB9F1F004F372F /* ChuThan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuThan.swift; sourceTree = "<group>"; };
+		B3A881732BDBA133004F372F /* MenhThanChu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenhThanChu.swift; sourceTree = "<group>"; };
+		B3A881752BDBA464004F372F /* Hanh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hanh.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +127,8 @@
 		26D55F472BD7A17500390E1F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B3A881632BDB8A14004F372F /* HomeViewController.swift */,
+				B3A881642BDB8A14004F372F /* HomeViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -131,6 +163,11 @@
 			children = (
 				26D55F4F2BD7A42A00390E1F /* ThienBan.swift */,
 				26D55F562BD7A62500390E1F /* BanMenh.swift */,
+				B385F8BF2BDB5D87009F8502 /* Cuc.swift */,
+				B385F8C32BDB63D6009F8502 /* MenhChu.swift */,
+				B385F8C52BDB662B009F8502 /* Sex.swift */,
+				B3A8816B2BDB91B0004F372F /* SaoDacTinh.swift */,
+				B3A881712BDB9F1F004F372F /* ChuThan.swift */,
 			);
 			path = ThienBan;
 			sourceTree = "<group>";
@@ -151,6 +188,14 @@
 			isa = PBXGroup;
 			children = (
 				26D55F512BD7A43600390E1F /* DiaBan.swift */,
+				B385F8BD2BDB509B009F8502 /* Menh.swift */,
+				B385F8C12BDB621D009F8502 /* AnThan.swift */,
+				B3A881672BDB8DAC004F372F /* TuVi.swift */,
+				B3A881692BDB8DB7004F372F /* ThienPhu.swift */,
+				B3A8816D2BDB9544004F372F /* TrangSinh.swift */,
+				B3A8816F2BDB99AA004F372F /* Sao.swift */,
+				B3A881732BDBA133004F372F /* MenhThanChu.swift */,
+				B3A881752BDBA464004F372F /* Hanh.swift */,
 			);
 			path = DiaBan;
 			sourceTree = "<group>";
@@ -222,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26D55F362BD600A900390E1F /* Assets.xcassets in Resources */,
+				B3A881662BDB8A14004F372F /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,18 +279,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				26D55F572BD7A62500390E1F /* BanMenh.swift in Sources */,
+				B385F8C22BDB621D009F8502 /* AnThan.swift in Sources */,
+				B3A881652BDB8A14004F372F /* HomeViewController.swift in Sources */,
+				B385F8C02BDB5D87009F8502 /* Cuc.swift in Sources */,
 				26D55F592BD7B38800390E1F /* CanChi.swift in Sources */,
 				26D55F4C2BD7A1BB00390E1F /* Chi.swift in Sources */,
 				26D55F312BD600A800390E1F /* ViewController.swift in Sources */,
+				B385F8C42BDB63D6009F8502 /* MenhChu.swift in Sources */,
 				26D55F522BD7A43600390E1F /* DiaBan.swift in Sources */,
+				B385F8C62BDB662B009F8502 /* Sex.swift in Sources */,
 				26D55F502BD7A42A00390E1F /* ThienBan.swift in Sources */,
 				26D55F442BD7A0A700390E1F /* LunarDate.swift in Sources */,
 				B385F8BC2BDA4F8B009F8502 /* Constants.swift in Sources */,
+				B3A881742BDBA133004F372F /* MenhThanChu.swift in Sources */,
+				B3A881722BDB9F1F004F372F /* ChuThan.swift in Sources */,
+				B3A8816C2BDB91B0004F372F /* SaoDacTinh.swift in Sources */,
 				26D55F462BD7A0EF00390E1F /* Can.swift in Sources */,
+				B3A881702BDB99AA004F372F /* Sao.swift in Sources */,
 				26D55F4E2BD7A41D00390E1F /* LaSo.swift in Sources */,
 				26D55F422BD7A09A00390E1F /* SolarDate.swift in Sources */,
 				26D55F2D2BD600A800390E1F /* AppDelegate.swift in Sources */,
+				B3A8816A2BDB8DB7004F372F /* ThienPhu.swift in Sources */,
+				B3A881682BDB8DAC004F372F /* TuVi.swift in Sources */,
+				B3A881762BDBA464004F372F /* Hanh.swift in Sources */,
 				26D55F2F2BD600A800390E1F /* SceneDelegate.swift in Sources */,
+				B385F8BE2BDB509B009F8502 /* Menh.swift in Sources */,
+				B3A8816E2BDB9544004F372F /* TrangSinh.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

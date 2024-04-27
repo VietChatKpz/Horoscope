@@ -20,8 +20,7 @@ class LunarDate {
     let hhTxt: CanChi
     
     init(solarDate: SolarDate) {
-        let arr = LunarDate.convertSolar2Lunar(solarDate: solarDate, timeZone: 7)
-        print(arr)
+        let arr = LunarDate.convertLunarHour(solarDate: solarDate)
         dd = arr[0]
         mm = arr[1]
         yy = arr[2]
@@ -129,10 +128,57 @@ extension LunarDate {
         return i - 1
     }
     
+    static func convertLunarHour(solarDate: SolarDate) -> [Int] {
+        let timeZone = 7.0
+        var dd = solarDate.dd
+        var mm = solarDate.mm
+        var yy = solarDate.yy
+        var hour = solarDate.hour
+        let calendar = Calendar.current
+        var components = DateComponents()
+        components.day = dd
+        components.month = mm
+        components.year = yy
+        components.hour = hour
+        let currentDate = calendar.date(from: components)
+        if let current = currentDate {
+            if hour >= 23 {
+                if let newDay = calendar.date(byAdding: .day, value: 1, to: current) {
+                    let newComponents = calendar.dateComponents([.day, .month, .year], from: newDay)
+                    dd = newComponents.day ?? 0
+                    mm = newComponents.month ?? 0
+                    yy = newComponents.year ?? 0
+                    let newSolarDate = SolarDate(dd: dd, mm: mm, yy: yy, hour: 0, minute: 0)
+                    return convertSolar2Lunar(solarDate: newSolarDate, timeZone: timeZone)
+                }
+            } else {
+                return convertSolar2Lunar(solarDate: solarDate, timeZone: timeZone)
+            }
+        }
+        return []
+    }
+    
     static func convertSolar2Lunar(solarDate: SolarDate, timeZone: Double) -> [Int] {
         let dd = solarDate.dd
         let mm = solarDate.mm
         let yy = solarDate.yy
+//        var hour = solarDate.hour
+//        let calendar = Calendar.current
+//        var components = DateComponents()
+//        components.day = dd
+//        components.month = mm
+//        components.year = yy
+//        components.hour = hour
+//        let currentDate = calendar.date(from: components)
+//        if let current = currentDate {
+//            if hour >= 23 {
+//                if let newDay = calendar.date(byAdding: .day, value: 1, to: current) {
+//                    print(newDay)
+//                }
+//            } else {
+//
+//            }
+//        }
         var lunarDay, lunarMonth, lunarYear, lunarLeap: Int
         let dayNumber = jdFromDate(dd: dd, mm: mm, yy: yy)
         let k = iFloor(inp: ((Double(dayNumber) - 2415021.076998695) / 29.530588853))
@@ -170,5 +216,4 @@ extension LunarDate {
         }
         return [lunarDay, lunarMonth, lunarYear, lunarLeap]
     }
-    
 }

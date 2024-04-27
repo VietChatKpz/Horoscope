@@ -8,6 +8,10 @@
 import Foundation
 
 class DiaBan {
+    let anThan: AnThan = .Menh
+    let cucInt: Int = 0
+//    let 
 //    let canChi: CanChi
 //    let cung: 
+    
 }

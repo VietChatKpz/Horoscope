@@ -56,7 +56,7 @@ class BanMenh {
         case (.Binh, .Ngo), (.Dinh, .Mui):
             txt = "Thiên thượng thủy (nước trên trời)"
         case (.Mau, .Than), (.Ky, .Dau):
-            txt = "Đất trach thổ (đất làm nhà)"
+            txt = "Đại Dịch Thổ (đất làm nhà)" //Đất trach thổ
         case (.Canh, .Tuat), (.Tan, .Hoi):
             txt = "Xuyến thoa kim (vàng trong tay)"
         case (.Nham, .Ti), (.Quy, .Suu):
