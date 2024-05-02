@@ -8,10 +8,18 @@
 import Foundation
 
 class DiaBan {
-    let anThan: AnThan = .Menh
-    let cucInt: Int = 0
-//    let 
-//    let canChi: CanChi
-//    let cung: 
+    var cungThan: AnThan = .Menh
+    var cungCuc: Int = 0
+    var cungChi: Chi = .Ti
+    var cungSao = ""
     
+//    var list: [DiaBan] = []
+    init(cungChi: Chi, cungThan: AnThan) {
+        self.cungChi = cungChi
+        self.cungThan = cungThan
+    }
+    
+    init(cungCuc: Int) {
+        self.cungCuc = cungCuc
+    }
 }

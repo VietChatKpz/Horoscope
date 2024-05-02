@@ -30,8 +30,8 @@
                             <color key="textColor" red="0.086274509799999996" green="0.086274509799999996" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CTs-LB-75R">
-                            <rect key="frame" x="16" y="64" width="361" height="36"/>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CTs-LB-75R">
+                            <rect key="frame" x="223" y="64" width="154" height="36"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="36" id="iea-vE-sF1"/>
                             </constraints>
@@ -44,11 +44,17 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7v6-yU-yVf">
+                            <rect key="frame" x="16" y="72" width="42" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="UpW-KK-z2I" firstAttribute="top" secondItem="fiT-ag-IIk" secondAttribute="top" constant="8" id="OCq-zw-T7M"/>
-                        <constraint firstItem="CTs-LB-75R" firstAttribute="leading" secondItem="fiT-ag-IIk" secondAttribute="leading" constant="16" id="P6O-wX-WrW"/>
                         <constraint firstAttribute="trailing" secondItem="UpW-KK-z2I" secondAttribute="trailing" constant="16" id="T7Q-8a-FWV"/>
                         <constraint firstAttribute="trailing" secondItem="CTs-LB-75R" secondAttribute="trailing" constant="16" id="X7h-Ip-8mW"/>
                         <constraint firstItem="CTs-LB-75R" firstAttribute="top" secondItem="UpW-KK-z2I" secondAttribute="bottom" constant="8" id="epb-Lv-aYr"/>
@@ -64,7 +70,7 @@
                 <constraint firstItem="fiT-ag-IIk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="QO3-nR-2bK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fiT-ag-IIk" secondAttribute="trailing" id="beP-Pt-6fw"/>
             </constraints>
-            <point key="canvasLocation" x="131" y="-11"/>
+            <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
         </view>
     </objects>
     <resources>

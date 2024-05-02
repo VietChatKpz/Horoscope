@@ -22,4 +22,15 @@ enum TrangSinh: Int {
     case MocDuc = 11
     
     static let list: [TrangSinh] = [.TrangSinh, .Duong, .Thai, .SaoTuyet, .Mo, .Tu, .Benh, .Suy, .DeVuong, .LamQuang, .QuangDoi, .MocDuc]
+    
+    static func generateArray(startWith startChi: TrangSinh, length: Int) -> [TrangSinh] {
+        let startIndex = startChi.rawValue
+        var cycleArray: [TrangSinh] = []
+        
+        for i in 0..<length {
+            let index = (startIndex + i) % list.count
+            cycleArray.append(list[index])
+        }
+        return cycleArray
+    }
 }

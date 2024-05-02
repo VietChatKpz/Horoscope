@@ -7,10 +7,10 @@
 
 import Foundation
 
-enum SaoDacTinh {
-    case Vuong
-    case Mieu
-    case Dac
-    case Binh
-    case Ham
+enum SaoDacTinh: String {
+    case Vuong = "V"
+    case Mieu = "M"
+    case Dac = "D"
+    case Binh = "B"
+    case Ham = "H"
 }

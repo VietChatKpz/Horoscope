@@ -7,75 +7,98 @@
 
 import Foundation
 
+enum CucType: Int {
+    case ThuyNhiCuc = 2
+    case MocTamCuc = 3
+    case KimTuCuc = 4
+    case ThoNguCuc = 5
+    case HoaLucCuc = 6
+    
+    func tenCuc() -> String {
+        switch self {
+        case .ThuyNhiCuc:
+            return "Thủy Nhị Cục"
+        case .MocTamCuc:
+            return "Mộc Tam Cục"
+        case .KimTuCuc:
+            return "Kim Tứ Cục"
+        case .ThoNguCuc:
+            return "Thổ Ngũ Cục"
+        case .HoaLucCuc:
+            return "Hỏa Lục Cục"
+        }
+    }
+}
+
 class Cuc {
-    let cuc: String
+    let cuc: CucType
     
     init(menh: Chi, can: Can) {
         switch can {
         case .Giap, .Ky:
             switch menh {
             case .Ti, .Suu:
-                cuc = "Thủy Nhị Cục"
+                cuc = .ThuyNhiCuc
             case .Dan, .Mao, .Tuat, .Hoi:
-                cuc = "Hỏa Lục Cục"
+                cuc = .HoaLucCuc
             case .Thin, .Ty:
-                cuc = "Mộc Tam Cục"
+                cuc = .MocTamCuc
             case .Ngo, .Mui:
-                cuc = "Thổ Ngũ Cục"
+                cuc = .ThoNguCuc
             case .Than, .Dau:
-                cuc = "Kim Tứ Cục"
+                cuc = .KimTuCuc
             }
         case .At, .Canh:
             switch menh {
             case .Ti, .Suu:
-                cuc = "Hỏa Lục Cục"
+                cuc = .HoaLucCuc
             case .Dan, .Mao, .Tuat, .Hoi:
-                cuc = "Thổ Ngũ Cục"
+                cuc = .ThoNguCuc
             case .Thin, .Ty:
-                cuc = "Kim Tứ Cục"
+                cuc = .KimTuCuc
             case .Ngo, .Mui:
-                cuc = "Mộc Tam Cục"
+                cuc = .MocTamCuc
             case .Than, .Dau:
-                cuc = "Thủy Nhị Cục"
+                cuc = .ThuyNhiCuc
             }
         case .Binh, .Tan:
             switch menh {
             case .Ti, .Suu:
-                cuc = "Thổ Ngũ Cục"
+                cuc = .ThoNguCuc
             case .Dan, .Mao, .Tuat, .Hoi:
-                cuc = "Mộc Tam Cục"
+                cuc = .MocTamCuc
             case .Thin, .Ty:
-                cuc = "Thủy Nhị Cục"
+                cuc = .ThuyNhiCuc
             case .Ngo, .Mui:
-                cuc = "Kim Tứ Cục"
+                cuc = .KimTuCuc
             case .Than, .Dau:
-                cuc = "Hỏa Lục Cục"
+                cuc = .HoaLucCuc
             }
         case .Dinh, .Nham:
             switch menh {
             case .Ti, .Suu:
-                cuc = "Mộc Tam Cục"
+                cuc = .MocTamCuc
             case .Dan, .Mao, .Tuat, .Hoi:
-                cuc = "Kim Tứ Cục"
+                cuc = .KimTuCuc
             case .Thin, .Ty:
-                cuc = "Hỏa Lục Cục"
+                cuc = .HoaLucCuc
             case .Ngo, .Mui:
-                cuc = "Thủy Nhị Cục"
+                cuc = .ThuyNhiCuc
             case .Than, .Dau:
-                cuc = "Thổ Ngũ Cục"
+                cuc = .ThoNguCuc
             }
         case .Mau, .Quy:
             switch menh {
             case .Ti, .Suu:
-                cuc = "Kim Tứ Cục"
+                cuc = .KimTuCuc
             case .Dan, .Mao, .Tuat, .Hoi:
-                cuc = "Thủy Nhị Cục"
+                cuc = .ThuyNhiCuc
             case .Thin, .Ty:
-                cuc = "Thổ Ngũ Cục"
+                cuc = .ThoNguCuc
             case .Ngo, .Mui:
-                cuc = "Hỏa Lục Cục"
+                cuc = .HoaLucCuc
             case .Than, .Dau:
-                cuc = "Mộc Tam Cục"
+                cuc = .MocTamCuc
             }
         }
     }

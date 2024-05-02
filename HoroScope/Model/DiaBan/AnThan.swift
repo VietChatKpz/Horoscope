@@ -23,4 +23,14 @@ enum AnThan: Int {
     
     static let list: [AnThan] = [.Menh, .PhuMau, .PhucDuc, .DienTrach, .QuanLoc, .NoBoc, .ThienDi, .TatAch, .TaiBach, .TuTuc, .TheThiep, .HuynhDe]
     
+    static func generateArray(startWith startChi: AnThan, length: Int) -> [AnThan] {
+        let startIndex = startChi.rawValue
+        var cycleArray: [AnThan] = []
+        
+        for i in 0..<length {
+            let index = (startIndex + i) % list.count
+            cycleArray.append(list[index])
+        }
+        return cycleArray
+    }
 }

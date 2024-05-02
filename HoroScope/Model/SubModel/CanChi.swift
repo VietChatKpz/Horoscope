@@ -21,11 +21,6 @@ class CanChi {
         self.can = Can.list[yy%10]
         self.chi = Chi.list[(yy+8)%12]
     }
-    
-    init(mm: Int) {
-        self.can = Can.list[(mm-1+2)%10]
-        self.chi = Chi.list[(mm-1+6)%12]
-    }
 
     //MARK: Can Chi theo tháng(tháng âm)
     init(withMonth mm: Int, withCanYY canYY: Can) {
@@ -49,7 +44,7 @@ class CanChi {
         var dd = dmy.dd
         var mm = dmy.mm
         var yy = dmy.yy
-        var hour = dmy.hour
+        let hour = dmy.hour
         let calendar = Calendar.current
         var components = DateComponents()
         components.day = dd
