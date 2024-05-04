@@ -33,4 +33,33 @@ enum AnThan: Int {
         }
         return cycleArray
     }
+    
+    func toString() -> String {
+        switch self {
+        case .Menh:
+            return "Mệnh"
+        case .PhuMau:
+            return "Phụ Mẫu"
+        case .PhucDuc:
+            return "Phúc Đức"
+        case .DienTrach:
+            return "Điền Trạch"
+        case .QuanLoc:
+            return "Quan Lộc"
+        case .NoBoc:
+            return "Nô Bộc"
+        case .ThienDi:
+            return "Thiên Di"
+        case .TatAch:
+            return "Tật Ách"
+        case .TaiBach:
+            return "Tài Bạch"
+        case .TuTuc:
+            return "Tử Tức"
+        case .TheThiep:
+            return "Thê Thiếp"
+        case .HuynhDe:
+            return "Huynh Đệ"
+        }
+    }
 }

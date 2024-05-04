@@ -34,6 +34,35 @@ enum Chi: Int {
         return cycleArray
     }
     
+    func toString() -> String {
+        switch self {
+        case .Ti:
+            return "Tí"
+        case .Suu:
+            return "Sửu"
+        case .Dan:
+            return "Dần"
+        case .Mao:
+            return "Mão"
+        case .Thin:
+            return "Thìn"
+        case .Ty:
+            return "Tỵ"
+        case .Ngo:
+            return "Ngọ"
+        case .Mui:
+            return "Mùi"
+        case .Than:
+            return "Thân"
+        case .Dau:
+            return "Dậu"
+        case .Tuat:
+            return "Tuất"
+        case .Hoi:
+            return "Hợi"
+        }
+    }
+    
     func nguHanh() -> String {
         switch self {
         case .Ti:
@@ -121,26 +150,3 @@ enum Chi: Int {
         }
     }
 }
-
-struct DiaChi {
-    let id: Int
-    let tenChi: String
-    let tenHanh: String
-    let menhChu: String
-    let thanChu: String
-}
-
-let listDiaChi: [DiaChi] = [
-    DiaChi(id: 1, tenChi: "Tý", tenHanh: "T", menhChu: "Tham Lang", thanChu: "Linh Tinh"),
-    DiaChi(id: 2, tenChi: "Sửu", tenHanh: "O", menhChu: "Cự Môn", thanChu: "Thiên Tướng"),
-    DiaChi(id: 3, tenChi: "Dần", tenHanh: "M", menhChu: "Lộc Tôn", thanChu: "Thiên Lương"),
-    DiaChi(id: 4, tenChi: "Mão", tenHanh: "M", menhChu: "Văn Khúc", thanChu: "Thiên Đồng"),
-    DiaChi(id: 5, tenChi: "Thìn", tenHanh: "O", menhChu: "Liêm Trinh", thanChu: "Văn Xương"),
-    DiaChi(id: 6, tenChi: "Tỵ", tenHanh: "H", menhChu: "Vũ Khúc", thanChu: "Thiên Cơ"),
-    DiaChi(id: 7, tenChi: "Ngọ", tenHanh: "H", menhChu: "Phá Quân", thanChu: "Hỏa Tinh"),
-    DiaChi(id: 8, tenChi: "Mùi", tenHanh: "O", menhChu: "Vũ Khúc", thanChu: "Thiên Tướng"),
-    DiaChi(id: 9, tenChi: "Thân", tenHanh: "K", menhChu: "Liêm Trinh", thanChu: "Thiên Lương"),
-    DiaChi(id: 10, tenChi: "Dậu", tenHanh: "K", menhChu: "Văn Khúc", thanChu: "Thiên Đồng"),
-    DiaChi(id: 11, tenChi: "Tuất", tenHanh: "O", menhChu: "Lộc Tôn", thanChu: "Văn Xương"),
-    DiaChi(id: 12, tenChi: "Hợi", tenHanh: "T", menhChu: "Cự Môn", thanChu: "Thiên Cơ")
-]

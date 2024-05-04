@@ -28,6 +28,32 @@ enum CucType: Int {
             return "Hỏa Lục Cục"
         }
     }
+    
+    func dayCuc() -> [Int] {
+        switch self {
+        case .ThuyNhiCuc:
+            return element(start: 2)
+        case .MocTamCuc:
+            return element(start: 3)
+        case .KimTuCuc:
+            return element(start: 4)
+        case .ThoNguCuc:
+            return element(start: 5)
+        case .HoaLucCuc:
+            return element(start: 6)
+        }
+    }
+    
+    func element(start: Int) -> [Int] {
+        let diff = 10
+        let number = 12
+        var sequence = [Int]()
+        for i in 0..<number {
+            let a = start + i*diff
+            sequence.append(a)
+        }
+        return sequence
+    }
 }
 
 class Cuc {

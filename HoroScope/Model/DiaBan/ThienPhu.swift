@@ -18,4 +18,25 @@ enum ThienPhu: Int {
     case PhaQuan = 7
     
     static let list: [ThienPhu] = [.ThienPhu, .ThaiAm, .ThamLang, .CuMon, .ThienTuong, .ThienLuong, .ThatSat, .PhaQuan]
+    
+    func toString() -> String {
+        switch self {
+        case .ThienPhu:
+            return "Thiên Phủ"
+        case .ThaiAm:
+            return "Thái Âm"
+        case .ThamLang:
+            return "Tham Lang"
+        case .CuMon:
+            return "Cự Môn"
+        case .ThienTuong:
+            return "Thiên Tướng"
+        case .ThienLuong:
+            return "Thiên Lương"
+        case .ThatSat:
+            return "Thất Sát"
+        case .PhaQuan:
+            return "Phá Quân"
+        }
+    }
 }

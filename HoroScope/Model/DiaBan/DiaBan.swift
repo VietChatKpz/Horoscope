@@ -12,14 +12,12 @@ class DiaBan {
     var cungCuc: Int = 0
     var cungChi: Chi = .Ti
     var cungSao = ""
+    var cungTuVi: [TuVi] = []
+    var cungThienPhu: [ThienPhu] = []
     
-//    var list: [DiaBan] = []
-    init(cungChi: Chi, cungThan: AnThan) {
+    init(cungChi: Chi, cungThan: AnThan, cungCuc: Int) {
         self.cungChi = cungChi
         self.cungThan = cungThan
-    }
-    
-    init(cungCuc: Int) {
         self.cungCuc = cungCuc
     }
 }

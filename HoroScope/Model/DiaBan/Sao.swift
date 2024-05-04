@@ -35,10 +35,4 @@ class Sao {
         self.saoDacTinh = dacTinh
         return self
     }
-
-//    func anCung(_ saoViTriCung: Int) -> Sao {
-//        self.saoViTriCung = saoViTriCung
-//        return self
-//    }
-//    saoTuVi = Sao(saoID: <#T##Int#>, saoTen: <#T##String#>, saoNguHanh: <#T##String#>)
 }

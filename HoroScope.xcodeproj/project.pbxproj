@@ -20,6 +20,12 @@
 		26D55F522BD7A43600390E1F /* DiaBan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D55F512BD7A43600390E1F /* DiaBan.swift */; };
 		26D55F572BD7A62500390E1F /* BanMenh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D55F562BD7A62500390E1F /* BanMenh.swift */; };
 		26D55F592BD7B38800390E1F /* CanChi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D55F582BD7B38800390E1F /* CanChi.swift */; };
+		B37E86F12BE5D281004DFF0E /* ThienBanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37E86EF2BE5D281004DFF0E /* ThienBanCell.swift */; };
+		B37E86F22BE5D281004DFF0E /* ThienBanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B37E86F02BE5D281004DFF0E /* ThienBanCell.xib */; };
+		B37E86F52BE5D292004DFF0E /* DiaBanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37E86F32BE5D292004DFF0E /* DiaBanCell.swift */; };
+		B37E86F62BE5D292004DFF0E /* DiaBanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B37E86F42BE5D292004DFF0E /* DiaBanCell.xib */; };
+		B37E86F92BE61F71004DFF0E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37E86F72BE61F71004DFF0E /* MenuViewController.swift */; };
+		B37E86FA2BE61F71004DFF0E /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B37E86F82BE61F71004DFF0E /* MenuViewController.xib */; };
 		B385F8BC2BDA4F8B009F8502 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B385F8BB2BDA4F8B009F8502 /* Constants.swift */; };
 		B385F8BE2BDB509B009F8502 /* Menh.swift in Sources */ = {isa = PBXBuildFile; fileRef = B385F8BD2BDB509B009F8502 /* Menh.swift */; };
 		B385F8C02BDB5D87009F8502 /* Cuc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B385F8BF2BDB5D87009F8502 /* Cuc.swift */; };
@@ -33,6 +39,9 @@
 		B3A8816E2BDB9544004F372F /* TrangSinh.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A8816D2BDB9544004F372F /* TrangSinh.swift */; };
 		B3A881702BDB99AA004F372F /* Sao.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A8816F2BDB99AA004F372F /* Sao.swift */; };
 		B3A881762BDBA464004F372F /* Hanh.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A881752BDBA464004F372F /* Hanh.swift */; };
+		B3B145482BE62DC300EE7EDB /* TextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B145472BE62DC300EE7EDB /* TextField + Extension.swift */; };
+		B3B1454A2BE635E400EE7EDB /* ThaiTue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B145492BE635E400EE7EDB /* ThaiTue.swift */; };
+		D6942E890851FEAA4DC67F66 /* Pods_HoroScope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DDB89EAA340DD312D367D4 /* Pods_HoroScope.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +60,12 @@
 		26D55F512BD7A43600390E1F /* DiaBan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaBan.swift; sourceTree = "<group>"; };
 		26D55F562BD7A62500390E1F /* BanMenh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanMenh.swift; sourceTree = "<group>"; };
 		26D55F582BD7B38800390E1F /* CanChi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanChi.swift; sourceTree = "<group>"; };
+		B37E86EF2BE5D281004DFF0E /* ThienBanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThienBanCell.swift; sourceTree = "<group>"; };
+		B37E86F02BE5D281004DFF0E /* ThienBanCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThienBanCell.xib; sourceTree = "<group>"; };
+		B37E86F32BE5D292004DFF0E /* DiaBanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaBanCell.swift; sourceTree = "<group>"; };
+		B37E86F42BE5D292004DFF0E /* DiaBanCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaBanCell.xib; sourceTree = "<group>"; };
+		B37E86F72BE61F71004DFF0E /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		B37E86F82BE61F71004DFF0E /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		B385F8BB2BDA4F8B009F8502 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B385F8BD2BDB509B009F8502 /* Menh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menh.swift; sourceTree = "<group>"; };
 		B385F8BF2BDB5D87009F8502 /* Cuc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cuc.swift; sourceTree = "<group>"; };
@@ -64,6 +79,11 @@
 		B3A8816D2BDB9544004F372F /* TrangSinh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrangSinh.swift; sourceTree = "<group>"; };
 		B3A8816F2BDB99AA004F372F /* Sao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sao.swift; sourceTree = "<group>"; };
 		B3A881752BDBA464004F372F /* Hanh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hanh.swift; sourceTree = "<group>"; };
+		B3B145472BE62DC300EE7EDB /* TextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField + Extension.swift"; sourceTree = "<group>"; };
+		B3B145492BE635E400EE7EDB /* ThaiTue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThaiTue.swift; sourceTree = "<group>"; };
+		D4DDB89EAA340DD312D367D4 /* Pods_HoroScope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoroScope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F39EADA7172A15DDE8CC9810 /* Pods-HoroScope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoroScope.debug.xcconfig"; path = "Target Support Files/Pods-HoroScope/Pods-HoroScope.debug.xcconfig"; sourceTree = "<group>"; };
+		F593D8BE33F547D1E4C0BA2F /* Pods-HoroScope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoroScope.release.xcconfig"; path = "Target Support Files/Pods-HoroScope/Pods-HoroScope.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6942E890851FEAA4DC67F66 /* Pods_HoroScope.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +103,8 @@
 			children = (
 				26D55F2B2BD600A800390E1F /* HoroScope */,
 				26D55F2A2BD600A800390E1F /* Products */,
+				9005C3DCD8FB99821B1A0E41 /* Pods */,
+				2DAC5A4C1A55DEA34DA4C98D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +146,12 @@
 			children = (
 				B3A881632BDB8A14004F372F /* HomeViewController.swift */,
 				B3A881642BDB8A14004F372F /* HomeViewController.xib */,
+				B37E86EF2BE5D281004DFF0E /* ThienBanCell.swift */,
+				B37E86F02BE5D281004DFF0E /* ThienBanCell.xib */,
+				B37E86F32BE5D292004DFF0E /* DiaBanCell.swift */,
+				B37E86F42BE5D292004DFF0E /* DiaBanCell.xib */,
+				B37E86F72BE61F71004DFF0E /* MenuViewController.swift */,
+				B37E86F82BE61F71004DFF0E /* MenuViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,13 +216,32 @@
 				B3A8816D2BDB9544004F372F /* TrangSinh.swift */,
 				B3A8816F2BDB99AA004F372F /* Sao.swift */,
 				B3A881752BDBA464004F372F /* Hanh.swift */,
+				B3B145492BE635E400EE7EDB /* ThaiTue.swift */,
 			);
 			path = DiaBan;
+			sourceTree = "<group>";
+		};
+		2DAC5A4C1A55DEA34DA4C98D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4DDB89EAA340DD312D367D4 /* Pods_HoroScope.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9005C3DCD8FB99821B1A0E41 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F39EADA7172A15DDE8CC9810 /* Pods-HoroScope.debug.xcconfig */,
+				F593D8BE33F547D1E4C0BA2F /* Pods-HoroScope.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		B385F8BA2BDA4F6F009F8502 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				B3B145472BE62DC300EE7EDB /* TextField + Extension.swift */,
 				B385F8BB2BDA4F8B009F8502 /* Constants.swift */,
 			);
 			path = Constants;
@@ -206,9 +254,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 26D55F3D2BD600A900390E1F /* Build configuration list for PBXNativeTarget "HoroScope" */;
 			buildPhases = (
+				85653EAE9AC95672F54AF2C7 /* [CP] Check Pods Manifest.lock */,
 				26D55F252BD600A800390E1F /* Sources */,
 				26D55F262BD600A800390E1F /* Frameworks */,
 				26D55F272BD600A800390E1F /* Resources */,
+				D5608B9C87A3989BE7D651D5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -259,10 +309,55 @@
 			files = (
 				26D55F362BD600A900390E1F /* Assets.xcassets in Resources */,
 				B3A881662BDB8A14004F372F /* HomeViewController.xib in Resources */,
+				B37E86FA2BE61F71004DFF0E /* MenuViewController.xib in Resources */,
+				B37E86F62BE5D292004DFF0E /* DiaBanCell.xib in Resources */,
+				B37E86F22BE5D281004DFF0E /* ThienBanCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		85653EAE9AC95672F54AF2C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HoroScope-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5608B9C87A3989BE7D651D5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HoroScope/Pods-HoroScope-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HoroScope/Pods-HoroScope-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HoroScope/Pods-HoroScope-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		26D55F252BD600A800390E1F /* Sources */ = {
@@ -271,9 +366,12 @@
 			files = (
 				26D55F572BD7A62500390E1F /* BanMenh.swift in Sources */,
 				B385F8C22BDB621D009F8502 /* AnThan.swift in Sources */,
+				B37E86F52BE5D292004DFF0E /* DiaBanCell.swift in Sources */,
+				B37E86F12BE5D281004DFF0E /* ThienBanCell.swift in Sources */,
 				B3A881652BDB8A14004F372F /* HomeViewController.swift in Sources */,
 				B385F8C02BDB5D87009F8502 /* Cuc.swift in Sources */,
 				26D55F592BD7B38800390E1F /* CanChi.swift in Sources */,
+				B3B1454A2BE635E400EE7EDB /* ThaiTue.swift in Sources */,
 				26D55F4C2BD7A1BB00390E1F /* Chi.swift in Sources */,
 				26D55F312BD600A800390E1F /* ViewController.swift in Sources */,
 				26D55F522BD7A43600390E1F /* DiaBan.swift in Sources */,
@@ -289,10 +387,12 @@
 				26D55F2D2BD600A800390E1F /* AppDelegate.swift in Sources */,
 				B3A8816A2BDB8DB7004F372F /* ThienPhu.swift in Sources */,
 				B3A881682BDB8DAC004F372F /* TuVi.swift in Sources */,
+				B37E86F92BE61F71004DFF0E /* MenuViewController.swift in Sources */,
 				B3A881762BDBA464004F372F /* Hanh.swift in Sources */,
 				26D55F2F2BD600A800390E1F /* SceneDelegate.swift in Sources */,
 				B385F8BE2BDB509B009F8502 /* Menh.swift in Sources */,
 				B3A8816E2BDB9544004F372F /* TrangSinh.swift in Sources */,
+				B3B145482BE62DC300EE7EDB /* TextField + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +436,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -399,7 +499,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -420,12 +520,13 @@
 		};
 		26D55F3E2BD600A900390E1F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F39EADA7172A15DDE8CC9810 /* Pods-HoroScope.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9G9YD8GX8D;
+				DEVELOPMENT_TEAM = L986574MQT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HoroScope/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -448,12 +549,13 @@
 		};
 		26D55F3F2BD600A900390E1F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F593D8BE33F547D1E4C0BA2F /* Pods-HoroScope.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9G9YD8GX8D;
+				DEVELOPMENT_TEAM = L986574MQT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HoroScope/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

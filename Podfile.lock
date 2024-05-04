@@ -1,0 +1,16 @@
+PODS:
+  - MBRadioButton (1.4)
+
+DEPENDENCIES:
+  - MBRadioButton
+
+SPEC REPOS:
+  trunk:
+    - MBRadioButton
+
+SPEC CHECKSUMS:
+  MBRadioButton: dcf111c9bb633d4cf6e83200d804af6e025033c8
+
+PODFILE CHECKSUM: de657d2fb2d0aaf98adbe50cd4f549b29a6ae733
+
+COCOAPODS: 1.14.3

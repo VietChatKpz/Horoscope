@@ -35,6 +35,31 @@ enum Can: Int {
         return cycleArray
     }
     
+    func toString() -> String {
+        switch self {
+        case .Canh:
+            return "Canh"
+        case .Tan:
+            return "Tân"
+        case .Nham:
+            return "Nhâm"
+        case .Quy:
+            return "Quý"
+        case .Giap:
+            return "Giáp"
+        case .At:
+            return "Ất"
+        case .Binh:
+            return "Bính"
+        case .Dinh:
+            return "Đinh"
+        case .Mau:
+            return "Mậu"
+        case .Ky:
+            return "Kỷ"
+        }
+    }
+    
     func chuCaiDau() -> String {
         switch self {
         case .Canh:
@@ -85,25 +110,3 @@ enum Can: Int {
         }
     }
 }
-
-//struct ThienCan {
-//    let id: Int
-//    let chuCaiDau: String
-//    let tenCan: String
-//    let nguHanh: String
-//    let nguHanhID: Int
-//    let amDuong: Int
-//}
-//
-//let listThienCan: [ThienCan] = [
-//    ThienCan(id: 1, chuCaiDau: "C", tenCan: "Canh", nguHanh: "K", nguHanhID: 1, amDuong: 1),
-//    ThienCan(id: 2, chuCaiDau: "T", tenCan: "Tân", nguHanh: "K", nguHanhID: 1, amDuong: -1),
-//    ThienCan(id: 3, chuCaiDau: "N", tenCan: "Nhâm", nguHanh: "T", nguHanhID: 3, amDuong: 1),
-//    ThienCan(id: 4, chuCaiDau: "Q", tenCan: "Quý", nguHanh: "T", nguHanhID: 3, amDuong: -1),
-//    ThienCan(id: 5, chuCaiDau: "G", tenCan: "Giáp", nguHanh: "M", nguHanhID: 2, amDuong: 1),
-//    ThienCan(id: 6, chuCaiDau: "A", tenCan: "Ất", nguHanh: "M", nguHanhID: 2, amDuong: -1),
-//    ThienCan(id: 7, chuCaiDau: "B", tenCan: "Bính", nguHanh: "H", nguHanhID: 4, amDuong: 1),
-//    ThienCan(id: 8, chuCaiDau: "D", tenCan: "Đinh", nguHanh: "H", nguHanhID: 4, amDuong: -1),
-//    ThienCan(id: 9, chuCaiDau: "M", tenCan: "Mậu", nguHanh: "O", nguHanhID: 5, amDuong: 1),
-//    ThienCan(id: 10, chuCaiDau: "K", tenCan: "Kỷ", nguHanh: "O", nguHanhID: 5, amDuong: -1)
-//]
