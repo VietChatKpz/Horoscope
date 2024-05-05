@@ -20,6 +20,7 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var nuBT: RadioButton!
     @IBOutlet weak var button: UIButton!
     
+    var sexBool: Bool = true
     var groupContainer = RadioButtonContainer()
     
     override func viewDidLoad() {
@@ -28,14 +29,15 @@ class MenuViewController: UIViewController {
         configuration()
     }
     @IBAction func onClick(_ sender: Any) {
-        guard let name = nameTF.text, name.isEmpty,
-        let yy = yyTF.text, yy.isEmpty,
-        let mm = mmTF.text, mm.isEmpty,
-        let dd = ddTF.text, dd.isEmpty,
-        let h = hTF.text, h.isEmpty,
-        let m = mTF.text, m.isEmpty else { return }
+        guard let name = nameTF.text, !name.isEmpty,
+        let yy = yyTF.text, !yy.isEmpty,
+        let mm = mmTF.text, !mm.isEmpty,
+        let dd = ddTF.text, !dd.isEmpty,
+        let h = hTF.text, !h.isEmpty,
+        let m = mTF.text, !m.isEmpty else { return }
         
         let vc = HomeViewController()
+        vc.thienBan = ThienBan(solarBirthDate: SolarDate(dd: Int(dd) ?? 0, mm: Int(mm) ?? 0, yy: Int(yy) ?? 0, hour: Int(h) ?? 0, minute: Int(m) ?? 0), name: name, sex: sexBool)
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -65,6 +67,7 @@ extension MenuViewController {
         mTF.addPadding(.left(8))
         groupContainer.addButtons([namBT, nuBT])
         groupContainer.delegate = self
+        groupContainer.selectedButton = sexBool ? namBT: nuBT
     }
 }
 
@@ -93,7 +96,7 @@ extension MenuViewController: UITextFieldDelegate {
 
 extension MenuViewController: RadioButtonDelegate {
     func radioButtonDidSelect(_ button: MBRadioButton.RadioButton) {
-        
+        sexBool = button == namBT
     }
     
     func radioButtonDidDeselect(_ button: MBRadioButton.RadioButton) {

@@ -11,7 +11,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let solar = SolarDate(dd: 31, mm: 10, yy: 2000, hour: 5, minute: 30)
+//    let solar = SolarDate(dd: 31, mm: 10, yy: 2000, hour: 5, minute: 30)
+    var thienBan: ThienBan = ThienBan(solarBirthDate: SolarDate(dd: 0, mm: 0, yy: 0, hour: 0, minute: 0), name: "", sex: true)
 //    let lunar = LunarDate(solarDate: solar)
     var list: [DiaBan] = []
     var index = 0
@@ -38,7 +39,7 @@ class HomeViewController: UIViewController {
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1/4),
                 heightDimension: .fractionalHeight(1)))
-        firstOrThirdLineItem.contentInsets = NSDirectionalEdgeInsets(top: 1, leading: 1, bottom: 1, trailing: 1)
+        firstOrThirdLineItem.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         let firstOrThirdLineGroup = NSCollectionLayoutGroup.horizontal(
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1),
@@ -50,7 +51,7 @@ class HomeViewController: UIViewController {
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1),
                 heightDimension: .fractionalHeight(1/2)))
-        secondLineSmallItem.contentInsets = NSDirectionalEdgeInsets(top: 1, leading: 1, bottom: 1, trailing: 1)
+        secondLineSmallItem.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         let leadingOrTrailingGroup = NSCollectionLayoutGroup.vertical(
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1/4),
@@ -60,7 +61,7 @@ class HomeViewController: UIViewController {
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1/2),
                 heightDimension: .fractionalHeight(1)))
-        secondLineMainItem.contentInsets = NSDirectionalEdgeInsets(top: 1, leading: 1, bottom: 1, trailing: 1)
+        secondLineMainItem.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         let secondLineGroup = NSCollectionLayoutGroup.horizontal(
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1),
@@ -79,11 +80,69 @@ class HomeViewController: UIViewController {
     }
     
     func data() {
-        let lunar = LunarDate(solarDate: solar)
+        let lunar = LunarDate(solarDate: thienBan.solarBirthDate)
         let menhIndex = Menh(with: lunar.mm, chi: lunar.hhTxt.chi).chi.rawValue
         let anThanIndex = AnThan.generateArray(startWith: .Menh, length: 12)[12-menhIndex]
         let listAnThan = AnThan.generateArray(startWith: anThanIndex, length: 12)
         let cucIndex = Cuc(menh: Menh(with: lunar.mm, chi: lunar.hhTxt.chi).chi, can: lunar.yyTxt.can).cuc.rawValue
+        let cuc = Cuc(menh: Menh(with: lunar.mm, chi: lunar.hhTxt.chi).chi, can: lunar.yyTxt.can).cuc
+        if thienBan.sex {
+            if lunar.yyTxt.can.rawValue % 2 == 0 {
+                switch cuc {
+                case .ThuyNhiCuc:
+                    let trangSinhIndex = TrangSinh.generateArray(startWith: .DeVuong, length: 12)
+                case .MocTamCuc:
+                    print("2")
+                case .KimTuCuc:
+                    print("3")
+                case .ThoNguCuc:
+                    let trangSinhIndex = TrangSinh.generateArray(startWith: .DeVuong, length: 12)
+                case .HoaLucCuc:
+                    print("5")
+                }
+            }else {
+                switch cuc {
+                case .ThuyNhiCuc:
+                    print("6")
+                case .MocTamCuc:
+                    print("7")
+                case .KimTuCuc:
+                    print("8")
+                case .ThoNguCuc:
+                    print("9")
+                case .HoaLucCuc:
+                    print("10")
+                }
+            }
+        }else {
+            if lunar.yyTxt.can.rawValue % 2 == 0 {
+                switch cuc {
+                case .ThuyNhiCuc:
+                    print("11")
+                case .MocTamCuc:
+                    print("12")
+                case .KimTuCuc:
+                    print("13")
+                case .ThoNguCuc:
+                    print("14")
+                case .HoaLucCuc:
+                    print("15")
+                }
+            }else {
+                switch cuc {
+                case .ThuyNhiCuc:
+                    print("141")
+                case .MocTamCuc:
+                    print("21")
+                case .KimTuCuc:
+                    print("31")
+                case .ThoNguCuc:
+                    print("41")
+                case .HoaLucCuc:
+                    print("51")
+                }
+            }
+        }
         for chi in Chi.list {
             let diaBan = DiaBan(cungChi: chi, cungThan: listAnThan[chi.rawValue], cungCuc: cucIndex + listAnThan[chi.rawValue].rawValue*10)
             list.append(diaBan)
@@ -180,7 +239,7 @@ extension HomeViewController: UICollectionViewDataSource {
             }
             return cell1
         } else {
-            cell2.thienBan = ThienBan(solarBirthDate: solar)
+            cell2.thienBan = ThienBan(solarBirthDate: thienBan.solarBirthDate, name: thienBan.name, sex: thienBan.sex)
             return cell2
         }
     }
