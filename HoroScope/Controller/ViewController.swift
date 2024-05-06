@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         let listAnThan = AnThan.generateArray(startWith: anThanIndex, length: 12)
         let cucIndex = Cuc(menh: Menh(with: lunar.mm, chi: lunar.hhTxt.chi).chi, can: lunar.yyTxt.can).cuc.rawValue
         for chi in Chi.list {
-            let diaBan = DiaBan(cungChi: chi, cungThan: listAnThan[chi.rawValue], cungCuc: cucIndex + listAnThan[chi.rawValue].rawValue*10)
+            let diaBan = DiaBan(cungVi: chi, cungThan: listAnThan[chi.rawValue], cungCuc: cucIndex + listAnThan[chi.rawValue].rawValue*10, trangSinh: .TrangSinh)
             list.append(diaBan)
         }
         

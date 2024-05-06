@@ -37,29 +37,29 @@ enum AnThan: Int {
     func toString() -> String {
         switch self {
         case .Menh:
-            return "Mệnh"
+            return "MỆNH"
         case .PhuMau:
-            return "Phụ Mẫu"
+            return "PHỤ MẪU"
         case .PhucDuc:
-            return "Phúc Đức"
+            return "PHÚC ĐỨC"
         case .DienTrach:
-            return "Điền Trạch"
+            return "ĐIỀN TRẠCH"
         case .QuanLoc:
-            return "Quan Lộc"
+            return "QUAN LỘC"
         case .NoBoc:
-            return "Nô Bộc"
+            return "NÔ BỘC"
         case .ThienDi:
-            return "Thiên Di"
+            return "THIÊN DI"
         case .TatAch:
-            return "Tật Ách"
+            return "TẬT ÁCH"
         case .TaiBach:
-            return "Tài Bạch"
+            return "TÀI BẠCH"
         case .TuTuc:
-            return "Tử Tức"
+            return "TỬ TỨC"
         case .TheThiep:
-            return "Thê Thiếp"
+            return "THÊ THIẾP"
         case .HuynhDe:
-            return "Huynh Đệ"
+            return "HUYNH ĐỆ"
         }
     }
 }

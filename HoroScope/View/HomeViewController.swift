@@ -86,65 +86,66 @@ class HomeViewController: UIViewController {
         let listAnThan = AnThan.generateArray(startWith: anThanIndex, length: 12)
         let cucIndex = Cuc(menh: Menh(with: lunar.mm, chi: lunar.hhTxt.chi).chi, can: lunar.yyTxt.can).cuc.rawValue
         let cuc = Cuc(menh: Menh(with: lunar.mm, chi: lunar.hhTxt.chi).chi, can: lunar.yyTxt.can).cuc
+        var trangSinhList = TrangSinh.generateArray(startWith: .DeVuong, length: 12)
         if thienBan.sex {
             if lunar.yyTxt.can.rawValue % 2 == 0 {
                 switch cuc {
                 case .ThuyNhiCuc:
-                    let trangSinhIndex = TrangSinh.generateArray(startWith: .DeVuong, length: 12)
+                    trangSinhList = TrangSinh.generateArray(startWith: .DeVuong, length: 12)
                 case .MocTamCuc:
-                    print("2")
+                    trangSinhList = TrangSinh.generateArray(startWith: .MocDuc, length: 12)
                 case .KimTuCuc:
-                    print("3")
+                    trangSinhList = TrangSinh.generateArray(startWith: .Tu, length: 12)
                 case .ThoNguCuc:
-                    let trangSinhIndex = TrangSinh.generateArray(startWith: .DeVuong, length: 12)
+                    trangSinhList = TrangSinh.generateArray(startWith: .DeVuong, length: 12)
                 case .HoaLucCuc:
-                    print("5")
+                    trangSinhList = TrangSinh.generateArray(startWith: .Thai, length: 12)
                 }
             }else {
                 switch cuc {
                 case .ThuyNhiCuc:
-                    print("6")
+                    trangSinhList = TrangSinh.generateReversedArray(startWith: .Mo, length: 12)
                 case .MocTamCuc:
-                    print("7")
+                    trangSinhList = TrangSinh.generateReversedArray(startWith: .Duong, length: 12)
                 case .KimTuCuc:
-                    print("8")
+                    trangSinhList = TrangSinh.generateReversedArray(startWith: .Tuyet, length: 12)
                 case .ThoNguCuc:
-                    print("9")
+                    trangSinhList = TrangSinh.generateReversedArray(startWith: .Suy, length: 12)
                 case .HoaLucCuc:
-                    print("10")
+                    trangSinhList = TrangSinh.generateReversedArray(startWith: .QuanDoi, length: 12)
                 }
             }
         }else {
             if lunar.yyTxt.can.rawValue % 2 == 0 {
                 switch cuc {
                 case .ThuyNhiCuc:
-                    print("11")
+                    trangSinhList = TrangSinh.generateReversedArray(startWith: .Mo, length: 12)
                 case .MocTamCuc:
-                    print("12")
+                    trangSinhList = TrangSinh.generateReversedArray(startWith: .Duong, length: 12)
                 case .KimTuCuc:
-                    print("13")
+                    trangSinhList = TrangSinh.generateReversedArray(startWith: .Tuyet, length: 12)
                 case .ThoNguCuc:
-                    print("14")
+                    trangSinhList = TrangSinh.generateReversedArray(startWith: .Suy, length: 12)
                 case .HoaLucCuc:
-                    print("15")
+                    trangSinhList = TrangSinh.generateReversedArray(startWith: .QuanDoi, length: 12)
                 }
             }else {
                 switch cuc {
                 case .ThuyNhiCuc:
-                    print("141")
+                    trangSinhList = TrangSinh.generateArray(startWith: .DeVuong, length: 12)
                 case .MocTamCuc:
-                    print("21")
+                    trangSinhList = TrangSinh.generateArray(startWith: .MocDuc, length: 12)
                 case .KimTuCuc:
-                    print("31")
+                    trangSinhList = TrangSinh.generateArray(startWith: .Tu, length: 12)
                 case .ThoNguCuc:
-                    print("41")
+                    trangSinhList = TrangSinh.generateArray(startWith: .DeVuong, length: 12)
                 case .HoaLucCuc:
-                    print("51")
+                    trangSinhList = TrangSinh.generateArray(startWith: .Thai, length: 12)
                 }
             }
         }
         for chi in Chi.list {
-            let diaBan = DiaBan(cungChi: chi, cungThan: listAnThan[chi.rawValue], cungCuc: cucIndex + listAnThan[chi.rawValue].rawValue*10)
+            let diaBan = DiaBan(cungVi: chi, cungThan: listAnThan[chi.rawValue], cungCuc: cucIndex + listAnThan[chi.rawValue].rawValue*10, trangSinh: trangSinhList[chi.rawValue])
             list.append(diaBan)
         }
         anTuVi(lunar: lunar, list: list)
@@ -216,24 +217,36 @@ extension HomeViewController: UICollectionViewDataSource {
                 cell1.diaBan = list[5]
             case 1:
                 cell1.diaBan = list[6]
+                cell1.view1.isHidden = true
+                cell1.view3.isHidden = true
             case 2:
                 cell1.diaBan = list[7]
+                cell1.view3.isHidden = true
             case 3:
                 cell1.diaBan = list[8]
             case 4:
                 cell1.diaBan = list[4]
+                cell1.view2.isHidden = true
+                cell1.view4.isHidden = true
             case 5:
                 cell1.diaBan = list[3]
+                cell1.view4.isHidden = true
             case 7:
                 cell1.diaBan = list[9]
+                cell1.view2.isHidden = true
+                cell1.view4.isHidden = true
             case 8:
                 cell1.diaBan = list[10]
+                cell1.view4.isHidden = true
             case 9:
                 cell1.diaBan = list[2]
             case 10:
                 cell1.diaBan = list[1]
+                cell1.view1.isHidden = true
+                cell1.view3.isHidden = true
             case 11:
                 cell1.diaBan = list[0]
+                cell1.view3.isHidden = true
             default:
                 cell1.diaBan = list[11]
             }

@@ -5,7 +5,7 @@
 //  Created by VietChat on 26/4/24.
 //
 
-import Foundation
+import UIKit
 
 enum ThienPhu: Int {
     case ThienPhu = 0
@@ -19,7 +19,7 @@ enum ThienPhu: Int {
     
     static let list: [ThienPhu] = [.ThienPhu, .ThaiAm, .ThamLang, .CuMon, .ThienTuong, .ThienLuong, .ThatSat, .PhaQuan]
     
-    func toString() -> String {
+    var name: String {
         switch self {
         case .ThienPhu:
             return "Thiên Phủ"
@@ -39,4 +39,28 @@ enum ThienPhu: Int {
             return "Phá Quân"
         }
     }
+    
+    var color: UIColor {
+        switch self {
+        case .ThienPhu:
+            return NguHanhColor.Tho.color
+        case .ThaiAm:
+            return NguHanhColor.Thuy.color
+        case .ThamLang:
+            return NguHanhColor.Thuy.color
+        case .CuMon:
+            return NguHanhColor.Thuy.color
+        case .ThienTuong:
+            return NguHanhColor.Thuy.color
+        case .ThienLuong:
+            return NguHanhColor.Moc.color
+        case .ThatSat:
+            return NguHanhColor.Kim.color
+        case .PhaQuan:
+            return NguHanhColor.Thuy.color
+        }
+    }
 }
+
+//MARK: K,1: Kim    M,2: Mộc    T,3: Thủy   H,4: Hỏa    O,5: Thổ
+//MARK: Dương: 1    Âm: -1

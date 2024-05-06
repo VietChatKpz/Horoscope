@@ -43,13 +43,3 @@ extension UITextField {
         
     }
 }
-
-extension Array {
-    func reversed() -> [Element] {
-        var reversedArray: [Element] = []
-        for element in self {
-            reversedArray.insert(element, at: 0)
-        }
-        return reversedArray
-    }
-}

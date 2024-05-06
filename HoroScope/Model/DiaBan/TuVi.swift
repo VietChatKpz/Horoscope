@@ -5,7 +5,7 @@
 //  Created by VietChat on 26/4/24.
 //
 
-import Foundation
+import UIKit
 
 enum TuVi: Int {
     case TuVi = 0
@@ -17,7 +17,7 @@ enum TuVi: Int {
     
     static let list: [TuVi] = [.TuVi, .LiemTrinh, .ThienDong, .VuKhuc, .ThaiDuong, .ThienCo]
     
-    func toString() -> String {
+    var name: String {
         switch self {
         case .TuVi:
             return "Tử Vi"
@@ -33,4 +33,24 @@ enum TuVi: Int {
             return "Thiên Cơ"
         }
     }
+    
+    var color: UIColor {
+        switch self {
+        case .TuVi:
+            return NguHanhColor.Tho.color
+        case .LiemTrinh:
+            return NguHanhColor.Hoa.color
+        case .ThienDong:
+            return NguHanhColor.Thuy.color
+        case .VuKhuc:
+            return NguHanhColor.Kim.color
+        case .ThaiDuong:
+            return NguHanhColor.Hoa.color
+        case .ThienCo:
+            return NguHanhColor.Moc.color
+        }
+    }
 }
+
+//MARK: K,1: Kim    M,2: Mộc    T,3: Thủy   H,4: Hỏa    O,5: Thổ
+//MARK: Dương: 1    Âm: -1

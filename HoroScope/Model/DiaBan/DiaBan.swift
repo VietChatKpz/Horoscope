@@ -10,14 +10,16 @@ import Foundation
 class DiaBan {
     var cungThan: AnThan = .Menh
     var cungCuc: Int = 0
-    var cungChi: Chi = .Ti
+    var cungVi: Chi = .Ti
     var cungSao = ""
     var cungTuVi: [TuVi] = []
     var cungThienPhu: [ThienPhu] = []
+    var trangSinh: TrangSinh = .TrangSinh
     
-    init(cungChi: Chi, cungThan: AnThan, cungCuc: Int) {
-        self.cungChi = cungChi
+    init(cungVi: Chi, cungThan: AnThan, cungCuc: Int, trangSinh: TrangSinh) {
+        self.cungVi = cungVi
         self.cungThan = cungThan
         self.cungCuc = cungCuc
+        self.trangSinh = trangSinh
     }
 }

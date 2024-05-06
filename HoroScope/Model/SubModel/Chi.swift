@@ -34,7 +34,7 @@ enum Chi: Int {
         return cycleArray
     }
     
-    func toString() -> String {
+    var name: String {
         switch self {
         case .Ti:
             return "Tí"
@@ -63,7 +63,7 @@ enum Chi: Int {
         }
     }
     
-    func nguHanh() -> String {
+    var nguHanh: String {
         switch self {
         case .Ti:
             return "T"
@@ -147,6 +147,17 @@ enum Chi: Int {
             return "Văn Xương"
         case .Hoi:
             return "Thiên Cơ"
+        }
+    }
+    
+    var index: Int {
+        switch self {
+        case .Ti, .Suu, .Ngo, .Mui:
+            return 0
+        case .Dan, .Mao, .Than, .Dau:
+            return 1
+        case .Thin, .Ty, .Tuat, .Hoi:
+            return 2
         }
     }
 }

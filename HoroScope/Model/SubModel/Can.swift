@@ -7,8 +7,7 @@
 
 import Foundation
 
-//MARK: K,1: Kim    M,2: Mộc    T,3: Thủy   H,4: Hỏa    O,5: Thổ
-//MARK: Dương: 1    Âm: -1
+
 
 enum Can: Int {
     case Canh = 0
@@ -107,6 +106,21 @@ enum Can: Int {
             return "O"
         case .Ky:
             return "O"
+        }
+    }
+    
+    var index: Int {
+        switch self {
+        case .Giap, .At:
+            return 1
+        case .Binh, .Dinh:
+            return 2
+        case .Mau, .Ky:
+            return 3
+        case .Canh, .Tan:
+            return 4
+        case .Nham, .Quy:
+            return 5
         }
     }
 }
