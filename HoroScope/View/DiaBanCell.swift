@@ -18,6 +18,7 @@ class DiaBanCell: UICollectionViewCell {
     @IBOutlet weak var view2: UIView!
     @IBOutlet weak var view3: UIView!
     @IBOutlet weak var view4: UIView!
+        
     var diaBan: DiaBan? {
         didSet {
             configurationData()
@@ -39,7 +40,7 @@ class DiaBanCell: UICollectionViewCell {
         let tuviAttributedString = NSMutableAttributedString()
         for i in diaBan.cungTuVi {
             let textColor = i.color
-            let attributedString = NSAttributedString(string: "\(i.name)\n", attributes: [NSAttributedString.Key.foregroundColor: textColor])
+            let attributedString = NSAttributedString(string: "\(i.name) (\(i.dacTinh[diaBan.id]))\n", attributes: [NSAttributedString.Key.foregroundColor: textColor])
             tuviAttributedString.append(attributedString)
         }
         for i in diaBan.cungThienPhu {

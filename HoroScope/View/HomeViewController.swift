@@ -145,7 +145,7 @@ class HomeViewController: UIViewController {
             }
         }
         for chi in Chi.list {
-            let diaBan = DiaBan(cungVi: chi, cungThan: listAnThan[chi.rawValue], cungCuc: cucIndex + listAnThan[chi.rawValue].rawValue*10, trangSinh: trangSinhList[chi.rawValue])
+            let diaBan = DiaBan(id: chi.rawValue,cungVi: chi, cungThan: listAnThan[chi.rawValue], cungCuc: cucIndex + listAnThan[chi.rawValue].rawValue*10, trangSinh: trangSinhList[chi.rawValue])
             list.append(diaBan)
         }
         anTuVi(lunar: lunar, list: list)

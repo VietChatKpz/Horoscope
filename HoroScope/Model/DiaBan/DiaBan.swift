@@ -8,6 +8,7 @@
 import Foundation
 
 class DiaBan {
+    var id: Int
     var cungThan: AnThan = .Menh
     var cungCuc: Int = 0
     var cungVi: Chi = .Ti
@@ -16,7 +17,8 @@ class DiaBan {
     var cungThienPhu: [ThienPhu] = []
     var trangSinh: TrangSinh = .TrangSinh
     
-    init(cungVi: Chi, cungThan: AnThan, cungCuc: Int, trangSinh: TrangSinh) {
+    init(id: Int, cungVi: Chi, cungThan: AnThan, cungCuc: Int, trangSinh: TrangSinh) {
+        self.id = id
         self.cungVi = cungVi
         self.cungThan = cungThan
         self.cungCuc = cungCuc
