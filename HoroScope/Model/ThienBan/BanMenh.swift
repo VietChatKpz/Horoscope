@@ -74,6 +74,5 @@ class BanMenh {
         default:
             txt = "Không có thông tin"
         }
-
     }
 }

@@ -44,72 +44,42 @@ enum ThienPhu: Int {
         switch self {
         case .ThienPhu:
             return NguHanhColor.Tho.color
-        case .ThaiAm:
-            return NguHanhColor.Thuy.color
-        case .ThamLang:
-            return NguHanhColor.Thuy.color
-        case .CuMon:
-            return NguHanhColor.Thuy.color
-        case .ThienTuong:
+        case .ThaiAm, .ThamLang, .CuMon, .ThienTuong, .PhaQuan:
             return NguHanhColor.Thuy.color
         case .ThienLuong:
             return NguHanhColor.Moc.color
         case .ThatSat:
             return NguHanhColor.Kim.color
-        case .PhaQuan:
-            return NguHanhColor.Thuy.color
         }
     }
     
     var dacTinh: [String] {
         switch self {
         case .ThienPhu:
-            return [
+            return ["M","B","M","B","V","Đ","M","Đ","M","B","V","H"]
         case .ThaiAm:
-            <#code#>
+            return ["V", "Đ", "H", "H", "H", "H", "H", "Đ", "V", "M",
+                    "M", "M"]
         case .ThamLang:
-            <#code#>
+            return ["H", "M", "Đ", "H", "V", "H", "H", "M", "Đ", "H",
+                    "V", "H"]
         case .CuMon:
-            <#code#>
+            return ["V", "H", "V", "M", "H", "H", "V", "H", "Đ", "M", "H",
+                    "Đ"]
         case .ThienTuong:
-            <#code#>
+            return ["V", "Đ", "M", "H", "V", "Đ", "V", "Đ", "M", "H",
+                    "V", "Đ"]
         case .ThienLuong:
-            <#code#>
+            return ["V", "Đ", "V", "V", "M", "H", "M", "Đ", "V", "H",
+                    "M", "H"]
         case .ThatSat:
-            <#code#>
+            return ["M", "Đ", "M", "H", "H", "V", "M", "Đ", "M", "H",
+                    "H", "V"]
         case .PhaQuan:
-            <#code#>
+            return ["M", "V", "H", "H", "Đ", "H", "M", "V", "H", "H",
+                    "Đ", "H"]
         }
     }
 }
 
-//MARK: K,1: Kim    M,2: Mộc    T,3: Thủy   H,4: Hỏa    O,5: Thổ
-//MARK: Dương: 1    Âm: -1
-
-//1: ["Tử vi", "B", "Đ", "M", "B", "V", "M", "M", "Đ", "M", "B", "V",
-//            "B"],
-//        2: ["Liêm trinh", "V", "Đ", "V", "H", "M", "H", "V", "Đ", "V", "H",
-//            "M", "H"],
-//        3: ["Thiên đồng", "V", "H", "M", "Đ", "H", "Đ", "H", "H", "M", "H",
-//            "H", "Đ"],
-//        4: ["Vũ khúc", "V", "M", "V", "Đ", "M", "H", "V", "M", "V", "Đ", "M",
-//            "H"],
-//        5: ["Thái dương", "H", "Đ", "V", "V", "V", "M", "M", "Đ", "H", "H",
-//            "H", "H"],
-//        6: ["Thiên cơ", "Đ", "Đ", "H", "M", "M", "V", "Đ", "Đ", "V", "M", "M",
-//            "H"],
-//        8: ["Thái âm", "V", "Đ", "H", "H", "H", "H", "H", "Đ", "V", "M",
-//            "M", "M"],
-//        9: ["Tham lang", "H", "M", "Đ", "H", "V", "H", "H", "M", "Đ", "H",
-//            "V", "H"],
-//        10: ["Cự môn", "V", "H", "V", "M", "H", "H", "V", "H", "Đ", "M", "H",
-//             "Đ"],
-//        11: ["Thiên tướng", "V", "Đ", "M", "H", "V", "Đ", "V", "Đ", "M", "H",
-//             "V", "Đ"],
-//        12: ["Thiên lương", "V", "Đ", "V", "V", "M", "H", "M", "Đ", "V", "H",
-//             "M", "H"],
-//        13: ["Thất sát", "M", "Đ", "M", "H", "H", "V", "M", "Đ", "M", "H",
-//             "H", "V"],
-//        14: ["Phá quân", "M", "V", "H", "H", "Đ", "H", "M", "V", "H", "H",
-//             "Đ", "H"],
 

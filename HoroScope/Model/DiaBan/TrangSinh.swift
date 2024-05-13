@@ -22,6 +22,8 @@ enum TrangSinh: Int {
     case Duong = 11
     
     static let list: [TrangSinh] = [.TrangSinh, .MocDuc, .QuanDoi, .LamQuan, .DeVuong, .Suy, .Benh, .Tu, .Mo, .Tuyet, .Thai, .Duong]
+    static let trangSinhStartList: [TrangSinh] = [.DeVuong, .MocDuc, .Tu, .DeVuong, .Thai]
+    static let trangSinhStartReversedList: [TrangSinh] = [.Mo, .Duong, .Tuyet, .Suy, .QuanDoi]
     
     var name: String {
         switch self {
@@ -52,7 +54,8 @@ enum TrangSinh: Int {
         }
     }
     
-    static func generateArray(startWith startChi: TrangSinh, length: Int) -> [TrangSinh] {
+    static func generateArray(startWith startChi: TrangSinh) -> [TrangSinh] {
+        let length = 12
         let startIndex = startChi.rawValue
         var cycleArray: [TrangSinh] = []
         
@@ -63,7 +66,8 @@ enum TrangSinh: Int {
         return cycleArray
     }
     
-    static func generateReversedArray(startWith startChi: TrangSinh, length: Int) -> [TrangSinh] {
+    static func generateReversedArray(startWith startChi: TrangSinh) -> [TrangSinh] {
+        let length = 12
         let startIndex = startChi.rawValue
         var reversedArray: [TrangSinh] = []
         

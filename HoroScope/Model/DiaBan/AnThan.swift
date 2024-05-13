@@ -23,7 +23,8 @@ enum AnThan: Int {
     
     static let list: [AnThan] = [.Menh, .PhuMau, .PhucDuc, .DienTrach, .QuanLoc, .NoBoc, .ThienDi, .TatAch, .TaiBach, .TuTuc, .TheThiep, .HuynhDe]
     
-    static func generateArray(startWith startChi: AnThan, length: Int) -> [AnThan] {
+    static func generateArray(startWith startChi: AnThan) -> [AnThan] {
+        let length = 12
         let startIndex = startChi.rawValue
         var cycleArray: [AnThan] = []
         
@@ -34,7 +35,7 @@ enum AnThan: Int {
         return cycleArray
     }
     
-    func toString() -> String {
+    var name: String {
         switch self {
         case .Menh:
             return "MỆNH"

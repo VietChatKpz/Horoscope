@@ -45,13 +45,13 @@ class MenuViewController: UIViewController {
 
 extension MenuViewController {
     func configuration() {
-        nameTF.layer.borderColor = UIColor.hexStringToUIColor(hex: "D83842").withAlphaComponent(0.3).cgColor
-        yyTF.layer.borderColor = UIColor.hexStringToUIColor(hex: "D83842").withAlphaComponent(0.3).cgColor
-        mmTF.layer.borderColor = UIColor.hexStringToUIColor(hex: "D83842").withAlphaComponent(0.3).cgColor
-        ddTF.layer.borderColor = UIColor.hexStringToUIColor(hex: "D83842").withAlphaComponent(0.3).cgColor
-        hTF.layer.borderColor = UIColor.hexStringToUIColor(hex: "D83842").withAlphaComponent(0.3).cgColor
-        mTF.layer.borderColor = UIColor.hexStringToUIColor(hex: "D83842").withAlphaComponent(0.3).cgColor
-        button.backgroundColor = UIColor.hexStringToUIColor(hex: "D83842").withAlphaComponent(0.3)
+        nameTF.layer.borderColor = Constants.colorBorder
+        yyTF.layer.borderColor = Constants.colorBorder
+        mmTF.layer.borderColor = Constants.colorBorder
+        ddTF.layer.borderColor = Constants.colorBorder
+        hTF.layer.borderColor = Constants.colorBorder
+        mTF.layer.borderColor = Constants.colorBorder
+        button.backgroundColor = Constants.colorButtonAlpha
         nameTF.becomeFirstResponder()
         nameTF.delegate = self
         yyTF.delegate = self
@@ -77,7 +77,7 @@ extension MenuViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.layer.borderColor =  UIColor.hexStringToUIColor(hex: "D83842").withAlphaComponent(0.3).cgColor
+        textField.layer.borderColor =  Constants.colorBorder
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
@@ -88,7 +88,7 @@ extension MenuViewController: UITextFieldDelegate {
         let h = (hTF.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         let m = (mTF.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         
-        button.backgroundColor = name || yy || mm || dd || h || m ? UIColor.hexStringToUIColor(hex: "D83842").withAlphaComponent(0.3) : UIColor.hexStringToUIColor(hex: "D83842")
+        button.backgroundColor = name || yy || mm || dd || h || m ? Constants.colorButtonAlpha : Constants.colorButton
         
     }
 }

@@ -31,12 +31,12 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ac9-OJ-MVD">
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tử vi chân cơ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLa-bk-DB1">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tử Vi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLa-bk-DB1">
                             <rect key="frame" x="16" y="8" width="361" height="48"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="oWz-2d-aLC"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                             <color key="textColor" red="0.086274509799999996" green="0.086274509799999996" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -300,10 +300,10 @@
     </objects>
     <designables>
         <designable name="kgh-mJ-Rgg">
-            <size key="intrinsicContentSize" width="42" height="18"/>
+            <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="trC-cr-m0S">
-            <size key="intrinsicContentSize" width="54" height="18"/>
+            <size key="intrinsicContentSize" width="32" height="30"/>
         </designable>
     </designables>
     <resources>

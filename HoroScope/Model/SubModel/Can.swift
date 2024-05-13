@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 enum Can: Int {
     case Canh = 0
     case Tan = 1
@@ -23,7 +21,8 @@ enum Can: Int {
         
     static let list: [Can] = [.Canh, .Tan, .Nham, .Quy, .Giap, .At, .Binh, .Dinh, .Mau, .Ky]
     
-    static func generateArray(startWith startCan: Can, length: Int) -> [Can] {
+    static func generateArray(startWith startCan: Can) -> [Can] {
+        let length = 12
         let startIndex = startCan.rawValue
         var cycleArray: [Can] = []
         
@@ -34,7 +33,7 @@ enum Can: Int {
         return cycleArray
     }
     
-    func toString() -> String {
+    var name: String {
         switch self {
         case .Canh:
             return "Canh"
@@ -59,7 +58,7 @@ enum Can: Int {
         }
     }
     
-    func chuCaiDau() -> String {
+    var nameFirst: String {
         switch self {
         case .Canh:
             return "C"
@@ -84,31 +83,6 @@ enum Can: Int {
         }
     }
     
-    func nguHanh() -> String {
-        switch self {
-        case .Canh:
-            return "K"
-        case .Tan:
-            return "K"
-        case .Nham:
-            return "T"
-        case .Quy:
-            return "T"
-        case .Giap:
-            return "M"
-        case .At:
-            return "M"
-        case .Binh:
-            return "H"
-        case .Dinh:
-            return "H"
-        case .Mau:
-            return "O"
-        case .Ky:
-            return "O"
-        }
-    }
-    
     var index: Int {
         switch self {
         case .Giap, .At:
@@ -124,3 +98,28 @@ enum Can: Int {
         }
     }
 }
+
+//    func nguHanh() -> String {
+//        switch self {
+//        case .Canh:
+//            return "K"
+//        case .Tan:
+//            return "K"
+//        case .Nham:
+//            return "T"
+//        case .Quy:
+//            return "T"
+//        case .Giap:
+//            return "M"
+//        case .At:
+//            return "M"
+//        case .Binh:
+//            return "H"
+//        case .Dinh:
+//            return "H"
+//        case .Mau:
+//            return "O"
+//        case .Ky:
+//            return "O"
+//        }
+//    }

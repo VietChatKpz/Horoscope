@@ -12,7 +12,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="HoroScope" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="BCo-XQ-EyS" id="Plr-d2-T1g"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -23,7 +22,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fiT-ag-IIk">
                     <rect key="frame" x="0.0" y="24" width="1024" height="1322"/>
                     <subviews>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BCo-XQ-EyS">
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BCo-XQ-EyS">
                             <rect key="frame" x="0.0" y="0.0" width="1024" height="1322"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4Q7-TB-bSi">
@@ -33,12 +32,20 @@
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </collectionViewFlowLayout>
                         </collectionView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yCK-RY-xY5">
+                            <rect key="frame" x="0.0" y="0.0" width="1024" height="1322"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstItem="yCK-RY-xY5" firstAttribute="top" secondItem="fiT-ag-IIk" secondAttribute="top" id="7o2-Bp-rwv"/>
                         <constraint firstItem="BCo-XQ-EyS" firstAttribute="leading" secondItem="fiT-ag-IIk" secondAttribute="leading" id="EjV-EQ-RMS"/>
+                        <constraint firstItem="yCK-RY-xY5" firstAttribute="leading" secondItem="fiT-ag-IIk" secondAttribute="leading" id="JDp-BR-DXd"/>
                         <constraint firstItem="BCo-XQ-EyS" firstAttribute="top" secondItem="fiT-ag-IIk" secondAttribute="top" id="YSq-Gr-qTi"/>
                         <constraint firstAttribute="trailing" secondItem="BCo-XQ-EyS" secondAttribute="trailing" id="aC0-mu-5TI"/>
+                        <constraint firstAttribute="bottom" secondItem="yCK-RY-xY5" secondAttribute="bottom" id="fUb-RI-xAo"/>
+                        <constraint firstAttribute="trailing" secondItem="yCK-RY-xY5" secondAttribute="trailing" id="fjA-a7-lOw"/>
                         <constraint firstAttribute="bottom" secondItem="BCo-XQ-EyS" secondAttribute="bottom" id="nOC-gT-8Jw"/>
                     </constraints>
                 </view>
@@ -51,7 +58,7 @@
                 <constraint firstItem="fiT-ag-IIk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="QO3-nR-2bK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fiT-ag-IIk" secondAttribute="trailing" id="beP-Pt-6fw"/>
             </constraints>
-            <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
+            <point key="canvasLocation" x="130.078125" y="-11.420204978038067"/>
         </view>
     </objects>
     <resources>

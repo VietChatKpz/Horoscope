@@ -38,14 +38,12 @@ enum TuVi: Int {
         switch self {
         case .TuVi:
             return NguHanhColor.Tho.color
-        case .LiemTrinh:
+        case .LiemTrinh, .ThaiDuong:
             return NguHanhColor.Hoa.color
         case .ThienDong:
             return NguHanhColor.Thuy.color
         case .VuKhuc:
             return NguHanhColor.Kim.color
-        case .ThaiDuong:
-            return NguHanhColor.Hoa.color
         case .ThienCo:
             return NguHanhColor.Moc.color
         }

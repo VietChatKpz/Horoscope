@@ -18,24 +18,24 @@ class CanChi {
     
     //MARK: Can chi theo năm
     init(yy: Int) {
-        self.can = Can.list[yy%10]
-        self.chi = Chi.list[(yy+8)%12]
+        self.can = Can.list[yy % 10]
+        self.chi = Chi.list[(yy + 8) % 12]
     }
 
     //MARK: Can Chi theo tháng(tháng âm)
     init(withMonth mm: Int, withCanYY canYY: Can) {
-        chi = Chi.generateArray(startWith: .Dan, length: 12)[mm-1]
+        chi = Chi.generateArray(startWith: .Dan)[mm - 1]
         switch canYY {
         case .Giap, .Ky:
-            can = Can.generateArray(startWith: .Binh, length: 12)[mm-1]
+            can = Can.generateArray(startWith: .Binh)[mm - 1]
         case .At, .Canh:
-            can = Can.generateArray(startWith: .Mau, length: 12)[mm-1]
+            can = Can.generateArray(startWith: .Mau)[mm - 1]
         case .Binh, .Tan:
-            can = Can.generateArray(startWith: .Canh, length: 12)[mm-1]
+            can = Can.generateArray(startWith: .Canh)[mm - 1]
         case .Dinh, .Nham:
-            can = Can.generateArray(startWith: .Nham, length: 12)[mm-1]
+            can = Can.generateArray(startWith: .Nham)[mm - 1]
         case .Mau, .Quy:
-            can = Can.generateArray(startWith: .Giap, length: 12)[mm-1]
+            can = Can.generateArray(startWith: .Giap)[mm - 1]
         }
     }
     
@@ -60,14 +60,14 @@ class CanChi {
                     mm = newComponents.month ?? 0
                     yy = newComponents.year ?? 0
                     let tmpD = LunarDate.jdFromDate(dd: dd, mm: mm, yy: yy)
-                    can = Can.list[(tmpD+3)%10]
-                    chi = Chi.list[(tmpD+1)%12]
+                    can = Can.list[(tmpD + 3) % 10]
+                    chi = Chi.list[(tmpD + 1) % 12]
                     return
                 }
             }else {
                 let tmpD = LunarDate.jdFromDate(dd: dmy.dd, mm: dmy.mm, yy: dmy.yy)
-                can = Can.list[(tmpD+3)%10]
-                chi = Chi.list[(tmpD+1)%12]
+                can = Can.list[(tmpD + 3) % 10]
+                chi = Chi.list[(tmpD + 1) % 12]
                 return
             }
         }
@@ -79,25 +79,25 @@ class CanChi {
     init(hourFrom h: Int, minute: Int, day: Can) {
         var hh = 0
         if h % 2 == 1 {
-            hh = (h/2+1)
+            hh = (h / 2 + 1)
             if hh == 12 {
                 hh = 0
             }
         }else {
-            hh = h/2
+            hh = h / 2
         }
-        chi = Chi.generateArray(startWith: .Ti, length: 12)[hh]
+        chi = Chi.generateArray(startWith: .Ti)[hh]
         switch day {
         case .Giap, .Ky:
-            can = Can.generateArray(startWith: .Giap, length: 12)[hh]
+            can = Can.generateArray(startWith: .Giap)[hh]
         case .At, .Canh:
-            can = Can.generateArray(startWith: .Binh, length: 12)[hh]
+            can = Can.generateArray(startWith: .Binh)[hh]
         case .Binh, .Tan:
-            can = Can.generateArray(startWith: .Mau, length: 12)[hh]
+            can = Can.generateArray(startWith: .Mau)[hh]
         case .Dinh, .Nham:
-            can = Can.generateArray(startWith: .Canh, length: 12)[hh]
+            can = Can.generateArray(startWith: .Canh)[hh]
         case .Mau, .Quy:
-            can = Can.generateArray(startWith: .Nham, length: 12)[hh]
+            can = Can.generateArray(startWith: .Nham)[hh]
         }
     }
 }

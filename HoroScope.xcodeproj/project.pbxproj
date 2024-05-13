@@ -20,6 +20,10 @@
 		26D55F522BD7A43600390E1F /* DiaBan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D55F512BD7A43600390E1F /* DiaBan.swift */; };
 		26D55F572BD7A62500390E1F /* BanMenh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D55F562BD7A62500390E1F /* BanMenh.swift */; };
 		26D55F592BD7B38800390E1F /* CanChi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D55F582BD7B38800390E1F /* CanChi.swift */; };
+		B31CDF9F2BECC04100AFF9A3 /* SaoTuoi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31CDF9E2BECC04100AFF9A3 /* SaoTuoi.swift */; };
+		B31CDFA12BECCECE00AFF9A3 /* SaoThienCanTuoi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31CDFA02BECCECE00AFF9A3 /* SaoThienCanTuoi.swift */; };
+		B37A82822BEA29D10084569C /* SaoGio.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37A82812BEA29D10084569C /* SaoGio.swift */; };
+		B37A82842BEB1DB30084569C /* SaoKhac.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37A82832BEB1DB30084569C /* SaoKhac.swift */; };
 		B37E86F12BE5D281004DFF0E /* ThienBanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37E86EF2BE5D281004DFF0E /* ThienBanCell.swift */; };
 		B37E86F22BE5D281004DFF0E /* ThienBanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B37E86F02BE5D281004DFF0E /* ThienBanCell.xib */; };
 		B37E86F52BE5D292004DFF0E /* DiaBanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37E86F32BE5D292004DFF0E /* DiaBanCell.swift */; };
@@ -30,17 +34,17 @@
 		B385F8BE2BDB509B009F8502 /* Menh.swift in Sources */ = {isa = PBXBuildFile; fileRef = B385F8BD2BDB509B009F8502 /* Menh.swift */; };
 		B385F8C02BDB5D87009F8502 /* Cuc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B385F8BF2BDB5D87009F8502 /* Cuc.swift */; };
 		B385F8C22BDB621D009F8502 /* AnThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B385F8C12BDB621D009F8502 /* AnThan.swift */; };
-		B385F8C62BDB662B009F8502 /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B385F8C52BDB662B009F8502 /* Sex.swift */; };
 		B3A881652BDB8A14004F372F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A881632BDB8A14004F372F /* HomeViewController.swift */; };
 		B3A881662BDB8A14004F372F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3A881642BDB8A14004F372F /* HomeViewController.xib */; };
 		B3A881682BDB8DAC004F372F /* TuVi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A881672BDB8DAC004F372F /* TuVi.swift */; };
 		B3A8816A2BDB8DB7004F372F /* ThienPhu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A881692BDB8DB7004F372F /* ThienPhu.swift */; };
-		B3A8816C2BDB91B0004F372F /* SaoDacTinh.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A8816B2BDB91B0004F372F /* SaoDacTinh.swift */; };
 		B3A8816E2BDB9544004F372F /* TrangSinh.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A8816D2BDB9544004F372F /* TrangSinh.swift */; };
-		B3A881702BDB99AA004F372F /* Sao.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A8816F2BDB99AA004F372F /* Sao.swift */; };
-		B3A881762BDBA464004F372F /* Hanh.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A881752BDBA464004F372F /* Hanh.swift */; };
+		B3AE55D32BEA1E00008C3600 /* SaoThang.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AE55D22BEA1E00008C3600 /* SaoThang.swift */; };
 		B3B145482BE62DC300EE7EDB /* TextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B145472BE62DC300EE7EDB /* TextField + Extension.swift */; };
 		B3B1454A2BE635E400EE7EDB /* ThaiTue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B145492BE635E400EE7EDB /* ThaiTue.swift */; };
+		B3E1F5182BE9C36900B00991 /* LocTon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E1F5172BE9C36900B00991 /* LocTon.swift */; };
+		B3E7B4DD2BEE023D00E9C0E5 /* TuHoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B4DC2BEE023D00E9C0E5 /* TuHoa.swift */; };
+		B3E7B4DF2BEE289000E9C0E5 /* TrietTuan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B4DE2BEE288F00E9C0E5 /* TrietTuan.swift */; };
 		D6942E890851FEAA4DC67F66 /* Pods_HoroScope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DDB89EAA340DD312D367D4 /* Pods_HoroScope.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +64,10 @@
 		26D55F512BD7A43600390E1F /* DiaBan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaBan.swift; sourceTree = "<group>"; };
 		26D55F562BD7A62500390E1F /* BanMenh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanMenh.swift; sourceTree = "<group>"; };
 		26D55F582BD7B38800390E1F /* CanChi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanChi.swift; sourceTree = "<group>"; };
+		B31CDF9E2BECC04100AFF9A3 /* SaoTuoi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaoTuoi.swift; sourceTree = "<group>"; };
+		B31CDFA02BECCECE00AFF9A3 /* SaoThienCanTuoi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaoThienCanTuoi.swift; sourceTree = "<group>"; };
+		B37A82812BEA29D10084569C /* SaoGio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaoGio.swift; sourceTree = "<group>"; };
+		B37A82832BEB1DB30084569C /* SaoKhac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaoKhac.swift; sourceTree = "<group>"; };
 		B37E86EF2BE5D281004DFF0E /* ThienBanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThienBanCell.swift; sourceTree = "<group>"; };
 		B37E86F02BE5D281004DFF0E /* ThienBanCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThienBanCell.xib; sourceTree = "<group>"; };
 		B37E86F32BE5D292004DFF0E /* DiaBanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaBanCell.swift; sourceTree = "<group>"; };
@@ -70,17 +78,17 @@
 		B385F8BD2BDB509B009F8502 /* Menh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menh.swift; sourceTree = "<group>"; };
 		B385F8BF2BDB5D87009F8502 /* Cuc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cuc.swift; sourceTree = "<group>"; };
 		B385F8C12BDB621D009F8502 /* AnThan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnThan.swift; sourceTree = "<group>"; };
-		B385F8C52BDB662B009F8502 /* Sex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sex.swift; sourceTree = "<group>"; };
 		B3A881632BDB8A14004F372F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B3A881642BDB8A14004F372F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		B3A881672BDB8DAC004F372F /* TuVi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuVi.swift; sourceTree = "<group>"; };
 		B3A881692BDB8DB7004F372F /* ThienPhu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThienPhu.swift; sourceTree = "<group>"; };
-		B3A8816B2BDB91B0004F372F /* SaoDacTinh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaoDacTinh.swift; sourceTree = "<group>"; };
 		B3A8816D2BDB9544004F372F /* TrangSinh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrangSinh.swift; sourceTree = "<group>"; };
-		B3A8816F2BDB99AA004F372F /* Sao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sao.swift; sourceTree = "<group>"; };
-		B3A881752BDBA464004F372F /* Hanh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hanh.swift; sourceTree = "<group>"; };
+		B3AE55D22BEA1E00008C3600 /* SaoThang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaoThang.swift; sourceTree = "<group>"; };
 		B3B145472BE62DC300EE7EDB /* TextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField + Extension.swift"; sourceTree = "<group>"; };
 		B3B145492BE635E400EE7EDB /* ThaiTue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThaiTue.swift; sourceTree = "<group>"; };
+		B3E1F5172BE9C36900B00991 /* LocTon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocTon.swift; sourceTree = "<group>"; };
+		B3E7B4DC2BEE023D00E9C0E5 /* TuHoa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuHoa.swift; sourceTree = "<group>"; };
+		B3E7B4DE2BEE288F00E9C0E5 /* TrietTuan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrietTuan.swift; sourceTree = "<group>"; };
 		D4DDB89EAA340DD312D367D4 /* Pods_HoroScope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoroScope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39EADA7172A15DDE8CC9810 /* Pods-HoroScope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoroScope.debug.xcconfig"; path = "Target Support Files/Pods-HoroScope/Pods-HoroScope.debug.xcconfig"; sourceTree = "<group>"; };
 		F593D8BE33F547D1E4C0BA2F /* Pods-HoroScope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoroScope.release.xcconfig"; path = "Target Support Files/Pods-HoroScope/Pods-HoroScope.release.xcconfig"; sourceTree = "<group>"; };
@@ -187,8 +195,6 @@
 				26D55F4F2BD7A42A00390E1F /* ThienBan.swift */,
 				26D55F562BD7A62500390E1F /* BanMenh.swift */,
 				B385F8BF2BDB5D87009F8502 /* Cuc.swift */,
-				B385F8C52BDB662B009F8502 /* Sex.swift */,
-				B3A8816B2BDB91B0004F372F /* SaoDacTinh.swift */,
 			);
 			path = ThienBan;
 			sourceTree = "<group>";
@@ -214,9 +220,15 @@
 				B3A881672BDB8DAC004F372F /* TuVi.swift */,
 				B3A881692BDB8DB7004F372F /* ThienPhu.swift */,
 				B3A8816D2BDB9544004F372F /* TrangSinh.swift */,
-				B3A8816F2BDB99AA004F372F /* Sao.swift */,
-				B3A881752BDBA464004F372F /* Hanh.swift */,
 				B3B145492BE635E400EE7EDB /* ThaiTue.swift */,
+				B3E1F5172BE9C36900B00991 /* LocTon.swift */,
+				B3AE55D22BEA1E00008C3600 /* SaoThang.swift */,
+				B37A82812BEA29D10084569C /* SaoGio.swift */,
+				B37A82832BEB1DB30084569C /* SaoKhac.swift */,
+				B31CDF9E2BECC04100AFF9A3 /* SaoTuoi.swift */,
+				B31CDFA02BECCECE00AFF9A3 /* SaoThienCanTuoi.swift */,
+				B3E7B4DC2BEE023D00E9C0E5 /* TuHoa.swift */,
+				B3E7B4DE2BEE288F00E9C0E5 /* TrietTuan.swift */,
 			);
 			path = DiaBan;
 			sourceTree = "<group>";
@@ -366,29 +378,33 @@
 			files = (
 				26D55F572BD7A62500390E1F /* BanMenh.swift in Sources */,
 				B385F8C22BDB621D009F8502 /* AnThan.swift in Sources */,
+				B37A82842BEB1DB30084569C /* SaoKhac.swift in Sources */,
+				B31CDFA12BECCECE00AFF9A3 /* SaoThienCanTuoi.swift in Sources */,
+				B3E1F5182BE9C36900B00991 /* LocTon.swift in Sources */,
 				B37E86F52BE5D292004DFF0E /* DiaBanCell.swift in Sources */,
 				B37E86F12BE5D281004DFF0E /* ThienBanCell.swift in Sources */,
+				B3E7B4DD2BEE023D00E9C0E5 /* TuHoa.swift in Sources */,
 				B3A881652BDB8A14004F372F /* HomeViewController.swift in Sources */,
 				B385F8C02BDB5D87009F8502 /* Cuc.swift in Sources */,
 				26D55F592BD7B38800390E1F /* CanChi.swift in Sources */,
 				B3B1454A2BE635E400EE7EDB /* ThaiTue.swift in Sources */,
+				B37A82822BEA29D10084569C /* SaoGio.swift in Sources */,
 				26D55F4C2BD7A1BB00390E1F /* Chi.swift in Sources */,
+				B31CDF9F2BECC04100AFF9A3 /* SaoTuoi.swift in Sources */,
 				26D55F312BD600A800390E1F /* ViewController.swift in Sources */,
 				26D55F522BD7A43600390E1F /* DiaBan.swift in Sources */,
-				B385F8C62BDB662B009F8502 /* Sex.swift in Sources */,
 				26D55F502BD7A42A00390E1F /* ThienBan.swift in Sources */,
 				26D55F442BD7A0A700390E1F /* LunarDate.swift in Sources */,
 				B385F8BC2BDA4F8B009F8502 /* Constants.swift in Sources */,
-				B3A8816C2BDB91B0004F372F /* SaoDacTinh.swift in Sources */,
 				26D55F462BD7A0EF00390E1F /* Can.swift in Sources */,
-				B3A881702BDB99AA004F372F /* Sao.swift in Sources */,
 				26D55F4E2BD7A41D00390E1F /* LaSo.swift in Sources */,
+				B3E7B4DF2BEE289000E9C0E5 /* TrietTuan.swift in Sources */,
 				26D55F422BD7A09A00390E1F /* SolarDate.swift in Sources */,
 				26D55F2D2BD600A800390E1F /* AppDelegate.swift in Sources */,
+				B3AE55D32BEA1E00008C3600 /* SaoThang.swift in Sources */,
 				B3A8816A2BDB8DB7004F372F /* ThienPhu.swift in Sources */,
 				B3A881682BDB8DAC004F372F /* TuVi.swift in Sources */,
 				B37E86F92BE61F71004DFF0E /* MenuViewController.swift in Sources */,
-				B3A881762BDBA464004F372F /* Hanh.swift in Sources */,
 				26D55F2F2BD600A800390E1F /* SceneDelegate.swift in Sources */,
 				B385F8BE2BDB509B009F8502 /* Menh.swift in Sources */,
 				B3A8816E2BDB9544004F372F /* TrangSinh.swift in Sources */,

@@ -14,7 +14,7 @@ enum CucType: Int {
     case ThoNguCuc = 5
     case HoaLucCuc = 6
     
-    func tenCuc() -> String {
+    var name: String {
         switch self {
         case .ThuyNhiCuc:
             return "Thủy Nhị Cục"

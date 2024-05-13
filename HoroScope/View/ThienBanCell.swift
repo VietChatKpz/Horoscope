@@ -43,22 +43,20 @@ class ThienBanCell: UICollectionViewCell {
         }
         print(Constants.canChiColor(canIndex: 2, chiIndex: 3))
         textView.text = """
-                            Tử vi chân cơ
+                            Thành - Thiên Bàn
             Họ tên:              \(thienBan.name)
-            Năm sinh:         \(solar.yy)                   \(lunar.yyTxt.can.toString()) \(lunar.yyTxt.chi.name)
-            Tháng sinh:      \(solar.mm)(\(lunar.mm))                 \(lunar.mmTxt.can.toString()) \(lunar.mmTxt.chi.name)
-            Ngày sinh:        \(solar.dd)(\(lunar.dd))                   \(lunar.ddTxt.can.toString()) \(lunar.ddTxt.chi.name)
-            Giờ sinh:            \(solar.hour)h\(solar.minute)'                 \(lunar.hhTxt.can.toString()) \(lunar.hhTxt.chi.name)
+            Năm sinh:         \(solar.yy)                   \(lunar.yyTxt.can.name) \(lunar.yyTxt.chi.name)
+            Tháng sinh:      \(solar.mm)(\(lunar.mm))                 \(lunar.mmTxt.can.name) \(lunar.mmTxt.chi.name)
+            Ngày sinh:        \(solar.dd)(\(lunar.dd))                   \(lunar.ddTxt.can.name) \(lunar.ddTxt.chi.name)
+            Giờ sinh:            \(solar.hour)h\(solar.minute)'                 \(lunar.hhTxt.can.name) \(lunar.hhTxt.chi.name)
             Năm hạn:     2024       Giáp Thìn
             Âm Dương:    \(string)
             Mệnh:        \(BanMenh(can: lunar.yyTxt.can, chi: lunar.yyTxt.chi).txt)
-            Cục:         \(Cuc(menh: Menh(with: lunar.mm, chi: lunar.hhTxt.chi).chi, can: lunar.yyTxt.can).cuc.tenCuc())
+            Cục:         \(Cuc(menh: Menh(with: lunar.mm, chi: lunar.hhTxt.chi).chi, can: lunar.yyTxt.can).cuc.name)
             Cung Phi:
-            Mệnh Chủ:    \(lunar.yyTxt.chi.menhChu())
-            Thân Chủ:    \(lunar.yyTxt.chi.thanChu())
+            Mệnh Chủ:    \(lunar.yyTxt.chi.menhChu)
+            Thân Chủ:    \(lunar.yyTxt.chi.thanChu)
         """
     }
 
 }
-
-//\(Constants.labelColor(canIndex: lunar.yyTxt.can.index, chiIndex: lunar.yyTxt.chi.index, text: lunar.yyTxt.chi.toString()))

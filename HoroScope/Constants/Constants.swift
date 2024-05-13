@@ -70,6 +70,10 @@ class Constants {
         label.attributedText = attributedString
         return label
     }
+    static let colorButton = UIColor.hexStringToUIColor(hex: "D83842")
+    static let colorButtonAlpha = UIColor.hexStringToUIColor(hex: "D83842").withAlphaComponent(0.3)
+    static let colorBorder = UIColor.hexStringToUIColor(hex: "D83842").withAlphaComponent(0.3).cgColor
+    static let colorDefault = UIColor.hexStringToUIColor(hex: "161616")
 }
 
 extension UIColor {

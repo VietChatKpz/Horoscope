@@ -23,7 +23,13 @@ enum Chi: Int {
     
     static let list: [Chi] = [.Ti, .Suu, .Dan, .Mao, .Thin, .Ty, .Ngo, .Mui, .Than, .Dau, .Tuat, .Hoi]
     
-    static func generateArray(startWith startChi: Chi, length: Int) -> [Chi] {
+    static let listStartMenh: [Chi] = [.Dan, .Suu, .Ti, .Hoi, .Tuat, .Dau, .Than, .Mui, .Ngo, .Ti, .Thin, .Mao]
+    
+    static let listStartHoaTinh: [Chi] = [.Dan, .Mao, .Suu, .Dau]
+    static let listStartLinhTinh: [Chi] = [.Tuat, .Tuat, .Mao, .Tuat]
+    
+    static func generateArray(startWith startChi: Chi) -> [Chi] {
+        let length = 12
         let startIndex = startChi.rawValue
         var cycleArray: [Chi] = []
         
@@ -32,6 +38,21 @@ enum Chi: Int {
             cycleArray.append(list[index])
         }
         return cycleArray
+    }
+    
+    static func generateReversedArray(startWith startChi: Chi) -> [Chi] {
+        let length = 12
+        let startIndex = startChi.rawValue
+        var reversedArray: [Chi] = []
+        
+        for i in 0..<length {
+            var index = (startIndex - i) % list.count
+            if index < 0 {
+                index += list.count
+            }
+            reversedArray.append(list[index])
+        }
+        return reversedArray
     }
     
     var name: String {
@@ -63,36 +84,7 @@ enum Chi: Int {
         }
     }
     
-    var nguHanh: String {
-        switch self {
-        case .Ti:
-            return "T"
-        case .Suu:
-            return "O"
-        case .Dan:
-            return "M"
-        case .Mao:
-            return "M"
-        case .Thin:
-            return "O"
-        case .Ty:
-            return "H"
-        case .Ngo:
-            return "H"
-        case .Mui:
-            return "O"
-        case .Than:
-            return "K"
-        case .Dau:
-            return "K"
-        case .Tuat:
-            return "O"
-        case .Hoi:
-            return "T"
-        }
-    }
-    
-    func menhChu() -> String {
+    var menhChu: String {
         switch self {
         case .Ti:
             return "Tham Lang"
@@ -121,7 +113,7 @@ enum Chi: Int {
         }
     }
     
-    func thanChu() -> String {
+    var thanChu: String {
         switch self {
         case .Ti:
             return "Linh Tinh"
@@ -161,3 +153,32 @@ enum Chi: Int {
         }
     }
 }
+
+//var nguHanh: String {
+//    switch self {
+//    case .Ti:
+//        return "T"
+//    case .Suu:
+//        return "O"
+//    case .Dan:
+//        return "M"
+//    case .Mao:
+//        return "M"
+//    case .Thin:
+//        return "O"
+//    case .Ty:
+//        return "H"
+//    case .Ngo:
+//        return "H"
+//    case .Mui:
+//        return "O"
+//    case .Than:
+//        return "K"
+//    case .Dau:
+//        return "K"
+//    case .Tuat:
+//        return "O"
+//    case .Hoi:
+//        return "T"
+//    }
+//}
