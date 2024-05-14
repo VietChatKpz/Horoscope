@@ -31,12 +31,7 @@ enum NguHanhColor {
 }
 
 class Constants {
-    static let nguHanhColor: [NguHanhColor] = [.Moc, .Hoa, .Kim, .Thuy, .Tho]
-//    static let mocColor = UIColor.hexStringToUIColor(hex: "0A5C36")
-//    static let thoColor = UIColor.hexStringToUIColor(hex: "FFD400")
-//    static let kimColor = UIColor.hexStringToUIColor(hex: "C0C0C0")
-//    static let hoaColor = UIColor.hexStringToUIColor(hex: "EB442C")
-//    static let thuyColor = UIColor.hexStringToUIColor(hex: "808080")
+    static let nguHanhColor: [NguHanhColor] = [.Moc, .Kim, .Thuy, .Hoa, .Tho]
     
     static func canChiColor(canIndex: Int, chiIndex: Int) -> UIColor {
         let total = (canIndex + chiIndex) % Constants.nguHanhColor.count

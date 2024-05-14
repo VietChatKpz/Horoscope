@@ -43,3 +43,12 @@ extension UITextField {
         
     }
 }
+
+extension Date {
+    var toYear: Int {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy"
+        return Int(dateFormatter.string(from: self)) ?? 0
+    }
+}
+

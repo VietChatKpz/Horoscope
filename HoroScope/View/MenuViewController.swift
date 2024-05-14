@@ -10,15 +10,15 @@ import MBRadioButton
 
 class MenuViewController: UIViewController {
 
-    @IBOutlet weak var nameTF: UITextField!
-    @IBOutlet weak var yyTF: UITextField!
-    @IBOutlet weak var mmTF: UITextField!
-    @IBOutlet weak var ddTF: UITextField!
-    @IBOutlet weak var hTF: UITextField!
-    @IBOutlet weak var mTF: UITextField!
-    @IBOutlet weak var namBT: RadioButton!
-    @IBOutlet weak var nuBT: RadioButton!
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet private weak var nameTF: UITextField!
+    @IBOutlet private weak var yyTF: UITextField!
+    @IBOutlet private weak var mmTF: UITextField!
+    @IBOutlet private weak var ddTF: UITextField!
+    @IBOutlet private weak var hTF: UITextField!
+    @IBOutlet private weak var mTF: UITextField!
+    @IBOutlet private weak var namBT: RadioButton!
+    @IBOutlet private weak var nuBT: RadioButton!
+    @IBOutlet private weak var button: UIButton!
     
     var sexBool: Bool = true
     var groupContainer = RadioButtonContainer()
@@ -36,7 +36,7 @@ class MenuViewController: UIViewController {
         let h = hTF.text, !h.isEmpty,
         let m = mTF.text, !m.isEmpty else { return }
         
-        let vc = HomeViewController()
+        let vc = ThienDiaViewController()
         vc.thienBan = ThienBan(solarBirthDate: SolarDate(dd: Int(dd) ?? 0, mm: Int(mm) ?? 0, yy: Int(yy) ?? 0, hour: Int(h) ?? 0, minute: Int(m) ?? 0), name: name, sex: sexBool)
         navigationController?.pushViewController(vc, animated: true)
     }

@@ -11,6 +11,7 @@ class DiaBan {
     var id: Int
     var cungThan: AnThan = .Menh
     var cungCuc: Int = 0
+    var cungViCan: Can = .Giap
     var cungVi: Chi = .Ti
     var cungSao = ""
     var cungTuVi: [TuVi] = []
@@ -25,14 +26,19 @@ class DiaBan {
     var saoTuoi: [SaoTuoi] = []
     var saoCanTuoi: [SaoThienCanTuoi] = []
     var tuHoa: [TuHoa] = []
+    var tieuVan: Chi = .Ti
+    var thangHan: Int = 0
     
-    init(id: Int, cungVi: Chi, cungThan: AnThan, cungCuc: Int, trangSinh: TrangSinh, locTon: LocTon, thaiTue: ThaiTue) {
+    init(id: Int, cungVi: Chi, cungViCan: Can, cungThan: AnThan, cungCuc: Int, trangSinh: TrangSinh, locTon: LocTon, thaiTue: ThaiTue, tieuVan: Chi, thangHan: Int) {
         self.id = id
         self.cungVi = cungVi
+        self.cungViCan = cungViCan
         self.cungThan = cungThan
         self.cungCuc = cungCuc
         self.trangSinh = trangSinh
         self.locTon = locTon
         self.thaiTue = thaiTue
+        self.tieuVan = tieuVan
+        self.thangHan = thangHan
     }
 }

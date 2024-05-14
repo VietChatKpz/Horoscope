@@ -5,7 +5,7 @@
 //  Created by VietChat on 26/4/24.
 //
 
-import Foundation
+import UIKit
 
 enum CucType: Int {
     case ThuyNhiCuc = 2
@@ -26,6 +26,21 @@ enum CucType: Int {
             return "Thổ Ngũ Cục"
         case .HoaLucCuc:
             return "Hỏa Lục Cục"
+        }
+    }
+    
+    var color: UIColor {
+        switch self {
+        case .ThuyNhiCuc:
+            return NguHanhColor.Thuy.color
+        case .MocTamCuc:
+            return NguHanhColor.Moc.color
+        case .KimTuCuc:
+            return NguHanhColor.Kim.color
+        case .ThoNguCuc:
+            return NguHanhColor.Tho.color
+        case .HoaLucCuc:
+            return NguHanhColor.Hoa.color
         }
     }
     

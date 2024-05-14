@@ -27,6 +27,7 @@ enum Chi: Int {
     
     static let listStartHoaTinh: [Chi] = [.Dan, .Mao, .Suu, .Dau]
     static let listStartLinhTinh: [Chi] = [.Tuat, .Tuat, .Mao, .Tuat]
+    static let listTieuVan: [Int] = [10,7,4,1]
     
     static func generateArray(startWith startChi: Chi) -> [Chi] {
         let length = 12

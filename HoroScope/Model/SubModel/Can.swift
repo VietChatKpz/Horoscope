@@ -21,6 +21,8 @@ enum Can: Int {
         
     static let list: [Can] = [.Canh, .Tan, .Nham, .Quy, .Giap, .At, .Binh, .Dinh, .Mau, .Ky]
     
+    static let listStart: [Can] = [.Mau, .Canh, .Nham, .Giap, .Binh]
+    
     static func generateArray(startWith startCan: Can) -> [Can] {
         let length = 12
         let startIndex = startCan.rawValue

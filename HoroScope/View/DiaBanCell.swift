@@ -9,17 +9,19 @@ import UIKit
 
 class DiaBanCell: UICollectionViewCell {
 
-    @IBOutlet weak var cungViLabel: UILabel!
-    @IBOutlet weak var anThanLabel: UILabel!
-    @IBOutlet weak var cucLabel: UILabel!
-    @IBOutlet weak var tuviLabel: UILabel!
-    @IBOutlet weak var trangSinhLabel: UILabel!
+    @IBOutlet private weak var cungViLabel: UILabel!
+    @IBOutlet private weak var anThanLabel: UILabel!
+    @IBOutlet private weak var cucLabel: UILabel!
+    @IBOutlet private weak var tuviLabel: UILabel!
+    @IBOutlet private weak var trangSinhLabel: UILabel!
     @IBOutlet weak var lineLeft: UIView!
     @IBOutlet weak var lineTop: UIView!
     @IBOutlet weak var lineRight: UIView!
     @IBOutlet weak var lineBottom: UIView!
-    @IBOutlet weak var saoTotLabel: UILabel!
-    @IBOutlet weak var saoXauLabel: UILabel!
+    @IBOutlet private weak var saoTotLabel: UILabel!
+    @IBOutlet private weak var saoXauLabel: UILabel!
+    @IBOutlet private weak var tieuVanLabel: UILabel!
+    @IBOutlet private weak var thangHanLabel: UILabel!
     
     var diaBan: DiaBan? {
         didSet {
@@ -36,7 +38,9 @@ class DiaBanCell: UICollectionViewCell {
     func configurationData() {
         guard let diaBan = diaBan else { return }
         cungViLabel.textColor = Constants.canChiColor(canIndex: 3, chiIndex: 2)
-        cungViLabel.text = "\(diaBan.cungVi.name)"
+        cungViLabel.text = diaBan.cungViCan.nameFirst + "." + diaBan.cungVi.name
+        tieuVanLabel.text = diaBan.tieuVan.name
+        thangHanLabel.text = "T " + "\(diaBan.thangHan)"
         let thanAttributedString = NSMutableAttributedString()
         if diaBan.than == "" {
             anThanLabel.text = diaBan.cungThan.name
