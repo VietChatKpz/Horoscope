@@ -25,52 +25,74 @@ class ThienDiaViewController: UIViewController {
         configurationAnSao()
     }
     
-    func configurationAnSao() {
-        let date = Date().toYear
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         let lunar = LunarDate(solarDate: thienBan.solarBirthDate)
-        let lunarCanIndex = lunar.yyTxt.can.rawValue
-        let lunarChiIndex = lunar.yyTxt.chi.rawValue
-        let menhIndex = Menh(with: lunar.mm, chi: lunar.hhTxt.chi).chi.rawValue
-        let anThanIndex = AnThan.generateArray(startWith: .Menh)[(12 - menhIndex) % 12]
-        let listAnThan = AnThan.generateArray(startWith: anThanIndex)
-        let thaiTueIndex = ThaiTue.generateArray(startWith: .ThaiTue)[(12 - lunarChiIndex) % 12]
-        let listThaiTue = ThaiTue.generateArray(startWith: thaiTueIndex)
-        let cucIndex = Cuc(menh: Menh(with: lunar.mm, chi: lunar.hhTxt.chi).chi, can: lunar.yyTxt.can).cuc.rawValue
-        var trangSinhList = TrangSinh.generateArray(startWith: .DeVuong)
-        var locTonList = LocTon.generateArray(startWith: .BacSi)
-        let isYYTxtCan = lunar.yyTxt.can.rawValue % 2 == 0
-        let mm = lunar.mm
-        let hIndex = lunar.hhTxt.chi.rawValue
-        if (thienBan.sex && isYYTxtCan) || (!thienBan.sex && !isYYTxtCan) {
-            //an sao vong trang sinh
-            trangSinhList = TrangSinh.generateArray(startWith: TrangSinh.trangSinhStartList[cucIndex - 2])
-            //an sao vong loc ton
-            locTonList = LocTon.generateArray(startWith: LocTon.locTonStartList[lunar.yyTxt.can.rawValue])
-        }else {
-            trangSinhList = TrangSinh.generateArray(startWith: TrangSinh.trangSinhStartReversedList[cucIndex - 2], reverse: true)
-            locTonList = LocTon.generateArray(startWith: LocTon.locTonStartReversedList[lunar.yyTxt.can.rawValue], reverse: true)
-        }
-        let vtTieuVan = Chi.listTieuVan[lunarChiIndex % 4]
-        let chiIndex = Chi.generateArray(startWith: lunar.yyTxt.chi)[(12 - vtTieuVan) % 12]
-        let listChiTV = Chi.generateArray(startWith: chiIndex)
-        let chiNow = CanChi(yy: date).chi
-        var index = 0
+        addLabel(lunar: lunar)
+        print(collectionView.frame)
+    }
+    
+    func configurationAnSao() {
+        let lunar = LunarDate(solarDate: thienBan.solarBirthDate)
+        let menhIndex = Menh(with: lunar.mm, chi: lunar.hhTxt.chi).chi.rawValue // Dựa vào tháng âm tìm mệnh thuộc vị trí nào trên lá số
+        let anThanIndex = AnThan.generateArray(startWith: .Menh)[(12 - menhIndex) % 12] //Tìm vị trí bắt đầu của vòng An Thần
+        let listAnThan = AnThan.generateArray(startWith: anThanIndex) // Danh sách An Thần
+        let thaiTueIndex = ThaiTue.generateArray(startWith: .ThaiTue)[(12 - lunar.yyTxt.chi.rawValue) % 12]  //Tìm vị trí bắt đầu của vòng Thái Tuế dựa vào chi năm sinh
+        let listThaiTue = ThaiTue.generateArray(startWith: thaiTueIndex) // Danh sách Thái Tuế
+        let cucIndex = Cuc(menh: Menh(with: lunar.mm, chi: lunar.hhTxt.chi).chi, can: lunar.yyTxt.can).cuc.rawValue // Kiểm tra thuộc cục nào trả ra giá trị cục đấy
+        let trangSinhList = listTrangSinh(lunar: lunar, cucIndex: cucIndex) //Danh sách Tràng Sinh
+        let locTonList = listLocTon(lunar: lunar) // Danh sách Lộc Tồn
+        let listTieuVan = listTieuVan(lunar: lunar) // Danh sách Tiểu Vận theo năm - Chi
+        let listThangHan = thangHan(lunar: lunar, listTV: listTieuVan) // Vòng tháng hạn trên lá số
+        let listCan = listCan(lunar: lunar) // Vòng Can Cung Vị trên lá số
+        list = listDiaBan(listCan: listCan, listAnThan: listAnThan, cucIndex: cucIndex, trangSinhList: trangSinhList, locTonList: locTonList, listThaiTue: listThaiTue, listTieuVan: listTieuVan, listThangHan: listThangHan)
+        anTuVi(lunar: lunar, list: list)
+    }
+    
+    func listTrangSinh(lunar: LunarDate, cucIndex: Int) -> [TrangSinh] {
+        //Kiểm tra Dương Nam, Dương Nữ, Âm Nam, Âm Nữ trả ra vòng tràng sinh thuận hay ngược
+        return (thienBan.sex && lunar.yyTxt.can.rawValue % 2 == 0) || (!thienBan.sex && lunar.yyTxt.can.rawValue % 2 != 0) ? TrangSinh.generateArray(startWith: TrangSinh.trangSinhStartList[cucIndex - 2]) : TrangSinh.generateArray(startWith: TrangSinh.trangSinhStartReversedList[cucIndex - 2], reverse: true)
+    }
+    
+    func listLocTon(lunar: LunarDate) -> [LocTon] {
+        //Kiểm tra Dương Nam, Dương Nữ, Âm Nam, Âm Nữ trả ra vòng lộc tồn thuận hay ngược
+        return (thienBan.sex && lunar.yyTxt.can.rawValue % 2 == 0) || (!thienBan.sex && lunar.yyTxt.can.rawValue % 2 != 0) ? LocTon.generateArray(startWith: LocTon.locTonStartList[lunar.yyTxt.can.rawValue]) : LocTon.generateArray(startWith: LocTon.locTonStartReversedList[lunar.yyTxt.can.rawValue], reverse: true)
+    }
+    
+    func listCan(lunar: LunarDate) -> [Can] {
+        var listCan = Can.generateArray(startWith: Can.listStart[lunar.yyTxt.can.rawValue % 5])
+        let suffixCan = listCan.suffix(2)
+        listCan.removeLast(2)
+        listCan.insert(contentsOf: suffixCan, at: 0)
+        return listCan
+    }
+    
+    func listTieuVan(lunar: LunarDate) -> [Chi] {
+        let vitri = Chi.listTieuVan[lunar.yyTxt.chi.rawValue % 4]
+        let chi = Chi.generateArray(startWith: lunar.yyTxt.chi)[(12 - vitri) % 12]
+        return Chi.generateArray(startWith: chi)
+    }
+    
+    func thangHan(lunar: LunarDate, listTV: [Chi]) -> [Int] {
+        let date = Date().toYear
+        let chiNow = CanChi(yy: date).chi // Năm Chi hiện tại
         var number = Array(1...12)
-        if let indexNew = listChiTV.firstIndex(where: {$0 == chiNow}) {
-            index = indexNew
+        var index = 0
+        if let indexNew = listTV.firstIndex(where: {$0 == chiNow}) {
+            index = indexNew    // Năm Chi hiện tại thuộc vị trí năm hạn(tiểu hạn) nào trên lá số
         }
-        let vtThang = index - mm + (hIndex + 1)
+        let vtThang = index - lunar.mm + (lunar.hhTxt.chi.rawValue + 1)
         let vtThangNew = vtThang < -11 ? (vtThang % 12) + 12 : (vtThang + 12) > 11 ? vtThang % 12 : vtThang + 12
         let subArray1 = number[12 - vtThangNew..<12]
         let subArray2 = number[0..<12 - vtThangNew]
         number = Array(subArray1) + Array(subArray2)
-        let vtCan = Can.listStart[lunarCanIndex % 5]
-        var listCan = Can.generateArray(startWith: vtCan)
-        let suffixCan = listCan.suffix(2)
-        listCan.removeLast(2)
-        listCan.insert(contentsOf: suffixCan, at: 0)
+        return number
+    }
+    
+    func listDiaBan(listCan: [Can], listAnThan: [AnThan], cucIndex: Int, trangSinhList: [TrangSinh], locTonList: [LocTon], listThaiTue: [ThaiTue], listTieuVan: [Chi], listThangHan: [Int]) -> [DiaBan] {
+        var list = [DiaBan]()
         for chi in Chi.list {
-            let diaBan = DiaBan(id: chi.rawValue, cungVi: chi, cungViCan: listCan[chi.rawValue], cungThan: listAnThan[chi.rawValue], cungCuc: cucIndex + listAnThan[chi.rawValue].rawValue * 10, trangSinh: trangSinhList[chi.rawValue], locTon: locTonList[chi.rawValue], thaiTue: listThaiTue[chi.rawValue], tieuVan: listChiTV[chi.rawValue], thangHan: number[chi.rawValue])
+            let diaBan = DiaBan(id: chi.rawValue, cungVi: chi, cungViCan: listCan[chi.rawValue], cungThan: listAnThan[chi.rawValue], cungCuc: cucIndex + listAnThan[chi.rawValue].rawValue * 10, trangSinh: trangSinhList[chi.rawValue], locTon: locTonList[chi.rawValue], thaiTue: listThaiTue[chi.rawValue], tieuVan: listTieuVan[chi.rawValue], thangHan: listThangHan[chi.rawValue])
             list.append(diaBan)
             if diaBan.cungThan.rawValue == 5 {
                 diaBan.saoKhac.append(.ThienThuong)
@@ -80,29 +102,28 @@ class ThienDiaViewController: UIViewController {
                 diaBan.saoKhac.append(.ThienKhong)
             }
         }
-        anTuVi(lunar: lunar, list: list)
-        addLabel(lunar: lunar)
+        return list
     }
-    
+        
     func anTuVi(lunar: LunarDate, list: [DiaBan]) {
-        let number = lunar.dd
-        let mm = lunar.mm
-        let hIndex = lunar.hhTxt.chi.rawValue
-        let cucIndex = Cuc(menh: Menh(with: lunar.mm, chi: lunar.hhTxt.chi).chi, can: lunar.yyTxt.can).cuc.rawValue
-        let menhIndex = Menh(with: lunar.mm, chi: lunar.hhTxt.chi).chi.rawValue
-        let yyIndex = lunar.yyTxt.chi.rawValue
-        let yyCanIndex = lunar.yyTxt.can.rawValue
-        let isYYTxtCan = lunar.yyTxt.can.rawValue % 2 == 0
+        let dd = lunar.dd //Ngày âm năm sinh
+        let mm = lunar.mm //Tháng âm năm sinh
+        let hIndex = lunar.hhTxt.chi.rawValue //Giờ gì(Tí, Sửu,...)
+        let cucIndex = Cuc(menh: Menh(with: lunar.mm, chi: lunar.hhTxt.chi).chi, can: lunar.yyTxt.can).cuc.rawValue // Cục nào
+        let menhIndex = Menh(with: lunar.mm, chi: lunar.hhTxt.chi).chi.rawValue // Vị trí Mệnh ở đâu trên lá số
+        let yyIndex = lunar.yyTxt.chi.rawValue // Chi năm sinh
+        let yyCanIndex = lunar.yyTxt.can.rawValue // Can năm sinh
+        let isYYTxtCan = lunar.yyTxt.can.rawValue % 2 == 0 // Can âm hay dương
         var index = 0
         var indexNew = 0
         var numberNew = 0
         var vitri = 2
         var a = 0
-        var vitriTPNew = 0
-        if number % cucIndex != 0 {
-            indexNew = (number / cucIndex) + 1
+        //Tìm vị trí tử vi dựa trên ngày sinh và cục
+        if dd % cucIndex != 0 {
+            indexNew = (dd / cucIndex) + 1
             numberNew = indexNew * cucIndex
-            a = numberNew - number
+            a = numberNew - dd
             if a % 2 != 0 {
                 index = indexNew - a
                 vitri = vitri + index
@@ -111,11 +132,11 @@ class ThienDiaViewController: UIViewController {
                 vitri = vitri + index
             }
         }else {
-            index = number / cucIndex
+            index = dd / cucIndex
             vitri = vitri + index
         }
         //An sao tử vi
-        let vtTuVi = vitri - 1
+        let vtTuVi = vitri - 1 > 0 ? vitri - 1 : (vitri - 1) + 12
         let vtThienDong = (vitri + 6) > 11 ? (vitri + 6) - 12 : (vitri + 6)
         let vtVuKhuc = (vitri + 7) > 11 ? (vitri + 7) - 12 : (vitri + 7)
         let vtThaiDuong = (vitri + 8) > 11 ? (vitri + 8) - 12 : (vitri + 8)
@@ -128,28 +149,21 @@ class ThienDiaViewController: UIViewController {
         list[vtThaiDuong].cungTuVi.append(.ThaiDuong)
         list[vtThienCo].cungTuVi.append(.ThienCo)
         
-        let vitriTV = vitri - 1
-        let vitriTP = 2 + 2 - vitriTV
-        if vitriTP > 0 {
-            vitriTPNew = 4 - vitriTV
-        }else {
-            vitriTPNew = 4 - vitriTV + 12
-        }
-        
+        let vitriTP = 4 - vtTuVi > 0 ? 4 - vtTuVi : 4 - vtTuVi + 12
         //An sao thiên phủ
-        let vtThaiAm = vitriTPNew + 1 > 11 ? vitriTPNew + 1 - 12 : vitriTPNew + 1
-        let vtCuMon = vitriTPNew + 3 > 11 ? vitriTPNew + 3 - 12 : vitriTPNew + 3
-        let vtThienLuong = vitriTPNew + 5 > 11 ? vitriTPNew + 5 - 12 : vitriTPNew + 5
-        let vtThienPhu = vitriTPNew > 11 ? vitriTPNew - 12 : vitriTPNew
-        let vtPhaQuan = vitriTPNew + 10 > 11 ? vitriTPNew + 10 - 12 : vitriTPNew + 10
-        let vtThamLang = vitriTPNew + 2 > 11 ? vitriTPNew + 2 - 12 : vitriTPNew + 2
+        let vtThaiAm = vitriTP + 1 > 11 ? vitriTP + 1 - 12 : vitriTP + 1
+        let vtCuMon = vitriTP + 3 > 11 ? vitriTP + 3 - 12 : vitriTP + 3
+        let vtThienLuong = vitriTP + 5 > 11 ? vitriTP + 5 - 12 : vitriTP + 5
+        let vtThienPhu = vitriTP > 11 ? vitriTP - 12 : vitriTP
+        let vtPhaQuan = vitriTP + 10 > 11 ? vitriTP + 10 - 12 : vitriTP + 10
+        let vtThamLang = vitriTP + 2 > 11 ? vitriTP + 2 - 12 : vitriTP + 2
         list[vtThienPhu].cungThienPhu.append(.ThienPhu)
         list[vtThaiAm].cungThienPhu.append(.ThaiAm)
         list[vtThamLang].cungThienPhu.append(.ThamLang)
         list[vtCuMon].cungThienPhu.append(.CuMon)
-        list[vitriTPNew + 4 > 11 ? vitriTPNew + 4 - 12 : vitriTPNew + 4].cungThienPhu.append(.ThienTuong)
+        list[vitriTP + 4 > 11 ? vitriTP + 4 - 12 : vitriTP + 4].cungThienPhu.append(.ThienTuong)
         list[vtThienLuong].cungThienPhu.append(.ThienLuong)
-        list[vitriTPNew + 6 > 11 ? vitriTPNew + 6 - 12 : vitriTPNew + 6].cungThienPhu.append(.ThatSat)
+        list[vitriTP + 6 > 11 ? vitriTP + 6 - 12 : vitriTP + 6].cungThienPhu.append(.ThatSat)
         list[vtPhaQuan].cungThienPhu.append(.PhaQuan)
         
         //An sao theo tháng
@@ -302,56 +316,51 @@ extension ThienDiaViewController {
     func addLabel(lunar: LunarDate) {
         let height = Int(collectionView.frame.height)
         let width = Int(collectionView.frame.width)
-        let widthLabel = 48
-        let heightLabel = 24
-        let widthLabel2 = 24
-        let heightLabel2 = 12
-        let widthCell = width/4
-        let heightCell = height/4
+        let widthLabel = 48 // Chiều rộng của label Tuần - Triệt
+        let heightLabel = 24 // Chiều cao của label Tuần - Triệt
+        let widthLabel2 = 24 // Chiều rộng một nửa của label Tuần - Triệt
+        let heightLabel2 = 12 // Chiều cao một nửa của label Tuần - Triệt
+        let widthCell = width/4 // Chiều rộng của 1 cell
+        let heightCell = height/4 // Chiều cao của 1 cell
         
-        let frameTS = CGRect(x: widthCell * 2 - widthLabel2, y: heightCell * 3 - heightLabel2, width: widthLabel, height: heightLabel)
-        let frameTD = CGRect(x: widthCell * 3 + widthCell / 2 - widthLabel2, y: heightCell - heightLabel2, width: widthLabel, height: heightLabel)
-        let frameTT = CGRect(x: widthCell / 2 - widthLabel2, y: heightCell - heightLabel2, width: widthLabel, height: heightLabel)
-        let frameNM = CGRect(x: widthCell * 2 - widthLabel2, y: heightCell - heightLabel2, width: widthLabel, height: heightLabel)
-        let frameDM = CGRect(x: widthCell / 2 - widthLabel2, y: heightCell * 3 - heightLabel2, width: widthLabel, height: heightLabel)
-        let frameTH = CGRect(x: widthCell * 3 + widthCell / 2 - widthLabel2, y: heightCell * 3 - heightLabel2, width: widthLabel, height: heightLabel)
+        //CGRect: Tí Sửu - Ngọ Mùi - Thân Dậu - Tỵ Thìn - Dần Mão - Tuất Hợi: Các vị trí x, y, chiều rộng, chiều cao của label trên collectionView
+        let listFrame = [
+            CGRect(x: widthCell * 2 - widthLabel2, y: heightCell * 3 - heightLabel2, width: widthLabel, height: heightLabel),  //Tí Sửu
+            CGRect(x: widthCell * 2 - widthLabel2, y: heightCell - heightLabel2, width: widthLabel, height: heightLabel),   // Ngọ Mùi
+            CGRect(x: widthCell * 3 + widthCell / 2 - widthLabel2, y: heightCell - heightLabel2, width: widthLabel, height: heightLabel),   // Thân Dậu
+            CGRect(x: widthCell / 2 - widthLabel2, y: heightCell - heightLabel2, width: widthLabel, height: heightLabel),   // Tỵ Thìn
+            CGRect(x: widthCell / 2 - widthLabel2, y: heightCell * 3 - heightLabel2, width: widthLabel, height: heightLabel),   // Dần Mão
+            CGRect(x: widthCell * 3 + widthCell / 2 - widthLabel2, y: heightCell * 3 - heightLabel2, width: widthLabel, height: heightLabel)    // Tuất Hợi
+        ]
         
         let yyCan = lunar.yyTxt.can
         switch yyCan {
         case .Canh, .At:
-            trietLabel.frame = frameNM
+            trietLabel.frame = listFrame[1]
         case .Tan, .Binh:
-            trietLabel.frame = frameTT
+            trietLabel.frame = listFrame[3]
         case .Nham, .Dinh:
-            trietLabel.frame = frameDM
+            trietLabel.frame = listFrame[4]
         case .Quy, .Mau:
-            trietLabel.frame = frameTS
+            trietLabel.frame = listFrame[0]
         case .Giap, .Ky:
-            trietLabel.frame = frameTD
+            trietLabel.frame = listFrame[2]
         }
         trietLabel.text = "Triệt"
         trietLabel.backgroundColor = Constants.colorDefault
         trietLabel.textColor = .white
         trietLabel.textAlignment = .center
-        let disTS: [Can: Chi] = [.Giap:.Dan, .At:.Mao, .Binh:.Thin, .Dinh:.Ty, .Mau:.Ngo, .Ky:.Mui, .Canh:.Than, .Tan:.Dau, .Nham:.Tuat, .Quy:.Hoi]
-        let disDM: [Can:Chi] = [.Giap:.Thin, .At:.Ty, .Binh:.Ngo, .Dinh:.Mui, .Mau:.Than, .Ky:.Dau, .Canh:.Tuat, .Tan:.Hoi, .Nham:.Ti, .Quy:.Suu]
-        let disTT: [Can:Chi] = [.Giap:.Ngo, .At:.Mui, .Binh:.Than, .Dinh:.Dau, .Mau:.Tuat, .Ky:.Hoi, .Canh:.Ti, .Tan:.Suu, .Nham:.Dan, .Quy:.Mao]
-        let disNM: [Can:Chi] = [.Giap:.Than, .At:.Dau, .Binh:.Tuat, .Dinh:.Hoi, .Mau:.Ti, .Ky:.Suu, .Canh:.Dan, .Tan:.Mao, .Nham:.Thin, .Quy:.Ty]
-        let disTD: [Can:Chi] = [.Giap:.Tuat, .At:.Hoi, .Binh:.Ti, .Dinh:.Suu, .Mau:.Dan, .Ky:.Mao, .Canh:.Thin, .Tan:.Ty, .Nham:.Ngo, .Quy:.Mui]
-        let disTH: [Can:Chi] = [.Giap:.Ti, .At:.Suu, .Binh:.Dan, .Dinh:.Mao, .Mau:.Thin, .Ky:.Ty, .Canh:.Ngo, .Tan:.Mui, .Nham:.Than, .Quy:.Dau]
-        let canChi: (Can, Chi) = (lunar.yyTxt.can, lunar.yyTxt.chi)
-        if disTS[canChi.0] == canChi.1 {
-            tuanLabel.frame = frameTS
-        }else if disDM[canChi.0] == canChi.1 {
-            tuanLabel.frame = frameDM
-        }else if disTT[canChi.0] == canChi.1{
-            tuanLabel.frame = frameTT
-        }else if disNM[canChi.0] == canChi.1{
-            tuanLabel.frame = frameNM
-        }else if disTD[canChi.0] == canChi.1{
-            tuanLabel.frame = frameTD
-        }else if disTH[canChi.0] == canChi.1{
-            tuanLabel.frame = frameTH
+        let listDis: [[Can : Chi]] = [
+            [.Giap:.Dan, .At:.Mao, .Binh:.Thin, .Dinh:.Ty, .Mau:.Ngo, .Ky:.Mui, .Canh:.Than, .Tan:.Dau, .Nham:.Tuat, .Quy:.Hoi],    // Tí Sửu
+            [.Giap:.Than, .At:.Dau, .Binh:.Tuat, .Dinh:.Hoi, .Mau:.Ti, .Ky:.Suu, .Canh:.Dan, .Tan:.Mao, .Nham:.Thin, .Quy:.Ty],     // Ngọ Mùi
+            [.Giap:.Tuat, .At:.Hoi, .Binh:.Ti, .Dinh:.Suu, .Mau:.Dan, .Ky:.Mao, .Canh:.Thin, .Tan:.Ty, .Nham:.Ngo, .Quy:.Mui],  // Thân Dậu
+            [.Giap:.Ngo, .At:.Mui, .Binh:.Than, .Dinh:.Dau, .Mau:.Tuat, .Ky:.Hoi, .Canh:.Ti, .Tan:.Suu, .Nham:.Dan, .Quy:.Mao],  // Tỵ Thìn
+            [.Giap:.Thin, .At:.Ty, .Binh:.Ngo, .Dinh:.Mui, .Mau:.Than, .Ky:.Dau, .Canh:.Tuat, .Tan:.Hoi, .Nham:.Ti, .Quy:.Suu],     // Mão Dần
+            [.Giap:.Ti, .At:.Suu, .Binh:.Dan, .Dinh:.Mao, .Mau:.Thin, .Ky:.Ty, .Canh:.Ngo, .Tan:.Mui, .Nham:.Than, .Quy:.Dau]       // Tuất Hợi
+        ]
+        let canChi: (Can, Chi) = (lunar.yyTxt.can, lunar.yyTxt.chi) // Can chi năm sinh
+        if let index = listDis.enumerated().compactMap({ $0.element[canChi.0] == canChi.1 ? $0.offset : nil }).first {
+            tuanLabel.frame = listFrame[index]
         }else {
             print("Không tìm thấy tuần")
         }
@@ -362,6 +371,7 @@ extension ThienDiaViewController {
         ttView.addSubview(trietLabel)
         ttView.addSubview(tuanLabel)
         
+        // Các điểm x, y của từng cell tương ứng trên collectionView
         let points: [CGPoint] = [ CGPoint(x: widthCell * 2 + widthCell / 2, y: heightCell * 3),
                                   CGPoint(x: widthCell + widthCell / 2, y: heightCell * 3),
                                   CGPoint(x: widthCell, y: heightCell * 3),

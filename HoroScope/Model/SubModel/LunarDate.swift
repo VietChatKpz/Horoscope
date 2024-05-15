@@ -133,7 +133,7 @@ extension LunarDate {
         var dd = solarDate.dd
         var mm = solarDate.mm
         var yy = solarDate.yy
-        var hour = solarDate.hour
+        let hour = solarDate.hour
         let calendar = Calendar.current
         var components = DateComponents()
         components.day = dd
@@ -162,23 +162,6 @@ extension LunarDate {
         let dd = solarDate.dd
         let mm = solarDate.mm
         let yy = solarDate.yy
-//        var hour = solarDate.hour
-//        let calendar = Calendar.current
-//        var components = DateComponents()
-//        components.day = dd
-//        components.month = mm
-//        components.year = yy
-//        components.hour = hour
-//        let currentDate = calendar.date(from: components)
-//        if let current = currentDate {
-//            if hour >= 23 {
-//                if let newDay = calendar.date(byAdding: .day, value: 1, to: current) {
-//                    print(newDay)
-//                }
-//            } else {
-//
-//            }
-//        }
         var lunarDay, lunarMonth, lunarYear, lunarLeap: Int
         let dayNumber = jdFromDate(dd: dd, mm: mm, yy: yy)
         let k = iFloor(inp: ((Double(dayNumber) - 2415021.076998695) / 29.530588853))

@@ -300,10 +300,10 @@
     </objects>
     <designables>
         <designable name="kgh-mJ-Rgg">
-            <size key="intrinsicContentSize" width="30" height="30"/>
+            <size key="intrinsicContentSize" width="42" height="18"/>
         </designable>
         <designable name="trC-cr-m0S">
-            <size key="intrinsicContentSize" width="32" height="30"/>
+            <size key="intrinsicContentSize" width="54" height="18"/>
         </designable>
     </designables>
     <resources>

@@ -31,11 +31,10 @@ class DiaBanCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
     }
     
     func configurationData() {
+        
         guard let diaBan = diaBan else { return }
         
         cungViLabel.textColor = Constants.canChiColor(canIndex: 3, chiIndex: 2)
@@ -209,12 +208,6 @@ class DiaBanCell: UICollectionViewCell {
             attributedString.append(attributed1)
             anThanLabel.attributedText = attributedString
         }
-    }
-    
-    private func configurationTuViLabel(from items: DiaBan, id: Int) -> NSAttributedString {
-        let attributedString = NSMutableAttributedString()
-        let listItems = [items.cungTuVi, items.cungThienPhu] as [Any]
-        return attributedString
     }
 }
 

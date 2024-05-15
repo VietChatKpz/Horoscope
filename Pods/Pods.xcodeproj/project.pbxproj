@@ -49,13 +49,13 @@
 		8EF564716FD95F0E9A859A92097EE3B2 /* RadioButtonColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadioButtonColor.swift; path = Source/RadioButton/RadioButtonColor.swift; sourceTree = "<group>"; };
 		90F08622B6854C45C8C9CEE7CC8254F2 /* RadioButtonContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadioButtonContainer.swift; path = Source/RadioButton/RadioButtonContainer.swift; sourceTree = "<group>"; };
 		973F7D94DA21D44591FF37E2F5657814 /* Pods-HoroScope.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HoroScope.modulemap"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FD1F4E4BC02F657A8BD09609FB17D1C /* MBRadioButton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBRadioButton.debug.xcconfig; sourceTree = "<group>"; };
 		A6AC0EE5E73E0E543DA0EE750A5BC6F4 /* RadioButtonCircleStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadioButtonCircleStyle.swift; path = Source/RadioButton/RadioButtonCircleStyle.swift; sourceTree = "<group>"; };
 		B10EC9CE3A7DD3F956447098932FB451 /* MBRadioButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBRadioButton-dummy.m"; sourceTree = "<group>"; };
 		B35D40C64DD62482CC3CD1DCEBDF26E1 /* Pods-HoroScope-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HoroScope-umbrella.h"; sourceTree = "<group>"; };
 		BCE321E0AD163E4F4BA256AD6B435AEF /* RadioButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadioButton.swift; path = Source/RadioButton/RadioButton.swift; sourceTree = "<group>"; };
-		C1D22196C2ECE17B91E0B45DECD1F7CE /* MBRadioButton */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MBRadioButton; path = MBRadioButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1D22196C2ECE17B91E0B45DECD1F7CE /* MBRadioButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBRadioButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA0737D2462EA9BF740995CEB99DCD6C /* MBRadioButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MBRadioButton.modulemap; sourceTree = "<group>"; };
 		F27169C578B723A157028BF5ABEC5CBD /* Pods-HoroScope-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HoroScope-Info.plist"; sourceTree = "<group>"; };
 		F91634555AB122135C1D6A7D07769742 /* MBRadioButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBRadioButton-umbrella.h"; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		4DB8DFE5013C01B25B6729A1FCBB4AF9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C1D22196C2ECE17B91E0B45DECD1F7CE /* MBRadioButton */,
+				C1D22196C2ECE17B91E0B45DECD1F7CE /* MBRadioButton.framework */,
 				5566A71019A72051285345B56B6FA456 /* Pods-HoroScope */,
 			);
 			name = Products;
@@ -134,7 +134,6 @@
 				1A24DD0386899031C856D54CEBEC12CD /* RadioCheckboxBaseContainer.swift */,
 				65EBDC2294760A3B9A86F3AFC31259BC /* Support Files */,
 			);
-			name = MBRadioButton;
 			path = MBRadioButton;
 			sourceTree = "<group>";
 		};
@@ -219,7 +218,7 @@
 			);
 			name = MBRadioButton;
 			productName = MBRadioButton;
-			productReference = C1D22196C2ECE17B91E0B45DECD1F7CE /* MBRadioButton */;
+			productReference = C1D22196C2ECE17B91E0B45DECD1F7CE /* MBRadioButton.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D2439570047E6D3D6587F41286540F71 /* Pods-HoroScope */ = {
@@ -337,7 +336,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MBRadioButton/MBRadioButton-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MBRadioButton/MBRadioButton-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -536,7 +535,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MBRadioButton/MBRadioButton-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MBRadioButton/MBRadioButton-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

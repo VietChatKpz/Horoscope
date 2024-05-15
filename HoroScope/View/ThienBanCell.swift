@@ -46,25 +46,25 @@ class ThienBanCell: UICollectionViewCell {
         let colorDefault = UIColor.blue
         let tuoi = date - lunar.yy
         let attrString = NSMutableAttributedString()
-        let arrYY: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 21), .foregroundColor: colorYY]
+        let arrYY: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 22), .foregroundColor: colorYY]
         attrString.append(NSAttributedString(string: "\n\(lunar.yyTxt.can.name) \(lunar.yyTxt.chi.name) \n", attributes: arrYY))
-        let arrMM: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 21), .foregroundColor: colorMM]
+        let arrMM: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 22), .foregroundColor: colorMM]
         attrString.append(NSAttributedString(string: "\(lunar.mmTxt.can.name) \(lunar.mmTxt.chi.name) \n", attributes: arrMM))
-        let arrDD: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 21), .foregroundColor: colorDD]
+        let arrDD: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 22), .foregroundColor: colorDD]
         attrString.append(NSAttributedString(string: "\(lunar.ddTxt.can.name) \(lunar.ddTxt.chi.name) \n", attributes: arrDD))
-        let arrH: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 21), .foregroundColor: colorH]
+        let arrH: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 22), .foregroundColor: colorH]
         attrString.append(NSAttributedString(string: "\(lunar.hhTxt.can.name) \(lunar.hhTxt.chi.name) \n", attributes: arrH))
-        let arrNow: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 21), .foregroundColor: colorN]
+        let arrNow: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 22), .foregroundColor: colorN]
         attrString.append(NSAttributedString(string: "\(CanChi(yy: date).can.name) \(CanChi(yy: date).chi.name) \n", attributes: arrNow))
-        let arrTuoi: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 21), .foregroundColor: colorDefault]
+        let arrTuoi: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 22), .foregroundColor: colorDefault]
         attrString.append(NSAttributedString(string: "\(tuoi) tuổi \n", attributes: arrTuoi))
         
         let attrStringCenter = NSMutableAttributedString()
         attrStringCenter.append(NSAttributedString(string: "\(thienBan.name) \n\(solar.yy) \n\(solar.mm)(\(lunar.mm)) \n\(solar.dd)(\(lunar.dd)) \n\(solar.hour)h\(solar.minute)' \n\(date) \n\(string) \n", attributes: arrTuoi))
-        let arrMenh: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 21), .foregroundColor: BanMenh(can: lunar.yyTxt.can, chi: lunar.yyTxt.chi).color]
+        let arrMenh: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 22), .foregroundColor: BanMenh(can: lunar.yyTxt.can, chi: lunar.yyTxt.chi).color]
         attrStringCenter.append(NSAttributedString(string: "\(BanMenh(can: lunar.yyTxt.can, chi: lunar.yyTxt.chi).txt) \n", attributes: arrMenh))
-        let arrCuc: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 21), .foregroundColor: Cuc(menh: Menh(with: lunar.mm, chi: lunar.hhTxt.chi).chi, can: lunar.yyTxt.can).cuc.color]
-        let arrCung: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 21), .foregroundColor: CungPhi.findCungPhi(lunar.yy, sex: thienBan.sex).color]
+        let arrCuc: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 22), .foregroundColor: Cuc(menh: Menh(with: lunar.mm, chi: lunar.hhTxt.chi).chi, can: lunar.yyTxt.can).cuc.color]
+        let arrCung: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 22), .foregroundColor: CungPhi.findCungPhi(lunar.yy, sex: thienBan.sex).color]
         attrStringCenter.append(NSAttributedString(string: "\(Cuc(menh: Menh(with: lunar.mm, chi: lunar.hhTxt.chi).chi, can: lunar.yyTxt.can).cuc.name) \n", attributes: arrCuc))
         attrStringCenter.append(NSAttributedString(string: "\(CungPhi.findCungPhi(lunar.yy, sex: thienBan.sex).rawValue) \n", attributes: arrCung))
         attrStringCenter.append(NSAttributedString(string: "\(lunar.yyTxt.chi.menhChu) \n\(lunar.yyTxt.chi.thanChu)", attributes: arrTuoi))
