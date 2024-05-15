@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLu-I1-46s">
-                                <rect key="frame" x="0.0" y="64" width="192" height="596"/>
+                                <rect key="frame" x="0.0" y="64" width="170.5" height="596"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Họ tên:
 Năm sinh:
@@ -51,14 +51,14 @@ Tháng sinh:
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4o-bw-zKK">
-                                <rect key="frame" x="192" y="64" width="192" height="596"/>
+                                <rect key="frame" x="170.5" y="64" width="171" height="596"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" red="0.086274509799999996" green="0.086274509799999996" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXT-aL-kIx">
-                                <rect key="frame" x="384" y="64" width="128" height="596"/>
+                                <rect key="frame" x="341.5" y="64" width="170.5" height="596"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" red="0.086274509799999996" green="0.086274509799999996" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -77,7 +77,7 @@ Tháng sinh:
                             <constraint firstItem="4QS-Ou-JTn" firstAttribute="top" secondItem="W0m-eW-swH" secondAttribute="top" constant="12" id="OrF-fN-L0w"/>
                             <constraint firstAttribute="bottom" secondItem="k4o-bw-zKK" secondAttribute="bottom" id="Wkn-Sd-Hqu"/>
                             <constraint firstAttribute="bottom" secondItem="wXT-aL-kIx" secondAttribute="bottom" id="bM4-SJ-k3R"/>
-                            <constraint firstItem="wXT-aL-kIx" firstAttribute="width" secondItem="k4o-bw-zKK" secondAttribute="width" multiplier="2/3" id="fcn-u7-mXH"/>
+                            <constraint firstItem="wXT-aL-kIx" firstAttribute="width" secondItem="k4o-bw-zKK" secondAttribute="width" id="fcn-u7-mXH"/>
                             <constraint firstAttribute="bottom" secondItem="kLu-I1-46s" secondAttribute="bottom" id="mA4-qC-vL8"/>
                             <constraint firstAttribute="trailing" secondItem="wXT-aL-kIx" secondAttribute="trailing" id="sMI-i3-0no"/>
                             <constraint firstItem="kLu-I1-46s" firstAttribute="top" secondItem="4QS-Ou-JTn" secondAttribute="bottom" constant="4" id="wpw-1G-VB9"/>
@@ -97,6 +97,7 @@ Tháng sinh:
             <connections>
                 <outlet property="centerTV" destination="k4o-bw-zKK" id="xRO-jL-YVW"/>
                 <outlet property="leftTV" destination="kLu-I1-46s" id="Sb4-p5-7Re"/>
+                <outlet property="nameLabel" destination="4QS-Ou-JTn" id="NRr-vZ-3Zk"/>
                 <outlet property="rightTV" destination="wXT-aL-kIx" id="Fp3-ae-nXw"/>
             </connections>
             <point key="canvasLocation" x="-157.03125" y="78.623718887262072"/>

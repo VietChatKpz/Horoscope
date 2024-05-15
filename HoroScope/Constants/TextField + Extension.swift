@@ -55,3 +55,14 @@ extension Date {
 extension UIFont {
     
 }
+
+extension CGSize {
+    static func getSafeAreaSize() -> CGSize {
+        guard let window = UIApplication.shared.windows.first else {
+            return UIScreen.main.bounds.size
+        }
+        
+        let safeFrame = window.safeAreaLayoutGuide.layoutFrame
+        return safeFrame.size
+    }
+}

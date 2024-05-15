@@ -24,14 +24,7 @@ class ThienDiaViewController: UIViewController {
         setupCollectionView()
         configurationAnSao()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        let lunar = LunarDate(solarDate: thienBan.solarBirthDate)
-        addLabel(lunar: lunar)
-        print(collectionView.frame)
-    }
-    
+        
     func configurationAnSao() {
         let lunar = LunarDate(solarDate: thienBan.solarBirthDate)
         let menhIndex = Menh(with: lunar.mm, chi: lunar.hhTxt.chi).chi.rawValue // Dựa vào tháng âm tìm mệnh thuộc vị trí nào trên lá số
@@ -308,14 +301,16 @@ class ThienDiaViewController: UIViewController {
             list[vtThienLuong].tuHoa.append(.HoaKhoa)
             list[vtVanKhuc].tuHoa.append(.HoaKy)
         }
+        
+        addLabel(lunar: lunar)
     }
 }
 
 //MARK: -UIView Tuần - Triệt
 extension ThienDiaViewController {
     func addLabel(lunar: LunarDate) {
-        let height = Int(collectionView.frame.height)
-        let width = Int(collectionView.frame.width)
+        let height = Int(CGSize.getSafeAreaSize().height)
+        let width = Int(CGSize.getSafeAreaSize().width)
         let widthLabel = 48 // Chiều rộng của label Tuần - Triệt
         let heightLabel = 24 // Chiều cao của label Tuần - Triệt
         let widthLabel2 = 24 // Chiều rộng một nửa của label Tuần - Triệt

@@ -32,6 +32,8 @@ enum NguHanhColor {
 
 class Constants {
     static let nguHanhColor: [NguHanhColor] = [.Moc, .Kim, .Thuy, .Hoa, .Tho]
+    static let widthScreen = 1024.0
+    static let heightScreen = 1322.0
     
     static func canChiColor(canIndex: Int, chiIndex: Int) -> UIColor {
         let total = (canIndex + chiIndex) % Constants.nguHanhColor.count

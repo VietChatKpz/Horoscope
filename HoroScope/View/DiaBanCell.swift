@@ -22,6 +22,7 @@ class DiaBanCell: UICollectionViewCell {
     @IBOutlet private weak var saoXauLabel: UILabel!
     @IBOutlet private weak var tieuVanLabel: UILabel!
     @IBOutlet private weak var thangHanLabel: UILabel!
+    @IBOutlet weak var heightViewTV: NSLayoutConstraint!
     
     var diaBan: DiaBan? {
         didSet {
@@ -31,6 +32,25 @@ class DiaBanCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        fontSizeLabel()
+    }
+    
+    func fontSizeLabel() {
+        let size = CGSize.getSafeAreaSize()
+        let fontSizeGoc = size.width * 11.0 / Constants.widthScreen
+        cungViLabel.font = UIFont.systemFont(ofSize: fontSizeGoc)
+        cucLabel.font = UIFont.boldSystemFont(ofSize: fontSizeGoc)
+        tieuVanLabel.font = UIFont.boldSystemFont(ofSize: fontSizeGoc)
+        thangHanLabel.font = UIFont.boldSystemFont(ofSize: fontSizeGoc)
+        let fontSizeAn = size.width * 15.0 / Constants.widthScreen
+        anThanLabel.font = UIFont.boldSystemFont(ofSize: fontSizeAn)
+        let fontSizeTV = size.width * 20.0 / Constants.widthScreen
+        tuviLabel.font = UIFont.boldSystemFont(ofSize: fontSizeTV)
+        let fontSao = size.width * 16.0 / Constants.widthScreen
+        saoTotLabel.font = UIFont.systemFont(ofSize: fontSao)
+        saoXauLabel.font = UIFont.systemFont(ofSize: fontSao)
+        trangSinhLabel.font = UIFont.boldSystemFont(ofSize: fontSizeAn)
+        heightViewTV.constant = size.height * 48.0 / Constants.heightScreen
     }
     
     func configurationData() {
