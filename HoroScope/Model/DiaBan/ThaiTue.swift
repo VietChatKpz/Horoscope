@@ -80,15 +80,20 @@ enum ThaiTue: Int {
         }
     }
     
-    static func generateArray(startWith startChi: ThaiTue) -> [ThaiTue] {
+    static func generateArray(startWith startChi: ThaiTue, reverse: Bool = false) -> [ThaiTue] {
         let length = 12
         let startIndex = startChi.rawValue
-        var cycleArray: [ThaiTue] = []
+        var resultArray: [ThaiTue] = []
         
         for i in 0..<length {
-            let index = (startIndex + i) % list.count
-            cycleArray.append(list[index])
+            let index: Int
+            if reverse {
+                index = (startIndex - i + list.count) % list.count
+            } else {
+                index = (startIndex + i) % list.count
+            }
+            resultArray.append(list[index])
         }
-        return cycleArray
+        return resultArray
     }
 }

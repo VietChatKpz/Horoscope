@@ -37,21 +37,14 @@ class DiaBanCell: UICollectionViewCell {
     
     func configurationData() {
         guard let diaBan = diaBan else { return }
+        
         cungViLabel.textColor = Constants.canChiColor(canIndex: 3, chiIndex: 2)
         cungViLabel.text = diaBan.cungViCan.nameFirst + "." + diaBan.cungVi.name
         tieuVanLabel.text = diaBan.tieuVan.name
         thangHanLabel.text = "T " + "\(diaBan.thangHan)"
-        let thanAttributedString = NSMutableAttributedString()
-        if diaBan.than == "" {
-            anThanLabel.text = diaBan.cungThan.name
-        }else {
-            let attributedString = NSAttributedString(string: diaBan.cungThan.name, attributes: [NSAttributedString.Key.foregroundColor: Constants.colorDefault])
-            let attributedString1 = NSAttributedString(string: diaBan.than, attributes: [NSAttributedString.Key.foregroundColor: NguHanhColor.Hoa.color])
-            thanAttributedString.append(attributedString)
-            thanAttributedString.append(attributedString1)
-            anThanLabel.attributedText = thanAttributedString
-        }
         cucLabel.text = "\(diaBan.cungCuc)"
+        
+        configurationAnThanLabel()
         let tuviAttributedString = NSMutableAttributedString()
         let saoTotString = NSMutableAttributedString()
         let saoXauString = NSMutableAttributedString()
@@ -203,6 +196,25 @@ class DiaBanCell: UICollectionViewCell {
         saoTotLabel.attributedText = saoTotString
         saoXauLabel.attributedText = saoXauString
     }
-
+    
+    private func configurationAnThanLabel() {
+        guard let diaBan = diaBan else { return }
+        let attributedString = NSMutableAttributedString()
+        if diaBan.than.isEmpty {
+            anThanLabel.text = diaBan.cungThan.name
+        }else {
+            let attributed = NSAttributedString(string: diaBan.cungThan.name, attributes: [NSAttributedString.Key.foregroundColor: Constants.colorDefault])
+            let attributed1 = NSAttributedString(string: diaBan.than, attributes: [NSAttributedString.Key.foregroundColor: NguHanhColor.Hoa.color])
+            attributedString.append(attributed)
+            attributedString.append(attributed1)
+            anThanLabel.attributedText = attributedString
+        }
+    }
+    
+    private func configurationTuViLabel(from items: DiaBan, id: Int) -> NSAttributedString {
+        let attributedString = NSMutableAttributedString()
+        let listItems = [items.cungTuVi, items.cungThienPhu] as [Any]
+        return attributedString
+    }
 }
 

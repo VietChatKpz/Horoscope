@@ -90,30 +90,20 @@ enum LocTon: Int {
     static let locTonStartList: [LocTon] = [.TuongQuan, .TieuHao, .LucSi, .BacSi, .PhucBinh, .DaiHao, .HyThan, .PhiLiem, .HyThan, .PhiLiem]
     static let locTonStartReversedList: [LocTon] = [.BenhPhu, .DaiHao, .QuanPhu, .BacSi, .ThanhLong, .TieuHao, .TauPhu, .PhiLiem, .TauPhu, .PhiLiem]
     
-    static func generateArray(startWith startChi: LocTon) -> [LocTon] {
+    static func generateArray(startWith startChi: LocTon, reverse: Bool = false) -> [LocTon] {
         let length = 12
         let startIndex = startChi.rawValue
-        var cycleArray: [LocTon] = []
+        var resultArray: [LocTon] = []
         
         for i in 0..<length {
-            let index = (startIndex + i) % list.count
-            cycleArray.append(list[index])
-        }
-        return cycleArray
-    }
-    
-    static func generateReversedArray(startWith startChi: LocTon) -> [LocTon] {
-        let length = 12
-        let startIndex = startChi.rawValue
-        var reversedArray: [LocTon] = []
-        
-        for i in 0..<length {
-            var index = (startIndex - i) % list.count
-            if index < 0 {
-                index += list.count
+            let index: Int
+            if reverse {
+                index = (startIndex - i + list.count) % list.count
+            } else {
+                index = (startIndex + i) % list.count
             }
-            reversedArray.append(list[index])
+            resultArray.append(list[index])
         }
-        return reversedArray
+        return resultArray
     }
 }

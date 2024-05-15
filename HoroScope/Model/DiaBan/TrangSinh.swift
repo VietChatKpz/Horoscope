@@ -53,31 +53,20 @@ enum TrangSinh: Int {
             return "Dưỡng"
         }
     }
-    
-    static func generateArray(startWith startChi: TrangSinh) -> [TrangSinh] {
+    static func generateArray(startWith startChi: TrangSinh, reverse: Bool = false) -> [TrangSinh] {
         let length = 12
         let startIndex = startChi.rawValue
-        var cycleArray: [TrangSinh] = []
+        var resultArray: [TrangSinh] = []
         
         for i in 0..<length {
-            let index = (startIndex + i) % list.count
-            cycleArray.append(list[index])
-        }
-        return cycleArray
-    }
-    
-    static func generateReversedArray(startWith startChi: TrangSinh) -> [TrangSinh] {
-        let length = 12
-        let startIndex = startChi.rawValue
-        var reversedArray: [TrangSinh] = []
-        
-        for i in 0..<length {
-            var index = (startIndex - i) % list.count
-            if index < 0 {
-                index += list.count
+            let index: Int
+            if reverse {
+                index = (startIndex - i + list.count) % list.count
+            } else {
+                index = (startIndex + i) % list.count
             }
-            reversedArray.append(list[index])
+            resultArray.append(list[index])
         }
-        return reversedArray
+        return resultArray
     }
 }

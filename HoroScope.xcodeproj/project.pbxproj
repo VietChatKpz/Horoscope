@@ -41,7 +41,6 @@
 		B3B1454A2BE635E400EE7EDB /* ThaiTue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B145492BE635E400EE7EDB /* ThaiTue.swift */; };
 		B3E1F5182BE9C36900B00991 /* LocTon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E1F5172BE9C36900B00991 /* LocTon.swift */; };
 		B3E7B4DD2BEE023D00E9C0E5 /* TuHoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B4DC2BEE023D00E9C0E5 /* TuHoa.swift */; };
-		B3E7B4DF2BEE289000E9C0E5 /* TrietTuan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B4DE2BEE288F00E9C0E5 /* TrietTuan.swift */; };
 		B3F725A42BF1C08200DF9871 /* ThienDiaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F725A32BF1C08200DF9871 /* ThienDiaViewController.xib */; };
 		B3F725A52BF1C08200DF9871 /* ThienDiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F725A22BF1C08200DF9871 /* ThienDiaViewController.swift */; };
 		B3F725A72BF2FFAC00DF9871 /* CustomLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F725A62BF2FFAC00DF9871 /* CustomLineView.swift */; };
@@ -86,7 +85,6 @@
 		B3B145492BE635E400EE7EDB /* ThaiTue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThaiTue.swift; sourceTree = "<group>"; };
 		B3E1F5172BE9C36900B00991 /* LocTon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocTon.swift; sourceTree = "<group>"; };
 		B3E7B4DC2BEE023D00E9C0E5 /* TuHoa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuHoa.swift; sourceTree = "<group>"; };
-		B3E7B4DE2BEE288F00E9C0E5 /* TrietTuan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrietTuan.swift; sourceTree = "<group>"; };
 		B3F725A22BF1C08200DF9871 /* ThienDiaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThienDiaViewController.swift; sourceTree = "<group>"; };
 		B3F725A32BF1C08200DF9871 /* ThienDiaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThienDiaViewController.xib; sourceTree = "<group>"; };
 		B3F725A62BF2FFAC00DF9871 /* CustomLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLineView.swift; sourceTree = "<group>"; };
@@ -223,7 +221,6 @@
 				B31CDF9E2BECC04100AFF9A3 /* SaoTuoi.swift */,
 				B31CDFA02BECCECE00AFF9A3 /* SaoThienCanTuoi.swift */,
 				B3E7B4DC2BEE023D00E9C0E5 /* TuHoa.swift */,
-				B3E7B4DE2BEE288F00E9C0E5 /* TrietTuan.swift */,
 			);
 			path = DiaBan;
 			sourceTree = "<group>";
@@ -393,7 +390,6 @@
 				B385F8BC2BDA4F8B009F8502 /* Constants.swift in Sources */,
 				26D55F462BD7A0EF00390E1F /* Can.swift in Sources */,
 				26D55F4E2BD7A41D00390E1F /* LaSo.swift in Sources */,
-				B3E7B4DF2BEE289000E9C0E5 /* TrietTuan.swift in Sources */,
 				26D55F422BD7A09A00390E1F /* SolarDate.swift in Sources */,
 				26D55F2D2BD600A800390E1F /* AppDelegate.swift in Sources */,
 				B3AE55D32BEA1E00008C3600 /* SaoThang.swift in Sources */,

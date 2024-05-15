@@ -47,8 +47,8 @@ class ThienDiaViewController: UIViewController {
             //an sao vong loc ton
             locTonList = LocTon.generateArray(startWith: LocTon.locTonStartList[lunar.yyTxt.can.rawValue])
         }else {
-            trangSinhList = TrangSinh.generateReversedArray(startWith: TrangSinh.trangSinhStartReversedList[cucIndex - 2])
-            locTonList = LocTon.generateReversedArray(startWith: LocTon.locTonStartReversedList[lunar.yyTxt.can.rawValue])
+            trangSinhList = TrangSinh.generateArray(startWith: TrangSinh.trangSinhStartReversedList[cucIndex - 2], reverse: true)
+            locTonList = LocTon.generateArray(startWith: LocTon.locTonStartReversedList[lunar.yyTxt.can.rawValue], reverse: true)
         }
         let vtTieuVan = Chi.listTieuVan[lunarChiIndex % 4]
         let chiIndex = Chi.generateArray(startWith: lunar.yyTxt.chi)[(12 - vtTieuVan) % 12]
@@ -460,46 +460,25 @@ extension ThienDiaViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: "DiaBanCell", for: indexPath) as! DiaBanCell
         let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "ThienBanCell", for: indexPath) as! ThienBanCell
-//        let diaBanIndex = [5,6,7,8,4,3,-1,9,10,2,1,0,11]
+        let diaBanIndex = [5,6,7,8,4,3,-1,9,10,2,1,0,11]
         if indexPath.row != 6 {
-//            cell1.diaBan = list[diaBanIndex[indexPath.row]]
+            cell1.diaBan = list[diaBanIndex[indexPath.row]]
             switch indexPath.row {
-            case 0:
-                cell1.diaBan = list[5]
-            case 1:
-                cell1.diaBan = list[6]
+            case 1, 10:
                 cell1.lineLeft.isHidden = true
                 cell1.lineRight.isHidden = true
-            case 2:
-                cell1.diaBan = list[7]
+            case 2, 11:
                 cell1.lineRight.isHidden = true
-            case 3:
-                cell1.diaBan = list[8]
-            case 4:
-                cell1.diaBan = list[4]
+            case 4, 7:
                 cell1.lineTop.isHidden = true
                 cell1.lineBottom.isHidden = true
-            case 5:
-                cell1.diaBan = list[3]
+            case 5, 8:
                 cell1.lineBottom.isHidden = true
-            case 7:
-                cell1.diaBan = list[9]
-                cell1.lineTop.isHidden = true
-                cell1.lineBottom.isHidden = true
-            case 8:
-                cell1.diaBan = list[10]
-                cell1.lineBottom.isHidden = true
-            case 9:
-                cell1.diaBan = list[2]
-            case 10:
-                cell1.diaBan = list[1]
-                cell1.lineLeft.isHidden = true
-                cell1.lineRight.isHidden = true
-            case 11:
-                cell1.diaBan = list[0]
-                cell1.lineRight.isHidden = true
             default:
-                cell1.diaBan = list[11]
+                cell1.lineLeft.isHidden = false
+                cell1.lineTop.isHidden = false
+                cell1.lineRight.isHidden = false
+                cell1.lineBottom.isHidden = false
             }
             return cell1
         } else {
