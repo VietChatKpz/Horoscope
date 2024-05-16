@@ -31,7 +31,8 @@ enum SaoThienCanTuoi: String {
         case .DuongPhu:
             return NguHanhColor.Moc.color
         case .VanTinh, .ThienKhoi, .ThienViet, .ThienQuan, .ThienPhuc:
-            return NguHanhColor.Hoa.color        }
+            return NguHanhColor.Hoa.color
+        }
     }
     
     var vitri: Int {

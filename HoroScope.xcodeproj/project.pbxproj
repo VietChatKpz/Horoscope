@@ -14,7 +14,6 @@
 		26D55F442BD7A0A700390E1F /* LunarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D55F432BD7A0A700390E1F /* LunarDate.swift */; };
 		26D55F462BD7A0EF00390E1F /* Can.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D55F452BD7A0EF00390E1F /* Can.swift */; };
 		26D55F4C2BD7A1BB00390E1F /* Chi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D55F4B2BD7A1BB00390E1F /* Chi.swift */; };
-		26D55F4E2BD7A41D00390E1F /* LaSo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D55F4D2BD7A41D00390E1F /* LaSo.swift */; };
 		26D55F502BD7A42A00390E1F /* ThienBan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D55F4F2BD7A42A00390E1F /* ThienBan.swift */; };
 		26D55F522BD7A43600390E1F /* DiaBan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D55F512BD7A43600390E1F /* DiaBan.swift */; };
 		26D55F572BD7A62500390E1F /* BanMenh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D55F562BD7A62500390E1F /* BanMenh.swift */; };
@@ -58,7 +57,6 @@
 		26D55F432BD7A0A700390E1F /* LunarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarDate.swift; sourceTree = "<group>"; };
 		26D55F452BD7A0EF00390E1F /* Can.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Can.swift; sourceTree = "<group>"; };
 		26D55F4B2BD7A1BB00390E1F /* Chi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chi.swift; sourceTree = "<group>"; };
-		26D55F4D2BD7A41D00390E1F /* LaSo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaSo.swift; sourceTree = "<group>"; };
 		26D55F4F2BD7A42A00390E1F /* ThienBan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThienBan.swift; sourceTree = "<group>"; };
 		26D55F512BD7A43600390E1F /* DiaBan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaBan.swift; sourceTree = "<group>"; };
 		26D55F562BD7A62500390E1F /* BanMenh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanMenh.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				26D55F542BD7A5CE00390E1F /* SubModel */,
-				26D55F4D2BD7A41D00390E1F /* LaSo.swift */,
 				26D55F532BD7A5BA00390E1F /* ThienBan */,
 				26D55F552BD7A5DA00390E1F /* DiaBan */,
 			);
@@ -389,7 +386,6 @@
 				26D55F442BD7A0A700390E1F /* LunarDate.swift in Sources */,
 				B385F8BC2BDA4F8B009F8502 /* Constants.swift in Sources */,
 				26D55F462BD7A0EF00390E1F /* Can.swift in Sources */,
-				26D55F4E2BD7A41D00390E1F /* LaSo.swift in Sources */,
 				26D55F422BD7A09A00390E1F /* SolarDate.swift in Sources */,
 				26D55F2D2BD600A800390E1F /* AppDelegate.swift in Sources */,
 				B3AE55D32BEA1E00008C3600 /* SaoThang.swift in Sources */,

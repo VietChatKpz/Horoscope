@@ -8,7 +8,7 @@
 import UIKit
 
 class DiaBanCell: UICollectionViewCell {
-
+    
     @IBOutlet private weak var cungViLabel: UILabel!
     @IBOutlet private weak var anThanLabel: UILabel!
     @IBOutlet private weak var cucLabel: UILabel!
@@ -38,15 +38,15 @@ class DiaBanCell: UICollectionViewCell {
     func fontSizeLabel() {
         let size = CGSize.getSafeAreaSize()
         let fontSizeGoc = size.width * 11.0 / Constants.widthScreen
+        let fontSizeAn = size.width * 15.0 / Constants.widthScreen
+        let fontSizeTV = size.width * 20.0 / Constants.widthScreen
+        let fontSao = size.width * 16.0 / Constants.widthScreen
         cungViLabel.font = UIFont.systemFont(ofSize: fontSizeGoc)
         cucLabel.font = UIFont.boldSystemFont(ofSize: fontSizeGoc)
         tieuVanLabel.font = UIFont.boldSystemFont(ofSize: fontSizeGoc)
         thangHanLabel.font = UIFont.boldSystemFont(ofSize: fontSizeGoc)
-        let fontSizeAn = size.width * 15.0 / Constants.widthScreen
         anThanLabel.font = UIFont.boldSystemFont(ofSize: fontSizeAn)
-        let fontSizeTV = size.width * 20.0 / Constants.widthScreen
         tuviLabel.font = UIFont.boldSystemFont(ofSize: fontSizeTV)
-        let fontSao = size.width * 16.0 / Constants.widthScreen
         saoTotLabel.font = UIFont.systemFont(ofSize: fontSao)
         saoXauLabel.font = UIFont.systemFont(ofSize: fontSao)
         trangSinhLabel.font = UIFont.boldSystemFont(ofSize: fontSizeAn)
@@ -54,15 +54,12 @@ class DiaBanCell: UICollectionViewCell {
     }
     
     func configurationData() {
-        
         guard let diaBan = diaBan else { return }
-        
         cungViLabel.textColor = Constants.canChiColor(canIndex: 3, chiIndex: 2)
         cungViLabel.text = diaBan.cungViCan.nameFirst + "." + diaBan.cungVi.name
         tieuVanLabel.text = diaBan.tieuVan.name
         thangHanLabel.text = "T " + "\(diaBan.thangHan)"
         cucLabel.text = "\(diaBan.cungCuc)"
-        
         configurationAnThanLabel()
         let tuviAttributedString = NSMutableAttributedString()
         let saoTotString = NSMutableAttributedString()

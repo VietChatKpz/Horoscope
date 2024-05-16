@@ -8,7 +8,7 @@
 import UIKit
 
 class ThienDiaViewController: UIViewController {
-
+    
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var ttView: UIView!
     
@@ -24,7 +24,7 @@ class ThienDiaViewController: UIViewController {
         setupCollectionView()
         configurationAnSao()
     }
-        
+    
     func configurationAnSao() {
         let lunar = LunarDate(solarDate: thienBan.solarBirthDate)
         let menhIndex = Menh(with: lunar.mm, chi: lunar.hhTxt.chi).chi.rawValue // Dựa vào tháng âm tìm mệnh thuộc vị trí nào trên lá số
@@ -97,7 +97,7 @@ class ThienDiaViewController: UIViewController {
         }
         return list
     }
-        
+    
     func anTuVi(lunar: LunarDate, list: [DiaBan]) {
         let dd = lunar.dd //Ngày âm năm sinh
         let mm = lunar.mm //Tháng âm năm sinh
@@ -249,59 +249,22 @@ class ThienDiaViewController: UIViewController {
         //Thiên Đồng - Tử vi
         //Thái Âm  - Thiên Phú
         //An bộ sao Tứ Hỏa
-        switch lunar.yyTxt.can {
-        case .Canh:
-            list[vtThaiDuong].tuHoa.append(.HoaLoc)
-            list[vtVuKhuc].tuHoa.append(.HoaQuyen)
-            list[vtThaiAm].tuHoa.append(.HoaKhoa)
-            list[vtThienDong].tuHoa.append(.HoaKy)
-        case .Tan:
-            list[vtCuMon].tuHoa.append(.HoaLoc)
-            list[vtThaiDuong].tuHoa.append(.HoaQuyen)
-            list[vtVanKhuc].tuHoa.append(.HoaKhoa)
-            list[vtVanXuong].tuHoa.append(.HoaKy)
-        case .Nham:
-            list[vtThienLuong].tuHoa.append(.HoaLoc)
-            list[vtTuVi].tuHoa.append(.HoaQuyen)
-            list[vtThienPhu].tuHoa.append(.HoaKhoa)
-            list[vtVuKhuc].tuHoa.append(.HoaKy)
-        case .Quy:
-            list[vtPhaQuan].tuHoa.append(.HoaLoc)
-            list[vtCuMon].tuHoa.append(.HoaQuyen)
-            list[vtThaiAm].tuHoa.append(.HoaKhoa)
-            list[vtThamLang].tuHoa.append(.HoaKy)
-        case .Giap:
-            list[vtLiemTrinh].tuHoa.append(.HoaLoc)
-            list[vtPhaQuan].tuHoa.append(.HoaQuyen)
-            list[vtVuKhuc].tuHoa.append(.HoaKhoa)
-            list[vtThaiDuong].tuHoa.append(.HoaKy)
-        case .At:
-            list[vtThienCo].tuHoa.append(.HoaLoc)
-            list[vtThienLuong].tuHoa.append(.HoaQuyen)
-            list[vtTuVi].tuHoa.append(.HoaKhoa)
-            list[vtThaiAm].tuHoa.append(.HoaKy)
-        case .Binh:
-            list[vtThienDong].tuHoa.append(.HoaLoc)
-            list[vtThienCo].tuHoa.append(.HoaQuyen)
-            list[vtVanXuong].tuHoa.append(.HoaKhoa)
-            list[vtLiemTrinh].tuHoa.append(.HoaKy)
-        case .Dinh:
-            list[vtThaiAm].tuHoa.append(.HoaLoc)
-            list[vtThienDong].tuHoa.append(.HoaQuyen)
-            list[vtThienCo].tuHoa.append(.HoaKhoa)
-            list[vtCuMon].tuHoa.append(.HoaKy)
-        case .Mau:
-            list[vtThamLang].tuHoa.append(.HoaLoc)
-            list[vtThaiAm].tuHoa.append(.HoaQuyen)
-            list[vtHuuBat].tuHoa.append(.HoaKhoa)
-            list[vtThienCo].tuHoa.append(.HoaKy)
-        case .Ky:
-            list[vtVuKhuc].tuHoa.append(.HoaLoc)
-            list[vtThamLang].tuHoa.append(.HoaQuyen)
-            list[vtThienLuong].tuHoa.append(.HoaKhoa)
-            list[vtVanKhuc].tuHoa.append(.HoaKy)
-        }
-        
+        let listVTTuHoa: [[Int]] = [
+            [vtThaiDuong, vtVuKhuc, vtThaiAm, vtThienDong],
+            [vtCuMon, vtThaiDuong, vtVanKhuc, vtVanXuong],
+            [vtThienLuong, vtTuVi, vtThienPhu, vtVanKhuc],
+            [vtPhaQuan, vtCuMon, vtThaiAm, vtThamLang],
+            [vtLiemTrinh, vtPhaQuan, vtVuKhuc, vtThaiDuong],
+            [vtThienCo, vtThienLuong, vtTuVi, vtThaiAm],
+            [vtThienDong, vtThienCo, vtVanXuong, vtLiemTrinh],
+            [vtThaiAm, vtThienDong, vtThienCo, vtCuMon],
+            [vtThamLang, vtThaiAm, vtHuuBat, vtThienCo],
+            [vtVuKhuc, vtThamLang, vtThienLuong, vtVuKhuc]
+        ]
+        list[listVTTuHoa[yyCanIndex][0]].tuHoa.append(.HoaLoc)
+        list[listVTTuHoa[yyCanIndex][1]].tuHoa.append(.HoaQuyen)
+        list[listVTTuHoa[yyCanIndex][2]].tuHoa.append(.HoaKhoa)
+        list[listVTTuHoa[yyCanIndex][3]].tuHoa.append(.HoaKy)
         addLabel(lunar: lunar)
     }
 }
