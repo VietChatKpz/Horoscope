@@ -55,6 +55,19 @@ class Constants {
     static let colorButtonAlpha = UIColor.hexStringToUIColor(hex: "D83842").withAlphaComponent(0.3)
     static let colorBorder = UIColor.hexStringToUIColor(hex: "D83842").withAlphaComponent(0.3).cgColor
     static let colorDefault = UIColor.hexStringToUIColor(hex: "161616")
+    
+    static func generateArray<T: CaseIterable & RawRepresentable>(startWith startValue: T, reverse: Bool = false) -> [T] where T.RawValue == Int {
+        let length = 12
+        let count = T.allCases.count
+        let startIndex = startValue.rawValue
+        var cycleArray: [T] = []
+        
+        for i in 0..<length {
+            let index = reverse ? (startIndex - i + count) % count : (startIndex + i) % count
+            cycleArray.append(T(rawValue: index)!)
+        }
+        return cycleArray
+    }
 }
 
 extension UIColor {

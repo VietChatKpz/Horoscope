@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Can: Int {
+enum Can: Int, CaseIterable {
     case Canh = 0
     case Tan = 1
     case Nham = 2
@@ -47,17 +47,9 @@ enum Can: Int {
     static let list: [Can] = [.Canh, .Tan, .Nham, .Quy, .Giap, .At, .Binh, .Dinh, .Mau, .Ky]
     
     static let listStart: [Can] = [.Mau, .Canh, .Nham, .Giap, .Binh]
-    
+
     static func generateArray(startWith startCan: Can) -> [Can] {
-        let length = 12
-        let startIndex = startCan.rawValue
-        var cycleArray: [Can] = []
-        
-        for i in 0..<length {
-            let index = (startIndex + i) % list.count
-            cycleArray.append(list[index])
-        }
-        return cycleArray
+        return Constants.generateArray(startWith: startCan)
     }
     
     var index: Int {

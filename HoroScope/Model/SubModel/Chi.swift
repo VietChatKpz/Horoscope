@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Chi: Int {
+enum Chi: Int, CaseIterable {
     case Ti = 0
     case Suu = 1
     case Dan = 2
@@ -29,16 +29,9 @@ enum Chi: Int {
     static let listStartLinhTinh: [Chi] = [.Tuat, .Tuat, .Mao, .Tuat]
     static let listTieuVan: [Int] = [10,7,4,1]
     
+    
     static func generateArray(startWith startChi: Chi, reverse: Bool = false) -> [Chi] {
-        let length = 12
-        let startIndex = startChi.rawValue
-        var resultArray: [Chi] = []
-        
-        for i in 0..<length {
-            let index = reverse ? (startIndex - i + list.count) % list.count : (startIndex + i) % list.count
-            resultArray.append(list[index])
-        }
-        return resultArray
+        return Constants.generateArray(startWith: startChi, reverse: reverse)
     }
     
     var name: String {

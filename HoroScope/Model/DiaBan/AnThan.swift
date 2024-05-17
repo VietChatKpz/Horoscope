@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum AnThan: Int {
+enum AnThan: Int, CaseIterable {
     case Menh = 0
     case PhuMau = 1
     case PhucDuc = 2
@@ -24,15 +24,7 @@ enum AnThan: Int {
     static let list: [AnThan] = [.Menh, .PhuMau, .PhucDuc, .DienTrach, .QuanLoc, .NoBoc, .ThienDi, .TatAch, .TaiBach, .TuTuc, .TheThiep, .HuynhDe]
     
     static func generateArray(startWith startChi: AnThan) -> [AnThan] {
-        let length = 12
-        let startIndex = startChi.rawValue
-        var cycleArray: [AnThan] = []
-        
-        for i in 0..<length {
-            let index = (startIndex + i) % list.count
-            cycleArray.append(list[index])
-        }
-        return cycleArray
+        return Constants.generateArray(startWith: startChi)
     }
     
     var name: String {

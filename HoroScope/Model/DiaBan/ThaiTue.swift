@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum ThaiTue: Int {
+enum ThaiTue: Int, CaseIterable {
     case ThaiTue = 0
     case ThieuDuong = 1
     case TangMon = 2
@@ -81,14 +81,6 @@ enum ThaiTue: Int {
     }
     
     static func generateArray(startWith startChi: ThaiTue, reverse: Bool = false) -> [ThaiTue] {
-        let length = 12
-        let startIndex = startChi.rawValue
-        var resultArray: [ThaiTue] = []
-        
-        for i in 0..<length {
-            let index = reverse ? (startIndex - i + list.count) % list.count : (startIndex + i) % list.count
-            resultArray.append(list[index])
-        }
-        return resultArray
+        return Constants.generateArray(startWith: startChi, reverse: reverse)
     }
 }

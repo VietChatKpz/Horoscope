@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TrangSinh: Int {
+enum TrangSinh: Int, CaseIterable {
     case TrangSinh = 0
     case MocDuc = 1
     case QuanDoi = 2
@@ -54,14 +54,6 @@ enum TrangSinh: Int {
         }
     }
     static func generateArray(startWith startChi: TrangSinh, reverse: Bool = false) -> [TrangSinh] {
-        let length = 12
-        let startIndex = startChi.rawValue
-        var resultArray: [TrangSinh] = []
-        
-        for i in 0..<length {
-            let index = reverse ? (startIndex - i + list.count) % list.count : (startIndex + i) % list.count
-            resultArray.append(list[index])
-        }
-        return resultArray
+        return Constants.generateArray(startWith: startChi, reverse: reverse)
     }
 }
