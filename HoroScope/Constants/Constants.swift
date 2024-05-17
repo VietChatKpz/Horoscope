@@ -39,22 +39,6 @@ class Constants {
         let total = (canIndex + chiIndex) % Constants.nguHanhColor.count
         let color = Constants.nguHanhColor[total]
         return color.color
-//        if total > 5 {
-//            total = total - 5
-//        }
-//        if total == 1 {
-//            return Constants.kimColor
-//        }else if total == 2 {
-//            return Constants.thuyColor
-//        }else if total == 3 {
-//            return Constants.hoaColor
-//        }else if total == 4 {
-//            return Constants.thoColor
-//        }else if total == 5 {
-//            return Constants.mocColor
-//        }else {
-//            return .cyan
-//        }
     }
     
     static func labelColor(canIndex: Int, chiIndex: Int, text: String) -> UILabel {

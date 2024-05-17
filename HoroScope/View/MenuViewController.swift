@@ -9,7 +9,7 @@ import UIKit
 import MBRadioButton
 
 class MenuViewController: UIViewController {
-
+    
     @IBOutlet private weak var nameTF: UITextField!
     @IBOutlet private weak var yyTF: UITextField!
     @IBOutlet private weak var mmTF: UITextField!
@@ -25,20 +25,21 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         configuration()
     }
     @IBAction func onClick(_ sender: Any) {
         guard let name = nameTF.text, !name.isEmpty,
-        let yy = yyTF.text, !yy.isEmpty,
-        let mm = mmTF.text, !mm.isEmpty,
-        let dd = ddTF.text, !dd.isEmpty,
-        let h = hTF.text, !h.isEmpty,
-        let m = mTF.text, !m.isEmpty else { return }
-        
-        let vc = ThienDiaViewController()
-        vc.thienBan = ThienBan(solarBirthDate: SolarDate(dd: Int(dd) ?? 0, mm: Int(mm) ?? 0, yy: Int(yy) ?? 0, hour: Int(h) ?? 0, minute: Int(m) ?? 0), name: name, sex: sexBool)
-        navigationController?.pushViewController(vc, animated: true)
+              let yy = yyTF.text, !yy.isEmpty,
+              let mm = mmTF.text, !mm.isEmpty,
+              let dd = ddTF.text, !dd.isEmpty,
+              let h = hTF.text, !h.isEmpty,
+              let m = mTF.text, !m.isEmpty else { return }
+        if isValidDate(Int(dd) ?? 0, Int(mm) ?? 0, Int(yy) ?? 0) {
+            let vc = ThienDiaViewController()
+            vc.thienBan = ThienBan(solarBirthDate: SolarDate(dd: Int(dd) ?? 0, mm: Int(mm) ?? 0, yy: Int(yy) ?? 0, hour: Int(h) ?? 0, minute: Int(m) ?? 0), name: name, sex: sexBool)
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
 }
@@ -69,6 +70,19 @@ extension MenuViewController {
         groupContainer.delegate = self
         groupContainer.selectedButton = sexBool ? namBT: nuBT
     }
+    
+    func isValidDate(_ day: Int, _ month: Int, _ year: Int) -> Bool {
+        let calendar = Calendar.current
+        guard let date = calendar.date(from: DateComponents(year: year, month: month, day: day)) else {
+            return false
+        }
+        guard calendar.component(.year, from: date) == year &&
+                calendar.component(.month, from: date) == month &&
+                calendar.component(.day, from: date) == day else {
+            return false
+        }
+        return true
+    }
 }
 
 extension MenuViewController: UITextFieldDelegate {
@@ -88,7 +102,7 @@ extension MenuViewController: UITextFieldDelegate {
         let h = (hTF.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         let m = (mTF.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         
-        button.backgroundColor = name || yy || mm || dd || h || m ? Constants.colorButtonAlpha : Constants.colorButton
+        button.backgroundColor = name || yy || mm || dd || h || m ? Constants.colorButtonAlpha : isValidDate(Int(ddTF.text ?? "") ?? 0, Int(mmTF.text ?? "") ?? 0, Int(yyTF.text ?? "") ?? 0) ? Constants.colorButton : Constants.colorButtonAlpha
         
     }
 }

@@ -56,7 +56,7 @@ class DiaBanCell: UICollectionViewCell {
     func configurationData() {
         guard let diaBan = diaBan else { return }
         cungViLabel.textColor = Constants.canChiColor(canIndex: 3, chiIndex: 2)
-        cungViLabel.text = diaBan.cungViCan.nameFirst + "." + diaBan.cungVi.name
+        cungViLabel.text = "\(diaBan.cungViCan.name.first!)" + "." + diaBan.cungVi.name
         tieuVanLabel.text = diaBan.tieuVan.name
         thangHanLabel.text = "T " + "\(diaBan.thangHan)"
         cucLabel.text = "\(diaBan.cungCuc)"
@@ -66,12 +66,12 @@ class DiaBanCell: UICollectionViewCell {
         let saoXauString = NSMutableAttributedString()
         for i in diaBan.cungTuVi {
             let textColor = i.color
-            let attributedString = NSAttributedString(string: "\(i.name) (\(i.dacTinh[diaBan.id]))\n", attributes: [NSAttributedString.Key.foregroundColor: textColor])
+            let attributedString = NSAttributedString(string: "\(TuVi.name[i]!) (\(TuVi.dacTinh[i]![diaBan.id]))\n", attributes: [NSAttributedString.Key.foregroundColor: textColor])
             tuviAttributedString.append(attributedString)
         }
         for i in diaBan.cungThienPhu {
             let textColor = i.color
-            let attributedString = NSAttributedString(string: " \(i.name) (\(i.dacTinh[diaBan.id]))", attributes: [NSAttributedString.Key.foregroundColor: textColor])
+            let attributedString = NSAttributedString(string: " \(i.name) (\(ThienPhu.dacTinh[i]![diaBan.id]))", attributes: [NSAttributedString.Key.foregroundColor: textColor])
             tuviAttributedString.append(attributedString)
         }
         if diaBan.locTon.rawValue == 0 {

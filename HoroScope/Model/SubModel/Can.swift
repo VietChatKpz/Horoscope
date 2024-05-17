@@ -18,22 +18,6 @@ enum Can: Int {
     case Dinh = 7
     case Mau = 8
     case Ky = 9
-        
-    static let list: [Can] = [.Canh, .Tan, .Nham, .Quy, .Giap, .At, .Binh, .Dinh, .Mau, .Ky]
-    
-    static let listStart: [Can] = [.Mau, .Canh, .Nham, .Giap, .Binh]
-    
-    static func generateArray(startWith startCan: Can) -> [Can] {
-        let length = 12
-        let startIndex = startCan.rawValue
-        var cycleArray: [Can] = []
-        
-        for i in 0..<length {
-            let index = (startIndex + i) % list.count
-            cycleArray.append(list[index])
-        }
-        return cycleArray
-    }
     
     var name: String {
         switch self {
@@ -59,30 +43,21 @@ enum Can: Int {
             return "Kỷ"
         }
     }
+        
+    static let list: [Can] = [.Canh, .Tan, .Nham, .Quy, .Giap, .At, .Binh, .Dinh, .Mau, .Ky]
     
-    var nameFirst: String {
-        switch self {
-        case .Canh:
-            return "C"
-        case .Tan:
-            return "T"
-        case .Nham:
-            return "N"
-        case .Quy:
-            return "Q"
-        case .Giap:
-            return "G"
-        case .At:
-            return "A"
-        case .Binh:
-            return "B"
-        case .Dinh:
-            return "D"
-        case .Mau:
-            return "M"
-        case .Ky:
-            return "K"
+    static let listStart: [Can] = [.Mau, .Canh, .Nham, .Giap, .Binh]
+    
+    static func generateArray(startWith startCan: Can) -> [Can] {
+        let length = 12
+        let startIndex = startCan.rawValue
+        var cycleArray: [Can] = []
+        
+        for i in 0..<length {
+            let index = (startIndex + i) % list.count
+            cycleArray.append(list[index])
         }
+        return cycleArray
     }
     
     var index: Int {
@@ -100,28 +75,3 @@ enum Can: Int {
         }
     }
 }
-
-//    func nguHanh() -> String {
-//        switch self {
-//        case .Canh:
-//            return "K"
-//        case .Tan:
-//            return "K"
-//        case .Nham:
-//            return "T"
-//        case .Quy:
-//            return "T"
-//        case .Giap:
-//            return "M"
-//        case .At:
-//            return "M"
-//        case .Binh:
-//            return "H"
-//        case .Dinh:
-//            return "H"
-//        case .Mau:
-//            return "O"
-//        case .Ky:
-//            return "O"
-//        }
-//    }

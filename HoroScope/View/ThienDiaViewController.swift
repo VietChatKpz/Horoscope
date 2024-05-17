@@ -201,15 +201,9 @@ class ThienDiaViewController: UIViewController {
         list[(thanIndex + yyIndex) > 11 ? (thanIndex + yyIndex) - 12 : (thanIndex + yyIndex)].saoKhac.append(.ThienTho)
         let vitriThaiTue = (yyIndex - mm + (hIndex + 1))
         list[vitriThaiTue < -11 ? (vitriThaiTue % 12) + 12 : (vitriThaiTue + 12) > 11 ? vitriThaiTue % 12 : vitriThaiTue + 12].saoKhac.append(.DauQuan)
-        var listChiHT = Chi.generateArray(startWith: .Dan)
-        var listChiLT = Chi.generateArray(startWith: .Dan)
-        if (thienBan.sex && isYYTxtCan) || (!thienBan.sex && !isYYTxtCan) {
-            listChiHT = Chi.generateArray(startWith: Chi.listStartHoaTinh[yyIndex % 4])
-            listChiLT = Chi.generateReversedArray(startWith: Chi.listStartLinhTinh[yyIndex % 4])
-        }else {
-            listChiHT = Chi.generateReversedArray(startWith: Chi.listStartHoaTinh[yyIndex % 4])
-            listChiLT = Chi.generateArray(startWith: Chi.listStartLinhTinh[yyIndex % 4])
-        }
+        let listChiHT = (thienBan.sex && isYYTxtCan) || (!thienBan.sex && !isYYTxtCan) ?  Chi.generateArray(startWith: Chi.listStartHoaTinh[yyIndex % 4]) : Chi.generateArray(startWith: Chi.listStartHoaTinh[yyIndex % 4], reverse: true)
+        let listChiLT = (thienBan.sex && isYYTxtCan) || (!thienBan.sex && !isYYTxtCan) ? Chi.generateArray(startWith: Chi.listStartLinhTinh[yyIndex % 4], reverse: true) : Chi.generateArray(startWith: Chi.listStartLinhTinh[yyIndex % 4])
+
         list[listChiHT[hIndex].rawValue].saoKhac.append(.HoaTinh)
         list[listChiLT[hIndex].rawValue].saoKhac.append(.LinhTinh)
         

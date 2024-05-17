@@ -53,33 +53,23 @@ enum ThienPhu: Int {
         }
     }
     
-    var dacTinh: [String] {
-        switch self {
-        case .ThienPhu:
-            return ["M","B","M","B","V","Đ","M","Đ","M","B","V","H"]
-        case .ThaiAm:
-            return ["V", "Đ", "H", "H", "H", "H", "H", "Đ", "V", "M",
-                    "M", "M"]
-        case .ThamLang:
-            return ["H", "M", "Đ", "H", "V", "H", "H", "M", "Đ", "H",
-                    "V", "H"]
-        case .CuMon:
-            return ["V", "H", "V", "M", "H", "H", "V", "H", "Đ", "M", "H",
-                    "Đ"]
-        case .ThienTuong:
-            return ["V", "Đ", "M", "H", "V", "Đ", "V", "Đ", "M", "H",
-                    "V", "Đ"]
-        case .ThienLuong:
-            return ["V", "Đ", "V", "V", "M", "H", "M", "Đ", "V", "H",
-                    "M", "H"]
-        case .ThatSat:
-            return ["M", "Đ", "M", "H", "H", "V", "M", "Đ", "M", "H",
-                    "H", "V"]
-        case .PhaQuan:
-            return ["M", "V", "H", "H", "Đ", "H", "M", "V", "H", "H",
+    static let dacTinh: [ThienPhu : [String]] = [
+        .ThienPhu : ["M","B","M","B","V","Đ","M","Đ","M","B","V","H"],
+        .ThaiAm : ["V", "Đ", "H", "H", "H", "H", "H", "Đ", "V", "M",
+                   "M", "M"],
+        .ThamLang : ["H", "M", "Đ", "H", "V", "H", "H", "M", "Đ", "H",
+                     "V", "H"],
+        .CuMon : ["V", "H", "V", "M", "H", "H", "V", "H", "Đ", "M", "H",
+                   "Đ"],
+        .ThienTuong : ["V", "Đ", "M", "H", "V", "Đ", "V", "Đ", "M", "H",
+                       "V", "Đ"],
+        .ThienLuong : ["V", "Đ", "V", "V", "M", "H", "M", "Đ", "V", "H",
+                       "M", "H"],
+        .ThatSat : ["M", "Đ", "M", "H", "H", "V", "M", "Đ", "M", "H",
+                    "H", "V"],
+        .PhaQuan : ["M", "V", "H", "H", "Đ", "H", "M", "V", "H", "H",
                     "Đ", "H"]
-        }
-    }
+    ]
 }
 
 

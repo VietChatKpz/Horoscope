@@ -75,72 +75,18 @@ class Cuc {
     let cuc: CucType
     
     init(menh: Chi, can: Can) {
-        switch can {
-        case .Giap, .Ky:
-            switch menh {
-            case .Ti, .Suu:
-                cuc = .ThuyNhiCuc
-            case .Dan, .Mao, .Tuat, .Hoi:
-                cuc = .HoaLucCuc
-            case .Thin, .Ty:
-                cuc = .MocTamCuc
-            case .Ngo, .Mui:
-                cuc = .ThoNguCuc
-            case .Than, .Dau:
-                cuc = .KimTuCuc
-            }
-        case .At, .Canh:
-            switch menh {
-            case .Ti, .Suu:
-                cuc = .HoaLucCuc
-            case .Dan, .Mao, .Tuat, .Hoi:
-                cuc = .ThoNguCuc
-            case .Thin, .Ty:
-                cuc = .KimTuCuc
-            case .Ngo, .Mui:
-                cuc = .MocTamCuc
-            case .Than, .Dau:
-                cuc = .ThuyNhiCuc
-            }
-        case .Binh, .Tan:
-            switch menh {
-            case .Ti, .Suu:
-                cuc = .ThoNguCuc
-            case .Dan, .Mao, .Tuat, .Hoi:
-                cuc = .MocTamCuc
-            case .Thin, .Ty:
-                cuc = .ThuyNhiCuc
-            case .Ngo, .Mui:
-                cuc = .KimTuCuc
-            case .Than, .Dau:
-                cuc = .HoaLucCuc
-            }
-        case .Dinh, .Nham:
-            switch menh {
-            case .Ti, .Suu:
-                cuc = .MocTamCuc
-            case .Dan, .Mao, .Tuat, .Hoi:
-                cuc = .KimTuCuc
-            case .Thin, .Ty:
-                cuc = .HoaLucCuc
-            case .Ngo, .Mui:
-                cuc = .ThuyNhiCuc
-            case .Than, .Dau:
-                cuc = .ThoNguCuc
-            }
-        case .Mau, .Quy:
-            switch menh {
-            case .Ti, .Suu:
-                cuc = .KimTuCuc
-            case .Dan, .Mao, .Tuat, .Hoi:
-                cuc = .ThuyNhiCuc
-            case .Thin, .Ty:
-                cuc = .ThoNguCuc
-            case .Ngo, .Mui:
-                cuc = .HoaLucCuc
-            case .Than, .Dau:
-                cuc = .MocTamCuc
-            }
-        }
+        let menhCan: [Can : [Chi : CucType]] = [
+            .Canh : [.Ti: .HoaLucCuc, .Suu: .HoaLucCuc, .Dan: .ThoNguCuc, .Mao: .ThoNguCuc, .Thin: .KimTuCuc, .Ty: .KimTuCuc, .Ngo: .MocTamCuc, .Mui: .MocTamCuc, .Than: .ThuyNhiCuc, .Dau: .ThuyNhiCuc, .Tuat: .ThoNguCuc, .Hoi: .ThoNguCuc],
+            .Tan : [.Ti: .ThoNguCuc, .Suu: .ThoNguCuc, .Dan: .MocTamCuc, .Mao: .MocTamCuc, .Thin: .ThuyNhiCuc, .Ty: .ThuyNhiCuc, .Ngo: .KimTuCuc, .Mui: .KimTuCuc, .Than: .HoaLucCuc, .Dau: .HoaLucCuc, .Tuat: .MocTamCuc, .Hoi: .MocTamCuc],
+            .Nham : [.Ti: .MocTamCuc, .Suu: .MocTamCuc, .Dan: .KimTuCuc, .Mao: .KimTuCuc, .Thin: .HoaLucCuc, .Ty: .HoaLucCuc, .Ngo: .ThuyNhiCuc, .Mui: .ThuyNhiCuc, .Than: .ThoNguCuc, .Dau: .ThoNguCuc, .Tuat: .KimTuCuc, .Hoi: .KimTuCuc],
+            .Quy : [.Ti: .KimTuCuc, .Suu: .KimTuCuc, .Dan: .ThuyNhiCuc, .Mao: .ThuyNhiCuc, .Thin: .ThoNguCuc, .Ty: .ThoNguCuc, .Ngo: .HoaLucCuc, .Mui: .HoaLucCuc, .Than: .MocTamCuc, .Dau: .MocTamCuc, .Tuat: .ThuyNhiCuc, .Hoi: .ThuyNhiCuc],
+            .Giap : [.Ti: .ThuyNhiCuc, .Suu: .ThuyNhiCuc, .Dan: .HoaLucCuc, .Mao: .HoaLucCuc, .Thin: .MocTamCuc, .Ty: .MocTamCuc, .Ngo: .ThoNguCuc, .Mui: .ThoNguCuc, .Than: .KimTuCuc, .Dau: .KimTuCuc, .Tuat: .HoaLucCuc, .Hoi: .HoaLucCuc],
+            .At : [.Ti: .HoaLucCuc, .Suu: .HoaLucCuc, .Dan: .ThoNguCuc, .Mao: .ThoNguCuc, .Thin: .KimTuCuc, .Ty: .KimTuCuc, .Ngo: .MocTamCuc, .Mui: .MocTamCuc, .Than: .ThuyNhiCuc, .Dau: .ThuyNhiCuc, .Tuat: .ThoNguCuc, .Hoi: .ThoNguCuc],
+            .Binh : [.Ti: .ThoNguCuc, .Suu: .ThoNguCuc, .Dan: .MocTamCuc, .Mao: .MocTamCuc, .Thin: .ThuyNhiCuc, .Ty: .ThuyNhiCuc, .Ngo: .KimTuCuc, .Mui: .KimTuCuc, .Than: .HoaLucCuc, .Dau: .HoaLucCuc, .Tuat: .MocTamCuc, .Hoi: .MocTamCuc],
+            .Dinh : [.Ti: .MocTamCuc, .Suu: .MocTamCuc, .Dan: .KimTuCuc, .Mao: .KimTuCuc, .Thin: .HoaLucCuc, .Ty: .HoaLucCuc, .Ngo: .ThuyNhiCuc, .Mui: .ThuyNhiCuc, .Than: .ThoNguCuc, .Dau: .ThoNguCuc, .Tuat: .KimTuCuc, .Hoi: .KimTuCuc],
+            .Mau : [.Ti: .KimTuCuc, .Suu: .KimTuCuc, .Dan: .ThuyNhiCuc, .Mao: .ThuyNhiCuc, .Thin: .ThoNguCuc, .Ty: .ThoNguCuc, .Ngo: .HoaLucCuc, .Mui: .HoaLucCuc, .Than: .MocTamCuc, .Dau: .MocTamCuc, .Tuat: .ThuyNhiCuc, .Hoi: .ThuyNhiCuc],
+            .Ky : [.Ti: .ThuyNhiCuc, .Suu: .ThuyNhiCuc, .Dan: .HoaLucCuc, .Mao: .HoaLucCuc, .Thin: .MocTamCuc, .Ty: .MocTamCuc, .Ngo: .ThoNguCuc, .Mui: .ThoNguCuc, .Than: .KimTuCuc, .Dau: .KimTuCuc, .Tuat: .HoaLucCuc, .Hoi: .HoaLucCuc],
+        ]
+        cuc = menhCan[can]![menh]!
     }
 }

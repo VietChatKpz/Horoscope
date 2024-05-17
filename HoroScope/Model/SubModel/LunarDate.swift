@@ -20,7 +20,7 @@ class LunarDate {
     let hhTxt: CanChi
     
     init(solarDate: SolarDate) {
-        let arr = LunarDate.convertLunarHour(solarDate: solarDate)
+        let arr = LunarDate.convertSolar2LunarHours(solarDate: solarDate)
         dd = arr[0]
         mm = arr[1]
         yy = arr[2]
@@ -39,7 +39,7 @@ extension LunarDate {
     static func iFloor(inp: Double) -> Int {
         return Int(floor(inp))
     }
-
+    
     static func jdFromDate(dd: Int, mm: Int, yy: Int) -> Int {
         let a = iFloor(inp: (14 - Double(mm)) / 12)
         let y = yy+4800-a
@@ -51,7 +51,7 @@ extension LunarDate {
         //jd = jd - 1721425
         return jd
     }
-
+    
     static func getNewMoonDay(k: Double, timeZone: Double) -> Int {
         let PI = Double.pi
         let dr = PI / 180.0
@@ -99,7 +99,7 @@ extension LunarDate {
         L -= 360 * floor(L / 360) // Normalize to (0, 360)
         return L
     }
-
+    
     static func getSunLongitude(dayNumber: Int, timeZone: Double) -> Double {
         return SunLongitude(Double(dayNumber) - 0.5 - timeZone/24)
     }
@@ -128,32 +128,17 @@ extension LunarDate {
         return i - 1
     }
     
-    static func convertLunarHour(solarDate: SolarDate) -> [Int] {
+    static func convertSolar2LunarHours(solarDate: SolarDate) -> [Int] {
         let timeZone = 7.0
-        var dd = solarDate.dd
-        var mm = solarDate.mm
-        var yy = solarDate.yy
-        let hour = solarDate.hour
         let calendar = Calendar.current
-        var components = DateComponents()
-        components.day = dd
-        components.month = mm
-        components.year = yy
-        components.hour = hour
-        let currentDate = calendar.date(from: components)
-        if let current = currentDate {
-            if hour >= 23 {
-                if let newDay = calendar.date(byAdding: .day, value: 1, to: current) {
-                    let newComponents = calendar.dateComponents([.day, .month, .year], from: newDay)
-                    dd = newComponents.day ?? 0
-                    mm = newComponents.month ?? 0
-                    yy = newComponents.year ?? 0
-                    let newSolarDate = SolarDate(dd: dd, mm: mm, yy: yy, hour: 0, minute: 0)
-                    return convertSolar2Lunar(solarDate: newSolarDate, timeZone: timeZone)
-                }
-            } else {
-                return convertSolar2Lunar(solarDate: solarDate, timeZone: timeZone)
+        if let currentDate = calendar.date(from: DateComponents(year: solarDate.yy, month: solarDate.mm, day: solarDate.dd, hour: solarDate.hour)) {
+            if solarDate.hour >= 23 {
+                let newDay = calendar.date(byAdding: .day, value: 1, to: currentDate)!
+                let newComponents = calendar.dateComponents([.day, .month, .year], from: newDay)
+                let newSolarDate = SolarDate(dd: newComponents.day!, mm: newComponents.month!, yy: newComponents.year!, hour: 0, minute: 0)
+                return convertSolar2Lunar(solarDate: newSolarDate, timeZone: timeZone)
             }
+            return convertSolar2Lunar(solarDate: solarDate, timeZone: timeZone)
         }
         return []
     }

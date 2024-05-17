@@ -59,12 +59,7 @@ enum TrangSinh: Int {
         var resultArray: [TrangSinh] = []
         
         for i in 0..<length {
-            let index: Int
-            if reverse {
-                index = (startIndex - i + list.count) % list.count
-            } else {
-                index = (startIndex + i) % list.count
-            }
+            let index = reverse ? (startIndex - i + list.count) % list.count : (startIndex + i) % list.count
             resultArray.append(list[index])
         }
         return resultArray

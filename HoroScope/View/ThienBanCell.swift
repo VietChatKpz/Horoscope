@@ -34,11 +34,9 @@ class ThienBanCell: UICollectionViewCell {
         let date = Date().toYear
         let solar = thienBan.solarBirthDate
         let lunar = LunarDate(solarDate: solar)
-        var string: String = "Âm"
-        if lunar.yyTxt.can.rawValue % 2 == 0 {
-            string = "Dương"
-        }
-        string = thienBan.sex ? string + " Nam" : " Nữ"
+        var string: String = ""
+        string = lunar.yyTxt.can.rawValue % 2 == 0 ? "Dương" : "Âm"
+        string += thienBan.sex ? " Nam" : " Nữ"
         let colorYY = Constants.canChiColor(canIndex: lunar.yyTxt.can.rawValue, chiIndex: lunar.yyTxt.chi.rawValue)
         let colorMM = Constants.canChiColor(canIndex: lunar.mmTxt.can.rawValue, chiIndex: lunar.mmTxt.chi.rawValue)
         let colorDD = Constants.canChiColor(canIndex: lunar.ddTxt.can.rawValue, chiIndex: lunar.ddTxt.chi.rawValue)
@@ -68,7 +66,7 @@ class ThienBanCell: UICollectionViewCell {
         let arrCung: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: fontSize), .foregroundColor: CungPhi.findCungPhi(lunar.yy, sex: thienBan.sex).color]
         attrStringCenter.append(NSAttributedString(string: "\(Cuc(menh: Menh(with: lunar.mm, chi: lunar.hhTxt.chi).chi, can: lunar.yyTxt.can).cuc.name) \n", attributes: arrCuc))
         attrStringCenter.append(NSAttributedString(string: "\(CungPhi.findCungPhi(lunar.yy, sex: thienBan.sex).rawValue) \n", attributes: arrCung))
-        attrStringCenter.append(NSAttributedString(string: "\(lunar.yyTxt.chi.menhChu) \n\(lunar.yyTxt.chi.thanChu)", attributes: arrTuoi))
+        attrStringCenter.append(NSAttributedString(string: "\(Chi.menhThanChu[lunar.yyTxt.chi]![0]) \n\(Chi.menhThanChu[lunar.yyTxt.chi]![1])", attributes: arrTuoi))
         leftTV.text = """
           Họ tên:
           Năm sinh:

@@ -29,31 +29,16 @@ enum Chi: Int {
     static let listStartLinhTinh: [Chi] = [.Tuat, .Tuat, .Mao, .Tuat]
     static let listTieuVan: [Int] = [10,7,4,1]
     
-    static func generateArray(startWith startChi: Chi) -> [Chi] {
+    static func generateArray(startWith startChi: Chi, reverse: Bool = false) -> [Chi] {
         let length = 12
         let startIndex = startChi.rawValue
-        var cycleArray: [Chi] = []
+        var resultArray: [Chi] = []
         
         for i in 0..<length {
-            let index = (startIndex + i) % list.count
-            cycleArray.append(list[index])
+            let index = reverse ? (startIndex - i + list.count) % list.count : (startIndex + i) % list.count
+            resultArray.append(list[index])
         }
-        return cycleArray
-    }
-    
-    static func generateReversedArray(startWith startChi: Chi) -> [Chi] {
-        let length = 12
-        let startIndex = startChi.rawValue
-        var reversedArray: [Chi] = []
-        
-        for i in 0..<length {
-            var index = (startIndex - i) % list.count
-            if index < 0 {
-                index += list.count
-            }
-            reversedArray.append(list[index])
-        }
-        return reversedArray
+        return resultArray
     }
     
     var name: String {
@@ -85,63 +70,21 @@ enum Chi: Int {
         }
     }
     
-    var menhChu: String {
-        switch self {
-        case .Ti:
-            return "Tham Lang"
-        case .Suu:
-            return "Cự Môn"
-        case .Dan:
-            return "Lộc Tôn"
-        case .Mao:
-            return "Văn Khúc"
-        case .Thin:
-            return "Liêm Trinh"
-        case .Ty:
-            return "Vũ Khúc"
-        case .Ngo:
-            return "Phá Quân"
-        case .Mui:
-            return "Vũ Khúc"
-        case .Than:
-            return "Liêm Trinh"
-        case .Dau:
-            return "Văn Khúc"
-        case .Tuat:
-            return "Lộc Tôn"
-        case .Hoi:
-            return "Cự Môn"
-        }
-    }
-    
-    var thanChu: String {
-        switch self {
-        case .Ti:
-            return "Linh Tinh"
-        case .Suu:
-            return "Thiên Tướng"
-        case .Dan:
-            return "Thiên Lương"
-        case .Mao:
-            return "Thiên Đồng"
-        case .Thin:
-            return "Văn Xương"
-        case .Ty:
-            return "Thiên Cơ"
-        case .Ngo:
-            return "Hỏa Tinh"
-        case .Mui:
-            return "Thiên Tướng"
-        case .Than:
-            return "Thiên Lương"
-        case .Dau:
-            return "Thiên Đồng"
-        case .Tuat:
-            return "Văn Xương"
-        case .Hoi:
-            return "Thiên Cơ"
-        }
-    }
+    //Mảng bao gồm [Mệnh Chủ, Thân Chủ]
+    static let menhThanChu: [Chi: [String]] =
+    [.Ti : ["Tham Lang", "Linh Tinh"],
+     .Suu : ["Cự Môn", "Thiên Tướng"],
+     .Dan : ["Lộc Tôn", "Thiên Lương"],
+     .Mao : ["Văn Khúc", "Thiên Đồng"],
+     .Thin : ["Liêm Trinh", "Văn Xương"],
+     .Ty: ["Vũ Khúc", "Thiên Cơ"],
+     .Ngo : ["Phá Quân", "Hỏa Tinh"],
+     .Mui : ["Vũ Khúc", "Thiên Tướng"],
+     .Than : ["Liêm Trinh", "Thiên Lương"],
+     .Dau : ["Văn Khúc", "Thiên Đồng"],
+     .Tuat : ["Lộc Tôn", "Văn Xương"],
+     .Hoi : ["Cự Môn", "Thiên Cơ"]
+    ]
     
     var index: Int {
         switch self {
@@ -154,32 +97,3 @@ enum Chi: Int {
         }
     }
 }
-
-//var nguHanh: String {
-//    switch self {
-//    case .Ti:
-//        return "T"
-//    case .Suu:
-//        return "O"
-//    case .Dan:
-//        return "M"
-//    case .Mao:
-//        return "M"
-//    case .Thin:
-//        return "O"
-//    case .Ty:
-//        return "H"
-//    case .Ngo:
-//        return "H"
-//    case .Mui:
-//        return "O"
-//    case .Than:
-//        return "K"
-//    case .Dau:
-//        return "K"
-//    case .Tuat:
-//        return "O"
-//    case .Hoi:
-//        return "T"
-//    }
-//}
