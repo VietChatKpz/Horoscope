@@ -41,7 +41,6 @@ class MenuViewController: UIViewController {
             navigationController?.pushViewController(vc, animated: true)
         }
     }
-    
 }
 
 extension MenuViewController {
@@ -71,6 +70,15 @@ extension MenuViewController {
         groupContainer.selectedButton = sexBool ? namBT: nuBT
     }
     
+    /// isValidDate
+    /// ham dung de validate Date
+    /// - Parameters:
+    ///   - day: <#day description#>
+    ///   - month: <#month description#>
+    ///   - year: <#year description#>
+    ///   Doi date sang lich calendar xem co ngay do trong lich khong
+    ///   Check lại xem date có trung voi ngay trong lich khong
+    /// - Returns: <#description#>
     func isValidDate(_ day: Int, _ month: Int, _ year: Int) -> Bool {
         let calendar = Calendar.current
         guard let date = calendar.date(from: DateComponents(year: year, month: month, day: day)) else {

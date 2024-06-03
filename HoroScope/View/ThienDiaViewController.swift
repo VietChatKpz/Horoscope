@@ -14,7 +14,7 @@ class ThienDiaViewController: UIViewController {
     
     var thienBan: ThienBan = ThienBan(solarBirthDate: SolarDate(dd: 0, mm: 0, yy: 0, hour: 0, minute: 0), name: "", sex: true)
     var list: [DiaBan] = []
-    var index = 0
+//    var index = 0
     
     let trietLabel = UILabel()
     let tuanLabel = UILabel()
