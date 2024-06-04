@@ -20,14 +20,14 @@ class MenuViewController: UIViewController {
     @IBOutlet private weak var nuBT: RadioButton!
     @IBOutlet private weak var button: UIButton!
     
-    var sexBool: Bool = true
-    var groupContainer = RadioButtonContainer()
+    private var sexBool: Bool = true
+    private var groupContainer = RadioButtonContainer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configuration()
     }
+    
     @IBAction func onClick(_ sender: Any) {
         guard let name = nameTF.text, !name.isEmpty,
               let yy = yyTF.text, !yy.isEmpty,
@@ -35,9 +35,10 @@ class MenuViewController: UIViewController {
               let dd = ddTF.text, !dd.isEmpty,
               let h = hTF.text, !h.isEmpty,
               let m = mTF.text, !m.isEmpty else { return }
-        if isValidDate(Int(dd) ?? 0, Int(mm) ?? 0, Int(yy) ?? 0) {
+        guard let year = Int(yy), let month = Int(mm), let day = Int(dd), let minute = Int(m), let hour = Int(h) else { return }
+        if isValidDate(day, month, year) {
             let vc = ThienDiaViewController()
-            vc.thienBan = ThienBan(solarBirthDate: SolarDate(dd: Int(dd) ?? 0, mm: Int(mm) ?? 0, yy: Int(yy) ?? 0, hour: Int(h) ?? 0, minute: Int(m) ?? 0), name: name, sex: sexBool)
+            vc.thienBan = ThienBan(solarBirthDate: SolarDate(dd: day, mm: month, yy: year, hour: hour, minute: minute), name: name, sex: sexBool)
             navigationController?.pushViewController(vc, animated: true)
         }
     }

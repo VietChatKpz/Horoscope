@@ -13,11 +13,11 @@ class ThienDiaViewController: UIViewController {
     @IBOutlet private weak var ttView: UIView!
     
     var thienBan: ThienBan = ThienBan(solarBirthDate: SolarDate(dd: 0, mm: 0, yy: 0, hour: 0, minute: 0), name: "", sex: true)
-    var list: [DiaBan] = []
+    private var list: [DiaBan] = []
 //    var index = 0
     
-    let trietLabel = UILabel()
-    let tuanLabel = UILabel()
+    private let trietLabel = UILabel()
+    private let tuanLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,12 +129,12 @@ class ThienDiaViewController: UIViewController {
             vitri = vitri + index
         }
         //An sao tử vi
-        let vtTuVi = vitri - 1 > 0 ? vitri - 1 : (vitri - 1) + 12
-        let vtThienDong = (vitri + 6) > 11 ? (vitri + 6) - 12 : (vitri + 6)
-        let vtVuKhuc = (vitri + 7) > 11 ? (vitri + 7) - 12 : (vitri + 7)
-        let vtThaiDuong = (vitri + 8) > 11 ? (vitri + 8) - 12 : (vitri + 8)
-        let vtLiemTrinh = (vitri + 3) > 11 ? (vitri + 3) - 12 : (vitri + 3)
-        let vtThienCo = (vitri + 10) > 11 ? (vitri + 10) - 12 : (vitri + 10)
+        let vtTuVi = (vitri - 1) % 12 >= 0 ? (vitri - 1) % 12 : (vitri - 1) % 12 + 12
+        let vtThienDong = (vitri + 6) % 12
+        let vtVuKhuc = (vitri + 7) % 12
+        let vtThaiDuong = (vitri + 8) % 12
+        let vtLiemTrinh = (vitri + 3) % 12
+        let vtThienCo = (vitri + 10) % 12
         list[vtTuVi].cungTuVi.append(.TuVi)
         list[vtLiemTrinh].cungTuVi.append(.LiemTrinh)
         list[vtThienDong].cungTuVi.append(.ThienDong)
@@ -142,14 +142,14 @@ class ThienDiaViewController: UIViewController {
         list[vtThaiDuong].cungTuVi.append(.ThaiDuong)
         list[vtThienCo].cungTuVi.append(.ThienCo)
         
-        let vitriTP = 4 - vtTuVi > 0 ? 4 - vtTuVi : 4 - vtTuVi + 12
+        let vitriTP = (4 - vtTuVi) % 12 >= 0 ? (4 - vtTuVi) % 12 : (4 - vtTuVi) % 12 + 12
         //An sao thiên phủ
-        let vtThaiAm = vitriTP + 1 > 11 ? vitriTP + 1 - 12 : vitriTP + 1
-        let vtCuMon = vitriTP + 3 > 11 ? vitriTP + 3 - 12 : vitriTP + 3
-        let vtThienLuong = vitriTP + 5 > 11 ? vitriTP + 5 - 12 : vitriTP + 5
-        let vtThienPhu = vitriTP > 11 ? vitriTP - 12 : vitriTP
-        let vtPhaQuan = vitriTP + 10 > 11 ? vitriTP + 10 - 12 : vitriTP + 10
-        let vtThamLang = vitriTP + 2 > 11 ? vitriTP + 2 - 12 : vitriTP + 2
+        let vtThaiAm = (vitriTP + 1) % 12
+        let vtCuMon = (vitriTP + 3) % 12
+        let vtThienLuong = (vitriTP + 5) % 12
+        let vtThienPhu = vitriTP % 12
+        let vtPhaQuan = (vitriTP + 10) % 12
+        let vtThamLang = (vitriTP + 2) % 12
         list[vtThienPhu].cungThienPhu.append(.ThienPhu)
         list[vtThaiAm].cungThienPhu.append(.ThaiAm)
         list[vtThamLang].cungThienPhu.append(.ThamLang)
@@ -189,14 +189,14 @@ class ThienDiaViewController: UIViewController {
         //(SaoThang.TaPhu.vitriDiaBan[mm - 1] + (lunar.dd - 1)) > 11 Kiểm tra đếm đã hết 1 vòng hay chưa, nếu quá số vòng ta lấy số dư chia 12
         let vitriTaPhu = (SaoThang.TaPhu.vitriDiaBan[mm - 1] + (lunar.dd - 1))
         list[vitriTaPhu > 11 ? (vitriTaPhu % 12) : vitriTaPhu].saoKhac.append(.TamThai)
-        let vitriVanXuong = (SaoGio.VanXuong.vitriDiaBan[hIndex] + (lunar.dd - 2))
-        list[vitriVanXuong > 11 ? (vitriVanXuong % 12) : vitriVanXuong].saoKhac.append(.AnQuang)
+        let vitriVanXuong = ((SaoGio.VanXuong.vitriDiaBan[hIndex] + (lunar.dd - 2))) % 12
+        list[vitriVanXuong >= 0 ? vitriVanXuong : vitriVanXuong + 12].saoKhac.append(.AnQuang)
         let vitriHuuBat = (SaoThang.HuuBat.vitriDiaBan[mm - 1] - (lunar.dd - 1))
         list[vitriHuuBat < -11 ? ((vitriHuuBat % 12) + 12) % 12 : (vitriHuuBat + 12) > 11 ? vitriHuuBat : (vitriHuuBat + 12) % 12].saoKhac.append(.BatToa)
-        let vitriVanKhuc = (SaoGio.VanKhuc.vitriDiaBan[hIndex] - (lunar.dd - 2))
-        list[vitriVanKhuc < -11 ? ((vitriVanKhuc % 12) + 12) % 12 : (vitriVanKhuc + 12) > 11 ? vitriVanKhuc : (vitriVanKhuc + 12) % 12].saoKhac.append(.ThienQuy)
+        let vitriVanKhuc = ((SaoGio.VanKhuc.vitriDiaBan[hIndex] - (lunar.dd - 2))) % 12
+        list[vitriVanKhuc >= 0 ? vitriVanKhuc : vitriVanKhuc + 12].saoKhac.append(.ThienQuy)
         list[(menhIndex + yyIndex) > 11 ? (menhIndex + yyIndex) - 12 : (menhIndex + yyIndex)].saoKhac.append(.ThienTai)
-        let thanIndex = 2 + (mm + (hIndex + 1) - 2) > 11 ? 2 + (mm + (hIndex + 1) - 2) - 12 : 2 + (mm + (hIndex + 1) - 2)
+        let thanIndex = (2 + (mm + (hIndex + 1) - 2) > 11 ? 2 + (mm + (hIndex + 1) - 2) - 12 : 2 + (mm + (hIndex + 1) - 2)) % 12
         list[thanIndex].than = "<THÂN>"
         list[(thanIndex + yyIndex) > 11 ? (thanIndex + yyIndex) - 12 : (thanIndex + yyIndex)].saoKhac.append(.ThienTho)
         let vitriThaiTue = (yyIndex - mm + (hIndex + 1))
@@ -340,7 +340,7 @@ extension ThienDiaViewController {
         let vtQuanLoc = list.firstIndex(where: { $0.cungThan == .QuanLoc })
         let vtTaiBach = list.firstIndex(where: { $0.cungThan == .TaiBach })
         let vtThienDi = list.firstIndex(where: { $0.cungThan == .ThienDi })
-        let customLine = CustomLineView(frame: self.view.bounds)
+        let customLine = CustomLineView(frame: CGRect(x: 0, y: 0, width: width, height: height))
         if let vtMenh = vtMenh {
             customLine.addPoint(points[vtMenh])
         }
